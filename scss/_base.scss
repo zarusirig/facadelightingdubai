@@ -1,0 +1,215 @@
+/* ============================================
+   FACADE LIGHTING DUBAI — Base & Reset
+   ============================================ */
+
+/* CSS Custom Properties (compatibility with inline styles) */
+:root {
+  --bg-void: #{$bg-void};
+  --bg-surface: #{$bg-surface};
+  --bg-elevated: #{$bg-elevated};
+  --bg-warm: #{$bg-warm};
+  --gold-primary: #{$gold-primary};
+  --gold-line: #{$gold-line};
+  --gold-bright: #{$gold-bright};
+  --text-primary: #{$text-primary};
+  --text-secondary: #{$text-secondary};
+  --text-dim: #{$text-dim};
+  --text-heading: #{$text-heading};
+  --text-white: #{$text-white};
+  --text-muted: #{$text-secondary};
+  --text-body: #{$text-primary};
+  --font-display: #{$font-display};
+  --font-heading: #{$font-heading};
+  --font-body: #{$font-body};
+  --text-xs: #{$text-xs};
+  --text-sm: #{$text-sm};
+  --text-base: #{$text-base};
+  --text-lg: #{$text-lg};
+  --text-xl: #{$text-xl};
+  --text-2xl: #{$text-2xl};
+  --text-3xl: #{$text-3xl};
+  --space-1: #{$space-1};
+  --space-2: #{$space-2};
+  --space-3: #{$space-3};
+  --space-4: #{$space-4};
+  --space-6: #{$space-6};
+  --space-8: #{$space-8};
+  --space-12: #{$space-12};
+  --space-16: #{$space-16};
+  --leading-relaxed: 1.75;
+  --radius-sm: #{$radius-sm};
+  --radius-md: #{$radius-md};
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Lenis smooth scrolling
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+.lenis.lenis-smooth iframe { pointer-events: none; }
+
+img, video, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: $text-primary;
+  text-decoration: none;
+  transition: color $duration-fast $ease-smooth;
+
+  &:hover { color: $gold-primary; }
+}
+
+ul, ol { list-style: none; }
+
+/* ---- Containers ---- */
+.container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $space-8;
+}
+
+.container-narrow {
+  max-width: $container-narrow;
+  margin: 0 auto;
+  padding: 0 $space-8;
+}
+
+.container-reading {
+  max-width: $container-reading;
+  margin: 0 auto;
+  padding: 0 $space-8;
+}
+
+/* ---- Buttons ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-3;
+  padding: $space-4 $space-8;
+  font-family: $font-heading;
+  font-size: $text-sm;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all $duration-normal $ease-out-expo;
+
+  // Slide-in hover effect
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left $duration-slow $ease-out-expo;
+    z-index: 0;
+  }
+
+  span, svg { position: relative; z-index: 1; }
+}
+
+.btn-primary {
+  background: $gold-primary;
+  color: $bg-void;
+  font-weight: 600;
+
+  &::before { background: $gold-bright; }
+
+  &:hover {
+    color: $bg-void;
+    transform: translateY(-2px);
+    box-shadow: $shadow-gold;
+
+    &::before { left: 0; }
+  }
+}
+
+.btn-outline {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: $text-primary;
+
+  &::before { background: rgba(255, 255, 255, 0.05); }
+
+  &:hover {
+    border-color: $gold-primary;
+    color: $gold-primary;
+
+    &::before { left: 0; }
+  }
+}
+
+.btn-ghost {
+  color: $gold-primary;
+  padding: $space-2 0;
+  letter-spacing: 0.05em;
+  border: none;
+
+  &::after {
+    content: '→';
+    margin-left: $space-2;
+    transition: transform $duration-normal $ease-out-expo;
+    display: inline-block;
+  }
+
+  &:hover::after { transform: translateX(4px); }
+}
+
+/* ---- Visual Overlays ---- */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ---- Selection ---- */
+::selection {
+  background: rgba($gold-base, 0.25);
+  color: $text-white;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-void;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba($gold-base, 0.2);
+  border-radius: $radius-full;
+
+  &:hover {
+    background: rgba($gold-base, 0.35);
+  }
+}
+
+/* ---- Focus Visible ---- */
+:focus-visible {
+  outline: 2px solid $gold-primary;
+  outline-offset: 2px;
+}

@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "frontend-design": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "5df87037065873efdf99dab68450b73de6d717744c1c363bc22cd04dc5578e93"
+    },
+    "ui-ux-pro-max": {
+      "source": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "sourceType": "github",
+      "computedHash": "0a413bf988d06481f69bb81df2070741c3ba12dd9f1be2706d57f259c905992d"
+    }
+  }
+}

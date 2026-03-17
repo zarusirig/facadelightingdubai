@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Mapping for Large-Scale Facade Displays</title>
+    <meta name="description"
+        content="Pixel mapping for large-scale facade LED displays — resolution planning, content creation, DMX addressing, and Art-Net/sACN network design. Technical guide for programmable architectural illumination on Dubai building exteriors.">
+    <link rel="canonical" href="https://facadelightingdubai.com/specialty/pixel-mapping/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "Pixel Mapping for Large-Scale Facade Displays", "url": "https://facadelightingdubai.com/specialty/pixel-mapping/", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai", "url": "https://facadelightingdubai.com" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/specialty/pixel-mapping/" } }
+    </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Specialty", "item": "https://facadelightingdubai.com/specialty/" }, { "@type": "ListItem", "position": 3, "name": "Pixel Mapping", "item": "https://facadelightingdubai.com/specialty/pixel-mapping/" } ]}
+    </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+    { "@type": "Question", "name": "What is pixel mapping in facade lighting?", "acceptedAnswer": { "@type": "Answer", "text": "Pixel mapping is the process of assigning a unique DMX address to each individually controllable LED node on a facade, then creating a coordinate map that links each physical pixel position to its corresponding location in visual content. This map allows a media server to render images, video, and effects across the building's irregular pixel layout as if it were a conventional display. The mapping accounts for non-uniform pixel spacing, building geometry, and physical gaps (windows, vents, structural elements)." }},
+    { "@type": "Question", "name": "How many DMX universes does a large facade need?", "acceptedAnswer": { "@type": "Answer", "text": "Each DMX universe handles 512 channels — equivalent to 128 RGBW pixels (4 channels each). A 5,000-pixel facade requires approximately 40 DMX universes. A 70,000-pixel system like the Burj Khalifa requires 1,500+ universes. For anything beyond a few universes, Art-Net or sACN protocol distributes the universes over Ethernet, replacing individual DMX cables with a single network backbone." }}
+  ]}
+    </script>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Pixel Mapping for Large-Scale Facade Displays">
+    <meta property="og:description"
+        content="DMX addressing, content creation, and network design for facade pixel mapping in Dubai.">
+    <meta property="og:url" content="https://facadelightingdubai.com/specialty/pixel-mapping/">
+    <meta property="og:site_name" content="Facade Lighting Dubai">
+    <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/specialty/pixel-mapping.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pixel Mapping for Large-Scale Facade Displays">
+    <meta name="twitter:description" content="Technical guide for pixel mapping on Dubai building exteriors.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/specialty/pixel-mapping.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner"><a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation"><a href="/design/">Design</a><a
+                    href="/led-technology/">Technology</a><a href="/regulations/">Regulations</a><a
+                    href="/installation/">Installation</a><a href="/building-types/">Building Types</a><a
+                    href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div><a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav><button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation"
+                aria-controls="main-nav" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/specialty/">Specialty</a></li>
+                <li><span class="current">Pixel Mapping</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Specialty</span><span>Updated March 2026</span><span>9 min
+                                read</span></div>
+                        <h1>Pixel Mapping for Large-Scale Facade Displays</h1>
+                        <p><strong>Pixel mapping is the technical process that translates visual content (images, video,
+                                generative patterns) into individual control commands for thousands of LED nodes
+                                distributed across a building's irregular exterior.</strong> Unlike a conventional
+                            display where pixels sit on a uniform grid, facade pixels follow the building's architecture
+                            — with gaps for windows, varying spacing between floors, and three-dimensional surface
+                            geometry. This guide covers DMX addressing strategies, Art-Net/sACN network architecture,
+                            content creation workflows, and the rendering pipeline that connects a <a
+                                href="/specialty/media-facades/">media facade</a> design to its physical LED
+                            installation.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/specialty/pixel-mapping.webp" alt="Pixel Mapping for Large-Scale Facade Displays" width="1600" height="900" loading="eager">
+          </div>
+
+                    <h2>DMX addressing architecture</h2>
+                    <p><strong>Every controllable LED node requires a unique DMX address.</strong> An <a
+                            href="/led-technology/rgb-rgbw/">RGBW pixel</a> uses 4 DMX channels (Red, Green, Blue,
+                        White). A single <a href="/controls/dmx512/">DMX512 universe</a> provides 512 channels — enough
+                        for 128 RGBW pixels. As facade pixel counts increase, the number of required universes grows
+                        rapidly:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Facade Size</th>
+                                <th>Pixel Count</th>
+                                <th>DMX Universes</th>
+                                <th>Distribution</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Small retail (500 m²)</td>
+                                <td>500-1,000</td>
+                                <td>4-8</td>
+                                <td>Direct DMX cabling</td>
+                            </tr>
+                            <tr>
+                                <td>Medium commercial (2,000 m²)</td>
+                                <td>2,000-5,000</td>
+                                <td>16-40</td>
+                                <td>Art-Net over Ethernet</td>
+                            </tr>
+                            <tr>
+                                <td>Large tower (10,000+ m²)</td>
+                                <td>10,000-30,000</td>
+                                <td>80-240</td>
+                                <td>sACN over fiber backbone</td>
+                            </tr>
+                            <tr>
+                                <td>Landmark (<a href="/case-studies/burj-khalifa/">Burj Khalifa</a> scale)</td>
+                                <td>70,000+</td>
+                                <td>1,500+</td>
+                                <td>sACN + fiber + floor distribution</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Content creation workflow</h2>
+                    <p><strong>Content must be created specifically for the facade's pixel layout — standard video files
+                            will not render correctly.</strong> The workflow is: (1) create a pixel map document showing
+                        every node's XY coordinate, (2) render content to match the map's resolution and aspect ratio,
+                        (3) apply any geometric correction for building curvature or non-planar surfaces, and (4) output
+                        the corrected content to the media server for real-time playback.</p>
+
+                    <h2>Art-Net vs sACN</h2>
+                    <p>For multi-universe distribution beyond a single DMX cable, two protocols dominate:</p>
+                    <ul>
+                        <li><strong>Art-Net</strong> — transmitted over standard Ethernet (Cat6). Widely supported by
+                            media servers and lighting controllers. Supports up to 32,768 universes. Best for systems
+                            under 10,000 pixels on a single network segment.</li>
+                        <li><strong>sACN (E1.31)</strong> — ANSI standard streaming ACN. Uses multicast for efficient
+                            bandwidth management. Better suited for large installations where network traffic management
+                            is critical.</li>
+                    </ul>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Pixel Mapping Expertise</h3>
+                            <p>We handle addressing, network design, and content pipeline for facade LED systems of any
+                                scale.</p><a href="/services/consultation/" class="btn btn-primary">Discuss Your
+                                System</a>
+                        </div>
+                    </div>
+
+                    <div class="related-pages">
+                        <h3>Related Topics</h3>
+                        <div class="related-grid">
+                            <a href="/specialty/media-facades/" class="related-card">
+                                <h4>Media Facades</h4>
+                                <p>Complete technology overview</p>
+                            </a>
+                            <a href="/controls/dmx512/" class="related-card">
+                                <h4>DMX512 Protocol</h4>
+                                <p>The foundation of fixture control</p>
+                            </a>
+                            <a href="/case-studies/burj-khalifa/" class="related-card">
+                                <h4>Burj Khalifa</h4>
+                                <p>70,000-pixel system analysis</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Specialty</div>
+                    <nav class="sidebar-nav" aria-label="Specialty navigation"><a href="/specialty/">Overview</a><a
+                            href="/specialty/media-facades/">Media Facades</a><a
+                            href="/specialty/dynamic-interactive/">Dynamic & Interactive</a><a
+                            href="/specialty/pixel-mapping/" class="active">Pixel Mapping</a><a
+                            href="/specialty/perforated-glass/">Perforated & Glass</a><a
+                            href="/specialty/kinetic-responsive/">Kinetic & Responsive</a></nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related</div>
+                    <nav class="sidebar-nav"><a href="/controls/dmx512/">DMX512</a><a
+                            href="/led-technology/rgb-rgbw/">RGB & RGBW</a><a href="/controls/smart-iot/">Smart IoT</a>
+                    </nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Need Help?</h4>
+                    <p>Expert pixel mapping for any scale.</p><a href="/contact/" class="btn btn-primary"
+                        style="width:100%;justify-content:center;">Contact Us</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/main.js"></script>
+<script src="/js/inner-pages.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

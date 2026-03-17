@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DALI Control for Facade Lighting in Dubai: Building Automation Guide</title>
+    <meta name="description"
+        content="DALI control protocol for facade lighting in Dubai — DALI-2 architecture, device types, BMS integration, scene management, group addressing, emergency lighting compliance, and building automation integration for static and tunable white facade systems.">
+    <link rel="canonical" href="https://facadelightingdubai.com/controls/dali/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "DALI Control for Facade Lighting in Dubai: Building Automation Guide", "url": "https://facadelightingdubai.com/controls/dali/", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/controls/dali/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Controls", "item": "https://facadelightingdubai.com/controls/" }, { "@type": "ListItem", "position": 3, "name": "DALI", "item": "https://facadelightingdubai.com/controls/dali/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What is DALI-2 and why is it preferred for facade lighting in Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "DALI-2 (Digital Addressable Lighting Interface, IEC 62386 Edition 2) is a bidirectional digital lighting control protocol that enables individual fixture addressing, logarithmic dimming, status monitoring, and building management system (BMS) integration. DALI-2 is preferred for static and tunable-white facade lighting in Dubai because it integrates with the building's BMS (enabling automated scheduling, daylight-responsive dimming, and energy monitoring for Al Sa'fat compliance), provides bidirectional status reporting (lamp failure, actual dim level, operating hours), and supports up to 64 individually addressable devices per bus with 16 groups and 16 scenes — sufficient for most static facade lighting zones." } }, { "@type": "Question", "name": "How many fixtures can a single DALI bus control?", "acceptedAnswer": { "@type": "Answer", "text": "A single DALI-2 bus supports up to 64 individually addressable device instances (previously called 'ballasts' in DALI-1). Each fixture with an integrated DALI driver counts as one device instance. For facade lighting, a typical DALI bus covers one floor level or facade zone — 20-60 fixtures. Multiple DALI buses connect to a DALI gateway/controller which aggregates them into the BMS network. For projects requiring more than 64 fixtures on one physical run, DALI uses multiple buses with zoned controllers rather than increasing bus capacity." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DALI Control for Facade Lighting in Dubai: Building Automation Guide">
+  <meta property="og:description" content="DALI control protocol for facade lighting in Dubai — DALI-2 architecture, device types, BMS integration, scene management, group addressing, emergency lighting compliance, and building automation integration for static and tunable white facade systems.">
+  <meta property="og:url" content="https://facadelightingdubai.com/controls/dali/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/dmx-controls.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DALI Control for Facade Lighting in Dubai: Building Automation Guide">
+  <meta name="twitter:description" content="DALI control protocol for facade lighting in Dubai — DALI-2 architecture, device types, BMS integration, scene management, group addressing, emergency lighting compliance, and building automation integration for static and tunable white facade systems.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/dmx-controls.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a
+                    href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a
+                    href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav"
+                aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/controls/">Controls</a></li>
+                <li><span class="current">DALI</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Controls Guide</span><span>Updated March 2026</span><span>12 min
+                                read</span></div>
+                        <h1>DALI Control for Facade Lighting in Dubai: Building Automation Guide</h1>
+                        <p><strong>DALI-2 (Digital Addressable Lighting Interface, IEC 62386) is the standard control
+                                protocol for static and tunable-white facade lighting that integrates with building
+                                management systems — providing individual fixture addressing, logarithmic dimming
+                                (smooth 0.1-100% range), bidirectional status monitoring, 16 scene presets, and BMS
+                                gateway connectivity that enables automated scheduling, energy reporting, and <a
+                                    href="/regulations/al-safat/">Al Sa'fat compliance</a> documentation.</strong></p>
+                        <p>This guide covers DALI-2 architecture for <a href="/facade-lighting-dubai/">facade lighting
+                                in Dubai</a>, including bus design, device types, BMS integration, scene programming,
+                            and the distinction between DALI-1 and DALI-2 certification.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/dmx-controls.webp" alt="DALI Control for Facade Lighting in Dubai: Building Automation Guide" width="1600" height="900" loading="eager">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#dali2-architecture">How does DALI-2 bus architecture work?</a></li>
+                            <li><a href="#device-types">What DALI device types apply to facade lighting?</a></li>
+                            <li><a href="#bms-integration">How does DALI integrate with building management?</a></li>
+                            <li><a href="#scene-group">How are scenes and groups used for facade lighting?</a></li>
+                            <li><a href="#dali1-vs-dali2">What is the difference between DALI-1 and DALI-2?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="dali2-architecture">How does DALI-2 bus architecture work?</h2>
+                    <p><strong>A DALI-2 bus consists of two wires (DA+ and DA–) carrying both control data and 16V DC
+                            bus power, connecting up to 64 device instances in a free-topology network (bus, star, or
+                            mixed) with a maximum bus current of 250mA supplied by the DALI bus power supply, using
+                            Manchester-encoded bidirectional communication at 1,200 baud.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>DALI-2 Specification</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard</td>
+                                <td>IEC 62386 (Edition 2)</td>
+                            </tr>
+                            <tr>
+                                <td>Bus voltage</td>
+                                <td>16V DC (nominal), 11.5-22.5V range</td>
+                            </tr>
+                            <tr>
+                                <td>Max bus current</td>
+                                <td>250mA (from bus power supply)</td>
+                            </tr>
+                            <tr>
+                                <td>Max devices per bus</td>
+                                <td>64 device instances</td>
+                            </tr>
+                            <tr>
+                                <td>Groups</td>
+                                <td>16 per bus</td>
+                            </tr>
+                            <tr>
+                                <td>Scenes</td>
+                                <td>16 per device</td>
+                            </tr>
+                            <tr>
+                                <td>Data rate</td>
+                                <td>1,200 baud (bidirectional)</td>
+                            </tr>
+                            <tr>
+                                <td>Topology</td>
+                                <td>Free — bus, star, tree, or mixed</td>
+                            </tr>
+                            <tr>
+                                <td>Max cable length</td>
+                                <td>300m (total bus wire length)</td>
+                            </tr>
+                            <tr>
+                                <td>Cable type</td>
+                                <td>Standard 2-core power cable (no special cable)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>A key advantage of DALI for facade lighting is the free topology — bus wires can be
+                        daisy-chained, star-connected, or any combination. This flexibility simplifies the <a
+                            href="/installation/electrical-infrastructure/">wiring installation</a>, as the DALI bus can follow
+                        the same cable route as the power supply without requiring a dedicated home-run topology.</p>
+
+                    <h2 id="device-types">What DALI device types apply to facade lighting?</h2>
+                    <p><strong>DALI-2 defines device types (DT) that specify the control interface for different LED
+                            driver configurations: DT6 (LED driver, single channel dimming — most common for white
+                            facade lighting), DT8 (colour control — RGBW, tunable white, or xy colour specification),
+                            and input devices (DT301-304 for sensors: occupancy, light level, push buttons).</strong>
+                    </p>
+
+                    <ul>
+                        <li><strong>DT6 — LED driver.</strong> Single-channel forward phase dimming. Each DT6 driver
+                            controls one LED module's intensity from 0.1% to 100%. This is the standard for
+                            monochromatic facade lighting (fixed <a href="/design/color-temperature/">color
+                                temperature</a> white, or single-color accent). Most facade lighting <a
+                                href="/led-technology/led-vs-traditional/">drivers</a> support DT6.</li>
+                        <li><strong>DT8 — Colour control.</strong> Multi-channel color mixing for RGBW, tunable white
+                            (2700K-6500K), or CIE xy colour specification. DT8 enables tunable white facade lighting
+                            that shifts color temperature throughout the evening — warm 2700K at sunset transitioning to
+                            neutral 4000K later, for example.</li>
+                        <li><strong>Input devices.</strong> DALI-2 input devices (sensors, switches, push buttons)
+                            enable local control without additional wiring — for example, a photocell on the facade that
+                            directly triggers DALI scene recall when ambient light drops below threshold, without BMS
+                            involvement.</li>
+                    </ul>
+
+                    <h2 id="bms-integration">How does DALI integrate with building management?</h2>
+                    <p><strong>DALI connects to the building management system (BMS) through a DALI gateway — a device
+                            that translates between DALI protocol and the BMS communication protocol (BACnet IP, Modbus
+                            TCP, or KNX), enabling centralized scheduling, energy monitoring, fixture status reporting,
+                            and automated <a href="/regulations/al-safat/">Al Sa'fat</a> compliance
+                            documentation.</strong></p>
+
+                    <ul>
+                        <li><strong>BACnet integration.</strong> DALI gateways expose each fixture and group as BACnet
+                            objects (Analog Output for dim level, Binary Input for status), enabling the BMS to schedule
+                            facade lighting on astronomical clock, adjust dim levels by time schedule, and log energy
+                            consumption. This is the primary integration method for <a
+                                href="/building-types/commercial-tower/">commercial tower</a> projects in Dubai.</li>
+                        <li><strong>Energy reporting.</strong> DALI-2 drivers report actual power consumption per
+                            fixture — aggregated by the gateway into zone-level energy reports for the BMS. This data
+                            supports Al Sa'fat energy density compliance reporting and enables anomaly detection (a
+                            fixture consuming more power than expected indicates a fault).</li>
+                        <li><strong>Fault reporting.</strong> Bidirectional DALI communication enables each driver to
+                            report lamp failure, driver failure, communication error, and over-temperature — information
+                            relayed via the gateway to the BMS fault management system, triggering <a
+                                href="/services/maintenance-programs/">maintenance</a> work orders automatically.</li>
+                    </ul>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need DALI System Design?</h3>
+                            <p>Bus architecture, BMS gateway specification, and Al Sa'fat compliance integration for
+                                facade lighting control.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Controls Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- ═══ CONTEXT BORDER ═══ -->
+
+                    <h2 id="scene-group">How are scenes and groups used for facade lighting?</h2>
+                    <p><strong>DALI scenes store preset dim levels for each device on the bus (16 scenes available) —
+                            recalled with a single command for instant facade-wide transitions — while groups organize
+                            fixtures into logical zones (16 groups, each fixture can belong to multiple groups) for
+                            zone-based control such as floor-level dimming, elevation-specific scheduling, or
+                            event-responsive zone activation.</strong></p>
+
+                    <ul>
+                        <li><strong>Scene 0: Full evening.</strong> All fixtures at design intensity (100% or as
+                            designed). Recalled at sunset.</li>
+                        <li><strong>Scene 1: Late evening.</strong> All fixtures dimmed to 70%. Recalled at 22:00.</li>
+                        <li><strong>Scene 2: Night economy.</strong> All fixtures at 50%. Recalled at midnight (Al
+                            Sa'fat compliant).</li>
+                        <li><strong>Scene 3: Off.</strong> All fixtures off. Recalled at scheduled curfew time.</li>
+                        <li><strong>Scene 4-15: Event and seasonal.</strong> Reserved for National Day colors (if
+                            tunable), Ramadan schedule, special event configurations.</li>
+                    </ul>
+
+                    <h2 id="dali1-vs-dali2">What is the difference between DALI-1 and DALI-2?</h2>
+                    <p><strong>DALI-2 (IEC 62386 Edition 2) adds mandatory interoperability testing (DiiA
+                            certification), standardized input devices, extended colour control, and tighter timing
+                            specifications — ensuring fixtures from different manufacturers work together reliably,
+                            which DALI-1 (Edition 1) did not guarantee due to implementation variations.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>DALI-1</th>
+                                <th>DALI-2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Standard</td>
+                                <td>IEC 62386 Ed.1</td>
+                                <td>IEC 62386 Ed.2</td>
+                            </tr>
+                            <tr>
+                                <td>Interoperability testing</td>
+                                <td>Optional</td>
+                                <td>Mandatory (DiiA certification)</td>
+                            </tr>
+                            <tr>
+                                <td>Input devices</td>
+                                <td>Not standardized</td>
+                                <td>Standardized (Part 301-304)</td>
+                            </tr>
+                            <tr>
+                                <td>Colour control</td>
+                                <td>Basic (DT8)</td>
+                                <td>Extended DT8 (Tc, xy, RGBWAF)</td>
+                            </tr>
+                            <tr>
+                                <td>Diagnostics</td>
+                                <td>Basic (lamp failure)</td>
+                                <td>Extended (thermal, power, hours)</td>
+                            </tr>
+                            <tr>
+                                <td>Timing precision</td>
+                                <td>Loose</td>
+                                <td>Tighter (better dimming)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For new facade lighting projects in Dubai, specify DALI-2 certified products exclusively. The
+                        DiiA certification (DALI-2 logo) guarantees tested interoperability — critical for projects
+                        where drivers, gateways, and sensors may come from different manufacturers.</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/controls/dmx512/" class="related-card">
+                                <h4>DMX512</h4>
+                                <p>Dynamic color-changing facade control</p>
+                            </a>
+                            <a href="/controls/dmx-vs-dali/" class="related-card">
+                                <h4>DMX vs DALI</h4>
+                                <p>Protocol comparison for your project</p>
+                            </a>
+                            <a href="/led-technology/dubai-grade/" class="related-card">
+                                <h4>Dubai-Grade</h4>
+                                <p>Overview of lighting control technologies</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Controls Topics</div>
+                    <nav class="sidebar-nav" aria-label="Controls section navigation">
+                        <a href="/controls/">Controls Overview</a><a href="/controls/dmx512/">DMX512</a><a
+                            href="/controls/dali/" class="active">DALI</a><a href="/controls/dmx-vs-dali/">DMX vs
+                            DALI</a><a href="/controls/smart-iot/">Smart IoT</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/led-technology/">LED Technology</a><a
+                            href="/design/">Design</a><a href="/regulations/">Regulations</a><a href="/cost/">Cost
+                            Guide</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>DALI Design</h4>
+                    <p>Bus architecture and BMS integration for facade lighting.</p>
+                    <a href="/services/consultation/" class="btn btn-primary"
+                        style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/main.js"></script>
+<script src="/js/inner-pages.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

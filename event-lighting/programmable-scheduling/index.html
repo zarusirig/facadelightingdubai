@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Programmable Facade Lighting Schedules &amp; Seasonal Themes</title>
+  <meta name="description" content="Program facade lighting schedules for Dubai's seasonal calendar — astronomical timers, scene libraries, event triggers, BMS integration, and automated theme switching for year-round engagement.">
+  <link rel="canonical" href="https://facadelightingdubai.com/event-lighting/programmable-scheduling/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/upgrades.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Programmable Facade Lighting Schedules &amp; Seasonal Themes">
+  <meta property="og:description" content="Program facade lighting schedules for Dubai's seasonal calendar — astronomical timers, scene libraries, event triggers, BMS integration, and automated theme switching for year-round engagement.">
+  <meta property="og:url" content="https://facadelightingdubai.com/event-lighting/programmable-scheduling/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/heroes/home-hero.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Programmable Facade Lighting Schedules &amp; Seasonal Themes">
+  <meta name="twitter:description" content="Program facade lighting schedules for Dubai's seasonal calendar — astronomical timers, scene libraries, event triggers, BMS integration, and automated theme switching for year-round engagement.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/heroes/home-hero.webp">
+
+  <!-- TechArticle Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Programmable Facade Lighting Schedules & Seasonal Themes",
+    "description": "Program facade lighting schedules for Dubai's seasonal calendar — astronomical timers, scene libraries, event triggers, BMS integration, and automated theme switching for year-round engagement.",
+    "url": "https://facadelightingdubai.com/event-lighting/programmable-scheduling/",
+    "datePublished": "2026-03-17",
+    "dateModified": "2026-03-17",
+    "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai", "url": "https://facadelightingdubai.com" },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/event-lighting/programmable-scheduling/" }
+  }
+  </script>
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Event Lighting", "item": "https://facadelightingdubai.com/event-lighting/" },
+      { "@type": "ListItem", "position": 3, "name": "Programmable Scheduling", "item": "https://facadelightingdubai.com/event-lighting/programmable-scheduling/" }
+    ]
+  }
+  </script>
+  <!-- FAQPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What control systems support programmable facade lighting schedules in Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The primary control system options for programmable facade lighting scheduling in Dubai are: standalone DMX show controllers (Pharos Controls Designer series, MA Lighting dot2, Compulite Spark) for show-file-based scheduling; BMS-integrated DALI or DMX gateways (Lutron, Helvar, ABB) for buildings with an active Building Management System; cloud-based lighting control platforms (Casambi, SATEL, custom API integrations) for remote access and multi-building management; and astronomical timer relays for simple on/off scheduling without scene programming capability. For Dubai's multi-event calendar with twelve or more seasonal themes, a standalone show controller or BMS-integrated gateway is the appropriate specification — astronomical timer relays alone cannot manage multiple named scenes."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How many scene presets are needed for a Dubai facade lighting system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A minimum of twelve named scene presets is recommended for a Dubai facade lighting system serving the full annual event calendar: Base/Standard (default nightly operation), Ramadan (30-day warm-white and gold seasonal scene), Eid al-Fitr (3-day celebratory elevation), UAE National Day (December 1-3, flag colours), Dubai Shopping Festival (December-January, 5-week warm festive scene), New Year Countdown (December 31, full dynamic show), National Occasion Override (UAE flag colours for ad-hoc national events), Maintenance Mode (reduced output for maintenance periods), Energy Saving (50% output for low-occupancy periods), Summer Dimming (seasonal intensity reduction), and two Custom slots for client-specific or brand events. Systems with more than twelve slots should add Diwali, Chinese New Year, and DSF-extended scenes as standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does prayer time API integration work for facade lighting controllers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Prayer time API integration connects the facade lighting controller to a web service that provides daily Islamic prayer times for a specific location. The Aladhan API (api.aladhan.com) and the UAE General Authority of Islamic Affairs and Endowments' official data are the primary sources. The controller queries the API once daily (typically at midnight) using the building's GPS coordinates and the Umm Al-Qura or ISNA calculation method, receives the five prayer times for the following day as JSON data, and stores them in local memory to use as scene trigger times throughout that day. This ensures that Iftar scene transitions occur at the actual sunset prayer time each evening — critical for Ramadan programming where the Iftar time shifts by one to two minutes daily. Controllers with this capability include Pharos Controls Designer series, custom Raspberry Pi-based integrations, and enterprise BMS systems with API gateway modules."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+      <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+        <a href="/design/">Design</a>
+        <a href="/led-technology/">Technology</a>
+        <a href="/regulations/">Regulations</a>
+        <a href="/installation/">Installation</a>
+        <a href="/building-types/">Building Types</a>
+        <a href="/cost/">Cost</a>
+        <div class="nav-dropdown">
+          <a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="nav-dropdown-menu">
+            <a href="/services/">Services</a>
+            <a href="/solutions/">Solutions</a>
+            <a href="/services/consultation/">Consultation</a>
+            <a href="/contractors-suppliers/">Contractors</a>
+            <a href="/services/uae/">UAE Coverage</a>
+          </div>
+        </div>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol>
+        <li><a href="/">Home</a></li>
+        <li><a href="/event-lighting/">Event Lighting</a></li>
+        <li><span class="current">Programmable Scheduling</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="page-layout">
+      <main id="main-content" class="main-content">
+        <article class="article-content">
+          <div class="article-header">
+            <div class="article-meta">
+              <span>Event Lighting</span>
+              <span>Updated March 2026</span>
+              <span>14 min read</span>
+            </div>
+            <h1>Programmable Facade Lighting Schedules &amp; Seasonal Themes</h1>
+            <p><strong>A programmable scheduling system transforms a building's facade lighting from a static nightly operation into a dynamic year-round engagement platform — switching automatically between twelve or more seasonal themes, tracking astronomical sunset and sunrise times, integrating prayer time APIs for Ramadan accuracy, and requiring only an annual review rather than manual daily management. The difference between a building that participates meaningfully in every event on Dubai's calendar and one that perpetually displays its default scene is, at the control system level, a matter of correct specification at commissioning.</strong></p>
+          </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/heroes/home-hero.webp" alt="Programmable Facade Lighting Schedules & Seasonal Themes" width="1600" height="900" loading="eager">
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In This Guide</div>
+            <ol>
+              <li><a href="#why-programmable">Why programmable scheduling matters</a></li>
+              <li><a href="#technology-options">Scheduling technology options</a></li>
+              <li><a href="#scene-library">Scene library design for Dubai's calendar</a></li>
+              <li><a href="#astronomical-clock">Astronomical clock integration</a></li>
+              <li><a href="#prayer-time-api">Prayer time API integration</a></li>
+              <li><a href="#bms-cloud">BMS and cloud platform integration</a></li>
+              <li><a href="#annual-calendar">Annual programming calendar template</a></li>
+            </ol>
+          </div>
+
+          <h2 id="why-programmable">Why programmable scheduling matters</h2>
+          <p><strong>Manual scene management — where a facilities manager or building operator must remember to change the facade lighting programme before each seasonal event, find the login credentials for the lighting controller, and correctly configure the scene — is not a viable operational model for buildings participating in eight or more events per year. Missed scene changes result in buildings displaying Ramadan warm-white during National Day (or vice versa), or showing their standard white base scene during New Year countdown. These failures are visible, documented, and commercially consequential for premium assets.</strong></p>
+          <p>Programmable scheduling eliminates the dependency on manual intervention by pre-loading the full annual calendar into the control system at commissioning (or at the annual programming update). The controller transitions between scenes automatically at the programmed dates and times, with astronomical and API-based triggers providing the precision that fixed-time scheduling cannot achieve. The building management team's operational role reduces to: annual programming review (typically two to four hours with a lighting programmer), override capability for unexpected events (national occasions, breaking news events that trigger city-wide lighting protocols), and fault monitoring.</p>
+          <p>The commercial case is straightforward: a building that consistently participates correctly in Dubai's event lighting calendar — the right colours, at the right times, without fail — builds a visible operational reputation that is qualitatively different from a building where the Ramadan scene activates three days late and runs two weeks into Eid. For developers managing multiple assets, a cloud-connected scheduling platform enables a single operator to manage the seasonal programmes for dozens of buildings from a single dashboard — the management efficiency argument for programmable scheduling is as strong as the brand consistency argument.</p>
+
+          <h2 id="technology-options">Scheduling technology options</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Technology</th>
+                <th>Products / Platforms</th>
+                <th>Scene Capacity</th>
+                <th>Astronomical Support</th>
+                <th>Remote Access</th>
+                <th>Best For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Standalone DMX show controller</td>
+                <td>Pharos Designer series, MA dot2, Compulite Spark, Enttec Playback Wing</td>
+                <td>100+ scenes; complex show files</td>
+                <td>Yes (built-in, GPS or manual coordinates)</td>
+                <td>Via Ethernet/cloud module</td>
+                <td>Show-quality event programming; complex sequences; timecode sync</td>
+              </tr>
+              <tr>
+                <td>BMS-integrated DALI/DMX gateway</td>
+                <td>Lutron Quantum, Helvar Designer, ABB i-bus DALI, Osram DALI gateway</td>
+                <td>32-256 scenes per zone</td>
+                <td>Yes (via BMS astronomical module)</td>
+                <td>Via BMS platform</td>
+                <td>Buildings with existing BMS; commercial/hospitality with FM team</td>
+              </tr>
+              <tr>
+                <td>Cloud-based lighting platform</td>
+                <td>Casambi, SATEL, Tridonic casambi, custom API gateways</td>
+                <td>Unlimited (cloud-hosted)</td>
+                <td>Yes (cloud-calculated)</td>
+                <td>Full mobile and web app</td>
+                <td>Multi-building portfolios; remote management; mobile override</td>
+              </tr>
+              <tr>
+                <td>Astronomical timer relay</td>
+                <td>Theben TR series, Hager EG series, Schneider Zelio Time</td>
+                <td>On/off + 1-2 relay states only</td>
+                <td>Yes (primary function)</td>
+                <td>None (standalone device)</td>
+                <td>Simple on/off control only; no scene switching capability</td>
+              </tr>
+              <tr>
+                <td>Smart lighting gateway (Zigbee/Z-Wave)</td>
+                <td>Philips Hue Business, GLEDOPTO, generic Zigbee gateways</td>
+                <td>Limited (8-20 scenes typical)</td>
+                <td>Basic (via hub)</td>
+                <td>Mobile app</td>
+                <td>Small-scale installations; villas and low-rise; limited scene requirements</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>For the majority of commercial and hospitality facade lighting systems in Dubai with twelve or more seasonal scenes and event-accuracy requirements, the standalone DMX show controller or BMS-integrated gateway represents the appropriate specification tier. Astronomical timer relays are adequate only where on/off scheduling is the sole requirement — they cannot address the scene-switching requirements of a multi-event annual calendar. Cloud platforms are increasingly the preferred choice for developers managing multiple buildings, as the per-building cost of cloud licensing is typically lower than the cost of maintaining individual on-site controllers without remote access capability.</p>
+
+          <h2 id="scene-library">Scene library design for Dubai's calendar</h2>
+          <p><strong>A Dubai facade lighting scene library should contain a minimum of twelve named scenes covering all recurring annual events, plus two to four unnamed override slots for ad-hoc occasions. Each scene is defined by its colour parameters, intensity profile, animation characteristics (static, slow fade, dynamic sequence), and operating schedule (date range, time window, and transition behaviour at scene boundaries).</strong></p>
+          <p>The following scene list is the recommended minimum for a commercial or hospitality building participating in Dubai's full annual event cycle:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Scene Name</th>
+                <th>Colour Specification</th>
+                <th>Animation</th>
+                <th>Scheduled Period</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Base / Standard</td>
+                <td>3000-4000K white (building-specific)</td>
+                <td>Static</td>
+                <td>Default (all non-event periods)</td>
+                <td>Architectural baseline; all other scenes override this</td>
+              </tr>
+              <tr>
+                <td>Ramadan</td>
+                <td>2700-3000K warm white, gold, amber</td>
+                <td>Slow 30-minute fade cycle</td>
+                <td>Ramadan lunar month (API triggered)</td>
+                <td>Sub-scenes for pre-Iftar, post-Iftar, Suhoor triggered by prayer time API</td>
+              </tr>
+              <tr>
+                <td>Eid al-Fitr</td>
+                <td>Gold, warm white, elevated intensity</td>
+                <td>Gentle sparkle variation</td>
+                <td>Eid al-Fitr (3 days, API triggered)</td>
+                <td>Elevated from Ramadan scene; more celebratory character</td>
+              </tr>
+              <tr>
+                <td>UAE National Day</td>
+                <td>Red #D71920, green #007A3D, white, black zones</td>
+                <td>Static flag or slow colour sweep</td>
+                <td>December 1-3</td>
+                <td>Colour calibration verification required annually</td>
+              </tr>
+              <tr>
+                <td>Dubai Shopping Festival</td>
+                <td>Gold, jewel tones, dynamic RGB</td>
+                <td>Slow dynamic sequence (45-second cycle)</td>
+                <td>DSF dates (typically December-January)</td>
+                <td>Overlaps with National Day; National Day scene takes priority December 1-3</td>
+              </tr>
+              <tr>
+                <td>New Year Countdown</td>
+                <td>White, gold; dynamic build to midnight flash</td>
+                <td>Time-coded show, midnight flash at 00:00:00</td>
+                <td>December 31 (22:00-01:00)</td>
+                <td>Requires time-accurate trigger; NTP or GPS synchronisation mandatory</td>
+              </tr>
+              <tr>
+                <td>National Occasion Override</td>
+                <td>UAE flag colours</td>
+                <td>Static</td>
+                <td>Ad hoc (manual trigger)</td>
+                <td>Pre-loaded for rapid activation within hours of national occasion announcement</td>
+              </tr>
+              <tr>
+                <td>Summer Dimming</td>
+                <td>Base colour at 50% intensity</td>
+                <td>Static</td>
+                <td>June 15 - August 31</td>
+                <td>Energy saving during low-occupancy summer season; Al Sa'fat compliance support</td>
+              </tr>
+              <tr>
+                <td>Maintenance Mode</td>
+                <td>White at 10% intensity</td>
+                <td>Static</td>
+                <td>Manual trigger</td>
+                <td>Safe low-output mode during maintenance access to facade</td>
+              </tr>
+              <tr>
+                <td>Diwali</td>
+                <td>Gold, orange, deep red</td>
+                <td>Slow warm tonal cycle</td>
+                <td>Diwali lunar date (October-November)</td>
+                <td>Optional; recommended for buildings in culturally diverse districts</td>
+              </tr>
+              <tr>
+                <td>Custom A</td>
+                <td>Client-defined</td>
+                <td>Client-defined</td>
+                <td>Manual or date trigger</td>
+                <td>Brand event, opening, product launch, bespoke occasion</td>
+              </tr>
+              <tr>
+                <td>Custom B</td>
+                <td>Client-defined</td>
+                <td>Client-defined</td>
+                <td>Manual or date trigger</td>
+                <td>Second override slot for simultaneous events or alternative brand expression</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="astronomical-clock">Astronomical clock integration</h2>
+          <p><strong>Astronomical clock integration calculates solar events — civil twilight, sunrise, solar noon, sunset, and astronomical twilight — for the building's specific GPS coordinates on each calendar date, using these calculated times as dynamic trigger points for facade lighting scene transitions rather than fixed daily on/off times.</strong></p>
+          <p>The value of astronomical scheduling over fixed-time scheduling in Dubai is significant. Dubai's annual sunset time range spans approximately two hours: the earliest sunset in December occurs around 17:30, and the latest in late June occurs around 19:30. A fixed 18:00 on/off time is appropriate for neither extreme — it activates facade lighting forty-five minutes before sunset in June (wasting energy, triggering lighting unnecessarily) and thirty minutes after sunset in December (missing the early-evening activation that captures the peak pedestrian and vehicular observation period).</p>
+          <p><strong>Astronomical calculation accuracy.</strong> Modern show controllers and BMS astronomical modules use the NOAA Solar Position Algorithm or equivalent, which calculates solar position to an accuracy of 0.01 degrees across the years 2000-2100. For Dubai at latitude 25.2°N, longitude 55.3°E, this algorithm provides sunset times accurate to within thirty seconds throughout the year. The controller requires the correct building coordinates (GPS), the correct IANA timezone (Asia/Dubai, UTC+4, no daylight saving), and an accurate real-time clock — typically maintained by NTP synchronisation to an internet time server or GPS receiver.</p>
+          <p><strong>Offset programming.</strong> Astronomical triggers are typically programmed with an offset to account for twilight conditions and building-specific activation preferences. A standard offset is: facade lighting on at civil twilight (approximately fifteen minutes after sunset, when the sky begins to darken perceptibly), rather than at the exact solar sunset moment. This avoids the early-evening period when the sky is still bright enough to make facade lighting invisible, and ensures the building is illuminated as the sky darkens and the facade becomes visually prominent. The offset value (typically +10 to +20 minutes relative to sunset) should be reviewed at commissioning during the darkening period and adjusted to match the lighting designer's intent.</p>
+
+          <h2 id="prayer-time-api">Prayer time API integration</h2>
+          <p><strong>Prayer time API integration provides the facade lighting controller with daily Islamic prayer times for Dubai — enabling Ramadan scene transitions to occur at the exact Iftar (Maghrib) time each evening, which shifts by one to two minutes daily throughout the thirty-day lunar month, without requiring any manual schedule adjustment.</strong></p>
+          <p><strong>API sources.</strong> The primary API sources for UAE prayer times are: the Aladhan API (api.aladhan.com), a widely used open-source Islamic prayer time service providing times in JSON format via HTTP GET request; and the UAE General Authority of Islamic Affairs and Endowments' official prayer time data, available through their digital services. The Aladhan API supports multiple calculation methods — for Dubai, the Umm Al-Qura method (used across the Gulf) or the UAE authority's method should be selected to ensure alignment with officially announced prayer times.</p>
+          <p><strong>Controller integration patterns.</strong> Controllers with native API integration (including Pharos Controls Designer series with its TCP/IP triggers and JavaScript scripting engine) can query the API directly using a built-in HTTP client. The standard integration pattern is: a scheduled daily query at 00:30 local time, parsing the JSON response for the following day's Maghrib and Fajr times, storing these as variable trigger points for the Ramadan scene transitions, and logging the retrieved values for audit purposes. Controllers without native HTTP capability can receive prayer time triggers via an intermediary — a Raspberry Pi, an AWS Lambda function, or a BMS API gateway that queries the prayer time service and sends a trigger command to the lighting controller via its supported protocol (UDP, TCP, OSC, or relay closure).</p>
+          <p><strong>Fallback behaviour.</strong> Network-dependent prayer time integration requires a defined fallback for cases where the API cannot be reached (network outage, API service downtime). The correct fallback is: use the stored prayer times from the previous day, which differ by at most two minutes — acceptable accuracy for Ramadan scene transitions. The controller should log API failures and alert building management if the fallback condition persists for more than forty-eight hours, as this indicates a network or configuration fault requiring investigation rather than continued operation on stale data.</p>
+
+          <h2 id="bms-cloud">BMS and cloud platform integration</h2>
+          <p><strong>Integration of facade lighting scheduling with a Building Management System (BMS) or cloud lighting platform provides remote scene management, energy monitoring, fault alerting, and multi-building coordination — capabilities that are essential for premium commercial assets, managed portfolios, and buildings where the facilities team has no dedicated lighting expertise.</strong></p>
+          <p><strong>BMS integration protocol options.</strong> Facade lighting controllers communicate with BMS platforms via several protocols: BACnet/IP (the dominant commercial BMS protocol, supported by all major BMS platforms and most modern lighting controllers), KNX (widely deployed in European-specification buildings and increasingly in Dubai premium residential), DALI (IEC 62386, for DALI-equipped LED drivers — provides per-fixture monitoring and grouped addressing), and Modbus TCP/RTU (legacy integration for older BMS installations). The choice of integration protocol should be specified at the building's M&E design stage — retrofitting an integration protocol that does not match the BMS's native capabilities is a common and avoidable cost escalation point.</p>
+          <p><strong>Cloud platform capabilities.</strong> Cloud-connected facade lighting platforms offer three capabilities beyond on-site controller operation: remote scene switching (change from Ramadan to Eid scene from a mobile device regardless of physical location), multi-building coordination (a portfolio manager pushes the National Day scene to forty buildings simultaneously from one interface), and energy reporting (monthly consumption reports by scene type, enabling Al Sa'fat energy compliance documentation and cost allocation). Cloud platforms also support over-the-air firmware updates for connected lighting controllers and drivers, reducing the need for on-site maintenance visits.</p>
+          <p><strong>Mobile override capability.</strong> A material operational requirement for Dubai buildings is the ability to activate the National Occasion Override scene (UAE flag colours) within two to four hours of an announcement of a national occasion. Without remote access, this requires a facilities manager to travel to the site or call an on-site operator — a process that may not meet the two-to-four-hour response expectation for nationally significant occasions. With cloud or BMS remote access, the scene can be activated from any location by any authorised user within seconds. This capability should be specified and tested at commissioning, including the user access control structure (who can override which scenes) and the audit log that records all manual overrides.</p>
+
+          <h2 id="annual-calendar">Annual programming calendar template</h2>
+          <p><strong>The following twelve-month grid provides the standard annual programming calendar for a Dubai commercial or hospitality building. Date ranges for lunar-calendar events (Ramadan, Eid, Diwali) shift annually and must be verified against the UAE government's official announcement for each year. All other events are fixed-date and can be pre-loaded at commissioning for multiple years.</strong></p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Event / Season</th>
+                <th>Scene</th>
+                <th>Override Windows</th>
+                <th>Annual Update Required</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>January</td>
+                <td>DSF continuation; post-New Year</td>
+                <td>DSF (until DSF end); then Base</td>
+                <td>None standard</td>
+                <td>Verify DSF end date</td>
+              </tr>
+              <tr>
+                <td>February</td>
+                <td>Standard; Dubai Fitness Challenge (if active)</td>
+                <td>Base</td>
+                <td>Custom A if DFC brand activation</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>March</td>
+                <td>Ramadan (most years, varies)</td>
+                <td>Ramadan (prayer time API triggered)</td>
+                <td>Eid al-Fitr at end of month (some years)</td>
+                <td>Confirm Ramadan start date; verify API configuration</td>
+              </tr>
+              <tr>
+                <td>April</td>
+                <td>Eid al-Fitr (most years); post-Ramadan</td>
+                <td>Eid (3 days); then Base</td>
+                <td>None standard</td>
+                <td>Confirm Eid dates; reset Ramadan scene to off</td>
+              </tr>
+              <tr>
+                <td>May</td>
+                <td>Standard</td>
+                <td>Base</td>
+                <td>National Occasion Override on standby</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>June</td>
+                <td>Summer season begins June 15</td>
+                <td>Summer Dimming from June 15</td>
+                <td>None standard</td>
+                <td>None (fixed date)</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Summer (low season)</td>
+                <td>Summer Dimming</td>
+                <td>None standard</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>August</td>
+                <td>Summer (low season, ends August 31)</td>
+                <td>Summer Dimming until August 31; Base from September 1</td>
+                <td>None standard</td>
+                <td>None (fixed date)</td>
+              </tr>
+              <tr>
+                <td>September</td>
+                <td>Standard</td>
+                <td>Base</td>
+                <td>National Occasion Override on standby</td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>October</td>
+                <td>Diwali (variable date, October-November)</td>
+                <td>Diwali (where applicable)</td>
+                <td>National Occasion Override on standby</td>
+                <td>Confirm Diwali date; activate for applicable buildings</td>
+              </tr>
+              <tr>
+                <td>November</td>
+                <td>Pre-National Day; National Day (November 30 - December 3)</td>
+                <td>Base until November 30; National Day from December 1</td>
+                <td>None; DSF may begin late November</td>
+                <td>Verify National Day scene colour calibration; confirm dates</td>
+              </tr>
+              <tr>
+                <td>December</td>
+                <td>National Day (Dec 1-3); DSF (Dec mid); New Year (Dec 31)</td>
+                <td>National Day (Dec 1-3) → DSF (Dec 4 - Dec 30) → New Year Countdown (Dec 31)</td>
+                <td>Eid al-Adha (some years); New Year override active from 22:00 Dec 31</td>
+                <td>Verify DSF dates; update New Year show file timecode if fireworks coordination updated</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>The annual programming review should be conducted in September or early October each year, before the National Day preparation period begins. The review covers: confirming lunar-calendar event dates for the coming year; verifying prayer time API connectivity and calculation method; updating the New Year show file if fireworks coordination details have changed; reviewing Summer Dimming dates against the building's actual occupancy pattern; and testing all twelve scenes in sequence to confirm no firmware updates have altered scene behaviour.</p>
+          <p>For the scene programming and control system architecture that underpins this scheduling capability, see <a href="/controls/">Facade Lighting Controls</a>. For the LED source specifications that enable colour-accurate scene reproduction, see <a href="/led-technology/">LED Technology</a>. For how scene scheduling integrates with the <a href="/event-lighting/ramadan/">Ramadan</a>, <a href="/event-lighting/national-day/">National Day</a>, and <a href="/event-lighting/new-year-countdown/">New Year Countdown</a> event requirements, see the individual event pages in this section.</p>
+
+          <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">What control systems support programmable facade lighting schedules in Dubai?</button>
+              <div class="faq-answer">
+                <p>The primary options for programmable facade lighting scheduling in Dubai are: standalone DMX show controllers (Pharos Controls Designer series, MA dot2, Compulite Spark) for show-file-based scheduling; BMS-integrated DALI or DMX gateways (Lutron, Helvar, ABB) for buildings with an active Building Management System; and cloud-based lighting control platforms (Casambi, SATEL) for remote access and multi-building management. For Dubai's multi-event calendar with twelve or more seasonal themes, a standalone show controller or BMS-integrated gateway is the appropriate specification.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How many scene presets are needed for a Dubai facade lighting system?</button>
+              <div class="faq-answer">
+                <p>A minimum of twelve named scene presets is recommended: Base/Standard, Ramadan, Eid al-Fitr, UAE National Day, Dubai Shopping Festival, New Year Countdown, National Occasion Override, Maintenance Mode, Energy Saving/Summer Dimming, Diwali (where applicable), and two Custom override slots. Systems serving buildings in culturally diverse districts or managed portfolios should add additional scenes for Chinese New Year, DSF-extended display, and brand-specific events.</p>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false">How does prayer time API integration work for facade lighting controllers?</button>
+              <div class="faq-answer">
+                <p>Prayer time API integration connects the facade lighting controller to a web service providing daily Islamic prayer times for a specific location. The controller queries the API once daily at midnight, downloads the following day's Maghrib and Fajr prayer times, and stores them as local trigger points for Ramadan scene transitions. This ensures Iftar scene transitions occur at the actual sunset prayer time each evening, automatically adjusting for the daily shift of one to two minutes throughout the lunar month without any manual reprogramming.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cta-banner">
+            <h2>Build Your Annual Lighting Programme</h2>
+            <p>Our commissioning team designs and loads the complete twelve-scene annual library into your facade lighting controller — with astronomical clocks, prayer time API integration, and remote access configured from day one.</p>
+            <a href="/services/consultation/" class="btn btn-primary">Book a Consultation</a>
+            <a href="/event-lighting/" class="btn btn-secondary">Event Lighting Overview</a>
+          </div>
+
+        </article>
+      </main>
+
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <div class="sidebar-title">Event &amp; Seasonal</div>
+          <nav class="sidebar-nav" aria-label="Event lighting navigation">
+            <a href="/event-lighting/">Event Lighting Overview</a>
+            <a href="/event-lighting/ramadan/">Ramadan Lighting</a>
+            <a href="/event-lighting/national-day/">UAE National Day</a>
+            <a href="/event-lighting/new-year-countdown/">New Year Countdown</a>
+            <a href="/event-lighting/temporary-installations/">Temporary Installations</a>
+            <a href="/event-lighting/programmable-scheduling/" class="active">Programmable Scheduling</a>
+          </nav>
+        </div>
+        <div class="sidebar-section">
+          <div class="sidebar-title">Related Sections</div>
+          <nav class="sidebar-nav">
+            <a href="/controls/">Controls</a>
+            <a href="/design/">Design</a>
+            <a href="/specialty/">Specialty</a>
+          </nav>
+        </div>
+        <div class="sidebar-cta">
+          <h3>Event Lighting Design</h3>
+          <p>Custom seasonal and event programming for your building's facade.</p>
+          <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h3>Explore</h3><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h3>Resources</h3><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h3>Technical</h3><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h3>Company</h3><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+
+  <script src="/js/main.js" defer></script>
+  <script src="/js/inner-pages.js" defer></script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>

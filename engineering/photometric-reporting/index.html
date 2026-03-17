@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photometric Reporting for Facade Lighting in Dubai: Simulation &amp; Documentation Guide</title>
+    <meta name="description"
+        content="Photometric reporting for facade lighting in Dubai — simulation software, illuminance calculations, uniformity ratios, light pollution compliance documentation, Dubai Municipality submission requirements, and IES/LDT file specifications.">
+    <link rel="canonical" href="https://facadelightingdubai.com/engineering/photometric-reporting/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "Photometric Reporting for Facade Lighting in Dubai", "url": "https://facadelightingdubai.com/engineering/photometric-reporting/", "datePublished": "2026-03-05", "dateModified": "2026-03-05", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/engineering/photometric-reporting/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Engineering", "item": "https://facadelightingdubai.com/engineering/" }, { "@type": "ListItem", "position": 3, "name": "Photometric Reporting", "item": "https://facadelightingdubai.com/engineering/photometric-reporting/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What photometric data is required for Dubai Municipality facade lighting approval?", "acceptedAnswer": { "@type": "Answer", "text": "Dubai Municipality requires photometric simulation documentation demonstrating: facade illuminance levels meeting design targets (typically 50-300 lux for architectural lighting), uniformity ratio within acceptable limits (minimum 0.3 for general facade, 0.5 for feature elements), light trespass not exceeding 10 lux at neighboring windows (residential adjacency), upward light ratio below 15% for Al Sa'fat Gold rating compliance, and glare control (maximum luminous intensity at critical angles). The documentation package includes site plan with fixture positions, 3D simulation renders, false-color illuminance maps, spill light analysis, and a fixture schedule referencing ECAS-registered products." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Photometric Reporting for Facade Lighting in Dubai: Simulation &amp; Documentation Guide">
+  <meta property="og:description" content="Photometric reporting for facade lighting in Dubai — simulation software, illuminance calculations, uniformity ratios, light pollution compliance documentation, Dubai Municipality submission requirements, and IES/LDT file specifications.">
+  <meta property="og:url" content="https://facadelightingdubai.com/engineering/photometric-reporting/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Photometric Reporting for Facade Lighting in Dubai: Simulation &amp; Documentation Guide">
+  <meta name="twitter:description" content="Photometric reporting for facade lighting in Dubai — simulation software, illuminance calculations, uniformity ratios, light pollution compliance documentation, Dubai Municipality submission requirements, and IES/LDT file specifications.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a
+                    href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a
+                    href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav"
+                aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/engineering/">Engineering</a></li>
+                <li><span class="current">Photometric Reporting</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Engineering Guide</span><span>Updated March 2026</span><span>12
+                                min read</span></div>
+                        <h1>Photometric Reporting for Facade Lighting in Dubai: Simulation &amp; Documentation Guide
+                        </h1>
+                        <p><strong>Photometric reporting translates the <a href="/design/">lighting design concept</a>
+                                into quantified engineering documentation — proving through simulation that the proposed
+                                fixture selection, positioning, and aiming achieves the target illuminance levels,
+                                uniformity ratios, and <a href="/regulations/compliance-checklist/">light pollution
+                                    compliance</a> required by Dubai Municipality, Al Sa'fat, and adjacent property
+                                considerations.</strong> No facade lighting project in Dubai can proceed past design
+                            stage without photometric documentation that demonstrates compliance with these quantitative
+                            requirements.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="Photometric Reporting for Facade Lighting in Dubai: Simulation & Documentation Guide" width="1600" height="900" loading="eager">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#simulation-software">What photometric simulation software is used?</a></li>
+                            <li><a href="#ies-files">What are IES and LDT photometric data files?</a></li>
+                            <li><a href="#calculation-methods">How are facade illuminance calculations performed?</a>
+                            </li>
+                            <li><a href="#compliance-docs">What compliance documentation does Dubai Municipality
+                                    require?</a></li>
+                            <li><a href="#maintenance-factor">How does the maintenance factor affect photometric
+                                    calculations?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="simulation-software">What photometric simulation software is used?</h2>
+                    <p><strong>Three software platforms dominate facade lighting photometric design: DIALux evo (free,
+                            industry-standard for MEP consultants), AGi32 (premium, preferred for complex architectural
+                            lighting), and Relux (free, strong European manufacturer integration) — each importing
+                            manufacturer IES/LDT photometric data files to calculate illuminance, luminance, and light
+                            distribution on 3D facade models.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Software</th>
+                                <th>Cost</th>
+                                <th>Strengths</th>
+                                <th>Dubai Use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DIALux evo</td>
+                                <td>Free</td>
+                                <td>Industry standard, extensive fixture library</td>
+                                <td>Most common — MEP consultants</td>
+                            </tr>
+                            <tr>
+                                <td>AGi32</td>
+                                <td>Licensed (≈AED 15,000)</td>
+                                <td>Complex surfaces, accurate facade simulation</td>
+                                <td>Specialist lighting designers</td>
+                            </tr>
+                            <tr>
+                                <td>Relux</td>
+                                <td>Free</td>
+                                <td>European brand integration, energy calcs</td>
+                                <td>Growing adoption</td>
+                            </tr>
+                            <tr>
+                                <td>VIVALDI (iGuzzini)</td>
+                                <td>Free (brand-specific)</td>
+                                <td>Real-time visualization</td>
+                                <td>iGuzzini projects only</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="ies-files">What are IES and LDT photometric data files?</h2>
+                    <p><strong>IES (Illuminating Engineering Society, .ies format) and EULUMDAT (.ldt format) files
+                            contain the measured light distribution of a specific fixture — intensity values at every
+                            angle in a 3D sphere, measured in an accredited photometric laboratory — enabling simulation
+                            software to accurately predict how each fixture illuminates the facade surface.</strong></p>
+
+                    <ul>
+                        <li><strong>IES format.</strong> ANSI/IES LM-63 standard. The global standard, used by most
+                            North American and international manufacturers. Contains luminous intensity data in candela
+                            at angular intervals (typically 2.5° or 5° spacing).</li>
+                        <li><strong>EULUMDAT format.</strong> European standard (.ldt files). Used by many European
+                            manufacturers. Contains the same photometric information in a different file structure.</li>
+                        <li><strong>Verification.</strong> Always request photometric data from an independent
+                            accredited lab (not the manufacturer's internal lab). Look for LM-79 (LED luminaire
+                            photometric testing standard) test reports alongside the IES file. This ensures the
+                            simulation is based on independently verified data, not manufacturer claims.</li>
+                    </ul>
+
+                    <h2 id="calculation-methods">How are facade illuminance calculations performed?</h2>
+                    <p><strong>Facade illuminance calculations model the facade surface as a vertical calculation grid
+                            (typically 0.5m × 0.5m resolution), position each fixture with its IES photometric data
+                            file, and calculate the illuminance contribution from every fixture to every grid point —
+                            producing a false-color illuminance map showing achieved values in lux, uniformity ratios
+                            (Emin/Emax and Emin/Eavg), and identification of hot spots and dark zones.</strong></p>
+
+                    <ul>
+                        <li><strong>Calculation grid.</strong> The facade surface is divided into a grid of calculation
+                            points. Grid spacing of 0.5m provides sufficient resolution for most facade lighting — finer
+                            grids (0.25m) are used for detailed feature elements where precision is critical.</li>
+                        <li><strong>Target values.</strong> Typical facade illuminance targets: general <a
+                                href="/design/wall-washing/">wall wash</a> 75-150 lux, <a
+                                href="/design/accent-spotlighting/">feature accent</a> 200-500 lux, <a
+                                href="/design/grazing/">texture grazing</a> 50-100 lux (grazing angle, measuring the
+                            perpendicular component), entrance/canopy 100-300 lux. Higher values for darker facade
+                            materials.</li>
+                        <li><strong>Uniformity.</strong> Uniformity ratio Emin/Eavg ≥0.3 for general facade wash
+                            (acceptable variation), ≥0.5 for feature elements (tight control), ≥0.7 for signage or media
+                            surfaces (high uniformity).</li>
+                    </ul>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need Photometric Design Documentation?</h3>
+                            <p>Complete photometric simulation, compliance reporting, and Dubai Municipality submission
+                                package.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Photometric Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- ═══ CONTEXT BORDER ═══ -->
+
+                    <h2 id="compliance-docs">What compliance documentation does Dubai Municipality require?</h2>
+                    <p><strong>The photometric compliance package for Dubai Municipality includes: site plan with
+                            fixture positions and aiming angles, 3D simulation renders (day and night), false-color
+                            illuminance maps for each facade elevation, spill light analysis at property boundaries (≤10
+                            lux at residential windows), upward light ratio calculation (<a
+                                href="/regulations/al-safat/">Al Sa'fat</a> compliance), fixture schedule with <a
+                                href="/regulations/esma/">ECAS registration</a> numbers, and control system schedule
+                            showing scheduling and dimming capability.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Document</th>
+                                <th>Content</th>
+                                <th>Purpose</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Site plan</td>
+                                <td>Fixture positions, aiming, cable routes</td>
+                                <td>Installation coordination</td>
+                            </tr>
+                            <tr>
+                                <td>3D renders</td>
+                                <td>Photorealistic nighttime visualization</td>
+                                <td>Design intent communication</td>
+                            </tr>
+                            <tr>
+                                <td>False-color maps</td>
+                                <td>Illuminance levels per elevation</td>
+                                <td>Performance verification</td>
+                            </tr>
+                            <tr>
+                                <td>Spill light analysis</td>
+                                <td>Light trespass at boundaries</td>
+                                <td>Neighbor compliance</td>
+                            </tr>
+                            <tr>
+                                <td>ULR calculation</td>
+                                <td>Upward light ratio percentage</td>
+                                <td>Al Sa'fat light pollution compliance</td>
+                            </tr>
+                            <tr>
+                                <td>Fixture schedule</td>
+                                <td>Type, wattage, ECAS number</td>
+                                <td>Regulatory product approval</td>
+                            </tr>
+                            <tr>
+                                <td>Energy summary</td>
+                                <td>Total connected load, LPD</td>
+                                <td>Al Sa'fat energy density</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 id="maintenance-factor">How does the maintenance factor affect photometric calculations?</h2>
+                    <p><strong>The maintenance factor (MF) — typically 0.7-0.8 for facade lighting in Dubai — reduces
+                            the calculated initial illuminance to predict the real-world performance after years of
+                            operation, accounting for LED lumen depreciation (LLD, typically 0.85 at L70 life),
+                            luminaire dirt depreciation (LDD, 0.80-0.90 for Dubai's <a
+                                href="/climate/sandstorm-protection/">dusty environment</a>), and room surface
+                            depreciation (not applicable for facades).</strong></p>
+
+                    <ul>
+                        <li><strong>Dubai MF calculation.</strong> MF = LLD × LDD = 0.85 × 0.85 = 0.72 (typical for
+                            Dubai with quarterly cleaning). Using 0.70 provides a conservative design that maintains
+                            target illuminance levels throughout the fixture lifespan.</li>
+                        <li><strong>Design implication.</strong> The initial installed lighting must deliver 1/MF
+                            (1.43×) the target illuminance, so that when dirt and depreciation reduce output, the
+                            maintained illuminance still meets the design target. This means specifying approximately
+                            40% more initial light output than the eventual desired level.</li>
+                        <li><strong>Sandstorm impact.</strong> Dubai's frequent dust events make the LDD component more
+                            aggressive than European calculations assume. Using European MF values (typically 0.80) for
+                            Dubai projects results in under-designed lighting that falls below targets sooner than
+                            expected.</li>
+                    </ul>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/engineering/digital-twin/" class="related-card">
+                                <h4>Digital Twin</h4>
+                                <p>Virtual facade lighting models for design and operations</p>
+                            </a>
+                            <a href="/design/" class="related-card">
+                                <h4>Lighting Design</h4>
+                                <p>Architectural facade lighting design principles</p>
+                            </a>
+                            <a href="/regulations/compliance-checklist/" class="related-card">
+                                <h4>Compliance Checklist</h4>
+                                <p>Dubai glare and spill light regulations</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Engineering Topics</div>
+                    <nav class="sidebar-nav" aria-label="Engineering section navigation">
+                        <a href="/engineering/">Engineering Overview</a><a href="/engineering/wind-load/">Wind
+                            Load</a><a href="/engineering/voltage-drop/">Voltage Drop</a><a
+                            href="/engineering/photometric-reporting/" class="active">Photometric Reporting</a><a
+                            href="/engineering/digital-twin/">Digital Twin</a><a
+                            href="/engineering/tender-template/">Tender Template</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/design/">Design</a><a href="/regulations/">Regulations</a><a
+                            href="/led-technology/">LED Technology</a><a href="/cost/">Cost Guide</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Photometric Design</h4>
+                    <p>Simulation and compliance documentation for Dubai projects.</p>
+                    <a href="/services/consultation/" class="btn btn-primary"
+                        style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/main.js"></script>
+<script src="/js/inner-pages.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

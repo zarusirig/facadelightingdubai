@@ -1,0 +1,558 @@
+/* ============================================
+   FACADE LIGHTING DUBAI — Components
+   ============================================ */
+
+/* --- HERO --- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 140px;
+  padding-bottom: $space-16;
+
+  // Subtle architectural grid background
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 80px 80px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Warm gold ambient glow
+  &::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -15%;
+    width: 70vw;
+    height: 70vw;
+    background: radial-gradient(circle, rgba($gold-base, 0.08) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-8;
+  margin-top: $space-16;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: $space-8;
+}
+
+.hero-stat-value {
+  display: block;
+  font-family: $font-display;
+  font-size: $text-3xl;
+  font-weight: 400;
+  color: $text-white;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  display: block;
+  font-family: $font-heading;
+  font-size: $text-xs;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $text-dim;
+  margin-top: $space-3;
+}
+
+/* --- Hero H1 Light Sweep --- */
+.hero h1 {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding-right: $space-4;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba($gold-base, 0.2), transparent);
+    transform: skewX(-20deg);
+    animation: shineSweep 10s infinite $ease-out-expo;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  // Gold highlight word
+  .highlight {
+    color: $gold-primary;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* --- SECTION STRUCTURE --- */
+.home-section {
+  padding: $space-32 0;
+  position: relative;
+}
+
+.section-header {
+  margin-bottom: $space-12;
+
+  h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: $space-4;
+  }
+
+  p {
+    max-width: 560px;
+  }
+
+  // Gold diamond ornament before section heading
+  &::before {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid $gold-line;
+    transform: rotate(45deg);
+    margin-bottom: $space-6;
+  }
+}
+
+// Optional: remove the diamond for certain contexts
+.section-header--clean::before { display: none; }
+
+/* --- SERVICE / GRID CARDS --- */
+.services-grid,
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: $space-6;
+  background: transparent;
+}
+
+.service-item,
+.section-card {
+  background: rgba($bg-surface, 0.6);
+  border: $border-subtle;
+  border-radius: $radius-sm;
+  padding: $space-10;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: all $duration-slow $ease-out-expo;
+  position: relative;
+  overflow: hidden;
+
+  // Gold bottom line that extends on hover
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, $gold-line, $gold-bright);
+    transition: width $duration-slow $ease-out-expo;
+    z-index: 1;
+  }
+
+  > * { position: relative; z-index: 2; }
+
+  &:hover {
+    background: rgba($bg-elevated, 0.7);
+    border-color: rgba($gold-base, 0.15);
+    box-shadow: $shadow-gold;
+    transform: translateY(-4px);
+
+    &::after { width: 100%; }
+
+    .section-card-icon svg {
+      color: $gold-bright;
+      transform: scale(1.05);
+    }
+
+    h3 { color: $text-white; }
+  }
+}
+
+// Numbered variant for services
+.service-item {
+  counter-increment: service-counter;
+
+  .service-number {
+    font-family: $font-display;
+    font-size: $text-4xl;
+    color: rgba($gold-base, 0.1);
+    line-height: 1;
+    margin-bottom: $space-6;
+    font-weight: 400;
+  }
+}
+
+.section-card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: $space-6;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    color: $gold-primary;
+    transition: all $duration-normal $ease-out-expo;
+    stroke-width: 1.5px;
+  }
+}
+
+/* --- BENTO GRID (Topics) --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: $space-4;
+
+  .bento-item {
+    background: rgba($bg-surface, 0.5);
+    border: $border-subtle;
+    border-radius: $radius-sm;
+    padding: $space-8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    min-height: 200px;
+    transition: all $duration-slow $ease-out-expo;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $gold-primary;
+      transition: width $duration-slow $ease-out-expo;
+    }
+
+    &:hover {
+      border-color: rgba($gold-base, 0.2);
+      transform: translateY(-2px);
+      box-shadow: $shadow-gold;
+
+      &::after { width: 100%; }
+    }
+
+    .bento-label {
+      font-family: $font-heading;
+      font-size: $text-xs;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: $gold-primary;
+      margin-bottom: $space-3;
+    }
+
+    h3 {
+      font-size: $text-xl;
+      margin-bottom: $space-2;
+    }
+
+    p {
+      font-size: $text-sm;
+      color: $text-dim;
+      margin-bottom: 0;
+    }
+  }
+
+  // Size variants
+  .bento-lg {
+    grid-column: span 2;
+    grid-row: span 2;
+    min-height: 360px;
+    padding: $space-12;
+
+    h3 { font-size: $text-2xl; }
+  }
+
+  .bento-wide {
+    grid-column: span 2;
+  }
+
+  .bento-tall {
+    grid-row: span 2;
+  }
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, 1fr);
+
+    .bento-lg { min-height: 280px; }
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+
+    .bento-lg, .bento-wide { grid-column: span 1; }
+    .bento-tall { grid-row: span 1; }
+    .bento-lg { min-height: 200px; }
+  }
+}
+
+/* --- TRUST STRIP --- */
+.trust-strip {
+  border-top: $border-subtle;
+  border-bottom: $border-subtle;
+  padding: $space-10 0;
+  background: $bg-deep;
+}
+
+.trust-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-8;
+}
+
+.trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.trust-item-value {
+  font-family: $font-display;
+  font-size: $text-2xl;
+  font-weight: 400;
+  color: $text-white;
+}
+
+.trust-item-label {
+  font-family: $font-heading;
+  font-size: $text-xs;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $text-dim;
+  margin-top: $space-2;
+}
+
+/* --- CTA BANNER --- */
+.cta-banner {
+  background: $bg-warm-subtle;
+  border: $border-gold;
+  padding: $space-16;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba($gold-base, 0.06) 100%);
+    pointer-events: none;
+  }
+
+  h2, p, .btn { position: relative; z-index: 1; }
+
+  h2 { color: $text-white; }
+
+  p {
+    margin: 0 auto $space-8;
+    max-width: 560px;
+  }
+}
+
+/* --- PROCESS TIMELINE --- */
+.process-timeline {
+  position: relative;
+  padding-left: $space-16;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: $space-8;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, $gold-line, rgba($gold-base, 0.1));
+  }
+}
+
+.process-step {
+  position: relative;
+  padding-bottom: $space-12;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: calc(-#{$space-16} + #{$space-8} - 5px);
+    top: $space-2;
+    width: 10px;
+    height: 10px;
+    border: 2px solid $gold-primary;
+    border-radius: $radius-full;
+    background: $bg-void;
+  }
+
+  .step-number {
+    font-family: $font-display;
+    font-size: $text-sm;
+    color: $gold-primary;
+    margin-bottom: $space-2;
+  }
+
+  h4 { margin-bottom: $space-2; }
+
+  p {
+    font-size: $text-sm;
+    color: $text-dim;
+    margin-bottom: 0;
+  }
+}
+
+/* --- TESTIMONIAL --- */
+.testimonial {
+  padding: $space-16 0;
+  text-align: center;
+  position: relative;
+
+  &::before {
+    content: '"';
+    font-family: $font-display;
+    font-size: 8rem;
+    color: rgba($gold-base, 0.08);
+    line-height: 1;
+    position: absolute;
+    top: $space-8;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  blockquote {
+    font-family: $font-display;
+    font-style: italic;
+    font-size: $text-2xl;
+    color: $text-primary;
+    line-height: 1.5;
+    max-width: 700px;
+    margin: 0 auto $space-8;
+    position: relative;
+    z-index: 1;
+  }
+
+  cite {
+    font-family: $font-heading;
+    font-style: normal;
+    font-size: $text-sm;
+    color: $text-dim;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* --- FLOATING CONTACT --- */
+.floating-contact {
+  position: fixed;
+  bottom: $space-8;
+  right: $space-8;
+  z-index: 90;
+
+  .contact-trigger {
+    width: 56px;
+    height: 56px;
+    border-radius: $radius-full;
+    background: $gold-primary;
+    color: $bg-void;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    box-shadow: $shadow-gold, $shadow-md;
+    transition: all $duration-normal $ease-out-expo;
+
+    svg { width: 22px; height: 22px; }
+
+    &:hover {
+      transform: translateY(-2px) scale(1.05);
+      background: $gold-bright;
+    }
+  }
+
+  .contact-menu {
+    position: absolute;
+    bottom: calc(100% + $space-4);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-3;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: all $duration-normal $ease-out-expo;
+
+    &.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    a {
+      width: 44px;
+      height: 44px;
+      border-radius: $radius-full;
+      background: $bg-elevated;
+      border: $border-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-primary;
+      transition: all $duration-fast ease-out;
+
+      svg { width: 18px; height: 18px; }
+
+      &:hover {
+        background: rgba($gold-base, 0.1);
+        border-color: rgba($gold-base, 0.3);
+        color: $gold-primary;
+      }
+    }
+  }
+}

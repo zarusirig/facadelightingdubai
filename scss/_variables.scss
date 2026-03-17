@@ -1,0 +1,110 @@
+/* ============================================
+   FACADE LIGHTING DUBAI — Design System Variables
+   Aesthetic: Architectural Noir
+   ============================================ */
+
+/* ---- Color System ---- */
+
+// Backgrounds (warm-tinted darks)
+$bg-void:         #04060c;
+$bg-deep:         #080b14;
+$bg-surface:      #0a0f1e;
+$bg-elevated:     #111827;
+$bg-warm:         #1a1408;
+$bg-warm-subtle:  #12100a;
+
+// Gold System (Light as Structure)
+$gold-dim:        rgba(207, 173, 78, 0.06);
+$gold-glow:       rgba(207, 173, 78, 0.12);
+$gold-line:       #b8982f;
+$gold-primary:    #cfad4e;
+$gold-bright:     #e8c84a;
+$gold-flare:      #ffd952;
+$gold-base:       #cfad4e;  // used for rgba() calls
+
+// Text (warm neutrals, not blue-slate)
+$text-primary:    #f0ede4;
+$text-secondary:  #8a8578;
+$text-dim:        #5c574e;
+$text-heading:    #f5f3ed;
+$text-white:      #ffffff;
+
+// Accent
+$accent-warm:     #e67a3d;
+
+/* ---- Typography ---- */
+
+// Font stacks
+$font-display:    'Playfair Display', Georgia, 'Times New Roman', serif;
+$font-heading:    'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+$font-body:       'Satoshi', 'DM Sans', 'Helvetica Neue', sans-serif;
+$font-mono:       'JetBrains Mono', 'Fira Code', monospace;
+
+// Type scale (fluid)
+$text-xs:         clamp(0.7rem, 0.65rem + 0.25vw, 0.8rem);
+$text-sm:         clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+$text-base:       clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+$text-lg:         clamp(1.05rem, 1rem + 0.3vw, 1.1875rem);
+$text-xl:         clamp(1.2rem, 1.1rem + 0.5vw, 1.5rem);
+$text-2xl:        clamp(1.5rem, 1.3rem + 1vw, 2rem);
+$text-3xl:        clamp(1.8rem, 1.5rem + 1.5vw, 2.75rem);
+$text-4xl:        clamp(2.2rem, 1.8rem + 2vw, 3.5rem);
+$text-5xl:        clamp(2.8rem, 2rem + 3vw, 5rem);
+$text-6xl:        clamp(3.5rem, 2.5rem + 4vw, 7rem);
+
+/* ---- Spacing ---- */
+$space-1:   0.25rem;    // 4px
+$space-2:   0.5rem;     // 8px
+$space-3:   0.75rem;    // 12px
+$space-4:   1rem;       // 16px
+$space-5:   1.25rem;    // 20px
+$space-6:   1.5rem;     // 24px
+$space-8:   2rem;       // 32px
+$space-10:  2.5rem;     // 40px
+$space-12:  3rem;       // 48px
+$space-16:  4rem;       // 64px
+$space-20:  5rem;       // 80px
+$space-24:  6rem;       // 96px
+$space-32:  8rem;       // 128px
+$space-40:  10rem;      // 160px
+
+/* ---- Layout ---- */
+$container-max:     1440px;
+$container-wide:    1200px;
+$container-narrow:  900px;
+$container-reading: 680px;
+
+/* ---- Motion ---- */
+$ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+$ease-out-quint:  cubic-bezier(0.22, 1, 0.36, 1);
+$ease-smooth:     cubic-bezier(0.4, 0, 0.2, 1);
+
+$duration-fast:   0.2s;
+$duration-normal: 0.4s;
+$duration-slow:   0.7s;
+$duration-slower: 1.2s;
+
+/* ---- Breakpoints ---- */
+$bp-sm:   480px;
+$bp-md:   768px;
+$bp-lg:   992px;
+$bp-xl:   1200px;
+$bp-2xl:  1440px;
+
+/* ---- Borders & Radius ---- */
+$radius-sm: 2px;
+$radius-md: 4px;
+$radius-lg: 8px;
+$radius-full: 9999px;
+
+$border-subtle:   1px solid rgba(255, 255, 255, 0.04);
+$border-light:    1px solid rgba(255, 255, 255, 0.08);
+$border-gold:     1px solid rgba($gold-base, 0.15);
+$border-gold-active: 1px solid rgba($gold-base, 0.4);
+
+/* ---- Shadows ---- */
+$shadow-sm:    0 2px 8px rgba(0, 0, 0, 0.2);
+$shadow-md:    0 8px 24px rgba(0, 0, 0, 0.3);
+$shadow-lg:    0 16px 48px rgba(0, 0, 0, 0.4);
+$shadow-gold:  0 8px 32px rgba($gold-base, 0.1);
+$shadow-glow:  0 0 40px rgba($gold-base, 0.08);

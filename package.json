@@ -1,0 +1,20 @@
+{
+  "name": "facadelightingdubai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "update_footers.js",
+  "scripts": {
+    "build:css": "sass scss/main.scss css/styles.css --no-source-map",
+    "watch:css": "sass --watch scss/main.scss css/styles.css --no-source-map",
+    "build": "sass scss/main.scss css/styles.css --style=compressed --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}

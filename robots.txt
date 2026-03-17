@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://facadelightingdubai.com/sitemap.xml
+
+# No pages need blocking — all content pages are indexable
+# Disallow only utility paths:
+Disallow: /assets/
+Disallow: /outputs/

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Driver Failure: Diagnosis & Replacement for Facade Lighting</title>
+    <meta name="description"
+        content="LED driver failure in facade lighting — common failure modes, diagnostic procedures, replacement strategies, and how Dubai's heat accelerates driver degradation. Practical troubleshooting guide for exterior LED power supplies.">
+    <link rel="canonical" href="https://facadelightingdubai.com/maintenance/led-driver-failure/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/upgrades.css">
+    <script
+        type="application/ld+json">{ "@context": "https://schema.org", "@type": "TechArticle", "headline": "LED Driver Failure: Diagnosis & Replacement for Facade Lighting", "url": "https://facadelightingdubai.com/maintenance/led-driver-failure/", "datePublished": "2026-03-05", "dateModified": "2026-03-17", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai", "url": "https://facadelightingdubai.com" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/maintenance/led-driver-failure/" } }</script>
+    <script
+        type="application/ld+json">{ "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Maintenance", "item": "https://facadelightingdubai.com/maintenance/" }, { "@type": "ListItem", "position": 3, "name": "LED Driver Failure", "item": "https://facadelightingdubai.com/maintenance/led-driver-failure/" } ]}</script>
+    <script
+        type="application/ld+json">{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Why do LED drivers fail faster in Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "LED drivers contain electrolytic capacitors whose lifespan halves for every 10°C above their rated temperature. At Dubai's 48°C+ ambient, a driver rated for 50,000 hours at 25°C may achieve only 15,000-25,000 hours. This makes driver selection (Tc rating) the single most important specification for facade lighting longevity in Dubai." } }, { "@type": "Question", "name": "What is the expected lifespan of an LED driver in Dubai conditions?", "acceptedAnswer": { "@type": "Answer", "text": "A budget-grade driver rated at L70 / 50,000 hours at Ta 25°C will realistically achieve 12,000–20,000 hours in Dubai's 45–50°C summer ambient conditions, due to the Arrhenius degradation of electrolytic capacitors. A premium driver rated at Tc 80°C or higher, from manufacturers such as Meanwell HLG, Inventronics EUC, or Tridonic, will maintain its L70 lifespan much more reliably at elevated temperatures. Running hours matter: a system operating 12 hours per night will accumulate 4,380 hours per year, meaning a premium driver should last 10+ years while a budget driver may fail within 3–5 years." } }, { "@type": "Question", "name": "How much surge protection does an LED driver need in Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "The minimum recommended surge protection for facade lighting drivers in Dubai is 4kV line-to-line and 6kV line-to-earth, per IEC 61000-4-5 Level 3. Dubai's desert climate produces significant thunderstorm activity in the autumn transition months (October–November), and DEWA's grid infrastructure — while improving — can produce voltage transients during switching operations. For buildings with exposed rooftop or parapet-level installations, a dedicated surge protection device (SPD) Class II should be fitted at the distribution board serving facade circuits, in addition to any built-in driver surge suppression. Do not rely solely on driver-internal SPD components for high-exposure installations." } }, { "@type": "Question", "name": "Should LED drivers be mounted inside or outside the fixture in Dubai?", "acceptedAnswer": { "@type": "Answer", "text": "Remote mounting of drivers in ventilated, shaded enclosures is strongly preferred for Dubai conditions. When a driver is mounted inside a fixture body exposed to direct solar radiation, the enclosure temperature can reach 65–75°C — well above the Tc rating of most drivers. Remote mounting in a ventilated riser cabinet or behind the facade cladding keeps driver temperatures 20–30°C lower, significantly extending service life. The trade-off is increased cable run length, which must be accounted for in voltage drop calculations. For runs exceeding 15 metres, a constant-current driver with a wide output voltage range is preferred over fixed-voltage systems." } } ] }</script>
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="LED Driver Failure: Diagnosis & Replacement">
+    <meta property="og:url" content="https://facadelightingdubai.com/maintenance/led-driver-failure/">
+    <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/inline/inline-led-quality.jpg">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner"><a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation"><a href="/design/">Design</a><a
+                    href="/led-technology/">Technology</a><a href="/regulations/">Regulations</a><a
+                    href="/installation/">Installation</a><a href="/building-types/">Building Types</a><a
+                    href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div><a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav><button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation"
+                aria-controls="main-nav" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/maintenance/">Maintenance</a></li>
+                <li><span class="current">LED Driver Failure</span></li>
+            </ol>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Maintenance</span><span>Updated March 2026</span><span>13 min
+                                read</span></div>
+                        <h1>LED Driver Failure: Diagnosis &amp; Replacement for Facade Lighting</h1>
+                        <p><strong>The LED driver (power supply) is the most failure-prone component in any facade
+                                lighting system — and Dubai's extreme heat accelerates degradation
+                                significantly.</strong> Electrolytic capacitors inside drivers have a
+                            temperature-dependent lifespan that halves for every 10°C above their rated temperature. A
+                            driver rated for 50,000 hours at 25°C may achieve only 15,000-25,000 hours at Dubai's 48°C+
+                            ambient. This guide covers the common failure modes, diagnostic procedures, and replacement
+                            strategies specific to Dubai's operating conditions.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/inline/inline-led-quality.jpg" alt="LED Driver Failure: Diagnosis & Replacement for Facade Lighting" width="1600" height="900" loading="eager">
+          </div>
+                    <h2>Common failure modes</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Symptom</th>
+                                <th>Likely Cause</th>
+                                <th>Diagnostic Check</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Complete fixture failure (dark)</td>
+                                <td>Capacitor failure, open circuit</td>
+                                <td>Measure input/output voltage; check for swollen capacitors</td>
+                            </tr>
+                            <tr>
+                                <td>Flickering or strobe effect</td>
+                                <td>Capacitor degradation, loose connection</td>
+                                <td>Output ripple measurement; connection tightness</td>
+                            </tr>
+                            <tr>
+                                <td>Reduced brightness (gradual)</td>
+                                <td>Driver output decay from heat stress</td>
+                                <td>Compare output current to rated specification</td>
+                            </tr>
+                            <tr>
+                                <td>Colour shift (warm to cool)</td>
+                                <td>Driver current regulation failure</td>
+                                <td>Measure per-channel current; compare to factory spec</td>
+                            </tr>
+                            <tr>
+                                <td>Intermittent operation</td>
+                                <td>Thermal shutdown protection cycling</td>
+                                <td>Temperature logging; check ventilation path</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h2>Prevention strategies</h2>
+                    <ul>
+                        <li><strong>Remote driver mounting.</strong> Where possible, mount drivers in ventilated
+                            enclosures away from direct sun exposure, connected to fixtures via extended cable runs.
+                            Account for <a href="/engineering/voltage-drop/">voltage drop</a> on extended runs.</li>
+                        <li><strong>Overspec the driver.</strong> Specify drivers rated for Tc 80°C minimum. Meanwell
+                            HLG series and Inventronics EUC series are proven choices for Dubai.</li>
+                        <li><strong>Temperature monitoring.</strong> Integrate Tc point temperature sensors into the <a
+                                href="/controls/smart-iot/">BMS</a> for predictive maintenance alerts.</li>
+                    </ul>
+
+                    <h2>Driver failure modes and diagnosis</h2>
+                    <p>Each failure mode in an LED driver presents a distinct symptom pattern and requires a different diagnostic sequence. Field technicians who can systematically work through the following table will resolve most driver faults without unnecessary component swaps or escalation to the manufacturer.</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Failure Mode</th>
+                                <th>Symptoms</th>
+                                <th>Primary Cause</th>
+                                <th>Diagnosis Method</th>
+                                <th>Recommended Fix</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>No output — complete failure</td>
+                                <td>Fixture completely dark; input power present at driver terminals</td>
+                                <td>Failed electrolytic capacitor (open circuit); blown internal fuse; OVP (over-voltage protection) lockout</td>
+                                <td>Measure output voltage at driver terminals: should read rated output voltage. If zero with correct input, driver has failed. Check for swollen or leaking capacitors visually.</td>
+                                <td>Replace driver. If OVP lockout is suspected, cycle power and measure input voltage — if input exceeds driver rating, investigate upstream voltage regulation before replacing.</td>
+                            </tr>
+                            <tr>
+                                <td>Flickering or stroboscopic effect</td>
+                                <td>Visible flicker, especially on camera; strobe at 50Hz or sub-harmonics</td>
+                                <td>Electrolytic capacitor ESR (equivalent series resistance) increase from ageing; intermittent connection at output terminals; early-stage capacitor failure</td>
+                                <td>Measure output voltage ripple with oscilloscope: acceptable &lt;10% of rated output. Ripple &gt;15% indicates failing output capacitor. Check all output terminal connections for tightness and corrosion.</td>
+                                <td>Replace driver if ripple exceeds threshold. Re-terminate connections if found loose. Do not operate flickering fixtures long-term — optical flicker above 3,000 Hz (Stroboscopic Effect Metric) in high-traffic areas violates DM photobiological safety guidelines.</td>
+                            </tr>
+                            <tr>
+                                <td>Reduced and declining output</td>
+                                <td>Fixture progressively dims over months; may be uniform across all fixtures on one driver</td>
+                                <td>Gradual output current decay from cumulative heat stress on capacitors; driver operating above Tc rating over extended period</td>
+                                <td>Measure output current with clamp meter: compare to driver rated output. Reduction of &gt;10% from rated indicates driver degradation. Check driver enclosure temperature — if consistently above Tc, root cause is thermal management, not driver failure alone.</td>
+                                <td>Replace driver. Simultaneously address thermal root cause: improve enclosure ventilation, relocate driver to shaded position, or uprate to a higher Tc driver. See remote mounting guidance below.</td>
+                            </tr>
+                            <tr>
+                                <td>Intermittent shutdown and restart</td>
+                                <td>Fixtures go dark then recover spontaneously; pattern correlates with peak ambient temperature (14:00–17:00)</td>
+                                <td>Thermal protection circuit triggering due to driver case temperature exceeding shutdown threshold; typically Tc &gt;90°C for most drivers</td>
+                                <td>Install data logger on driver enclosure temperature. Correlate shutdown events with temperature log. If shutdowns occur consistently at Tc &gt;85°C, thermal protection is operating correctly — the problem is inadequate thermal management, not driver defect.</td>
+                                <td>Improve thermal management: add ventilation apertures to enclosure, install small forced-air ventilation fan on thermostat, or relocate driver to a cooler position. If enclosure temperature cannot be reduced below Tc, upgrade to a driver with higher thermal threshold rating.</td>
+                            </tr>
+                            <tr>
+                                <td>Overvoltage protection (OVP) tripping</td>
+                                <td>Driver shuts down instantly on power-on; sometimes recovers, sometimes requires manual reset</td>
+                                <td>Upstream voltage transient or surge; grid switching event; lightning-induced transient on distribution network</td>
+                                <td>Check input voltage at driver terminals during operation. Measure with data-logging voltmeter over 24-hour period to capture transient events. Check SPD status at distribution board.</td>
+                                <td>If upstream voltage confirmed normal, driver OVP circuit may be miscalibrated — replace driver. If transients detected, fit Class II SPD at distribution board. Replace any SPD that has activated (indicated by status flag). See surge protection discussion below.</td>
+                            </tr>
+                            <tr>
+                                <td>Colour channel imbalance (RGBW systems)</td>
+                                <td>Colour rendering shifts from programmed value; one colour channel appears dominant or absent; affects all fixtures on one driver</td>
+                                <td>Per-channel current regulation failure, typically affecting one output stage; can result from both electrical and thermal degradation of PWM control circuitry</td>
+                                <td>Measure current on each output channel with clamp meter. Compare to factory specification for each channel at the programmed dimming level. A channel delivering significantly less than rated current has a failed regulation stage.</td>
+                                <td>Replace driver. RGBW colour integrity is critical for media facade and architectural colour-change applications — a single channel imbalance affects the entire colour gamut. Do not attempt field repair of multi-channel PWM circuitry.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Driver selection to prevent premature failure in Dubai</h2>
+                    <p><strong>The most effective maintenance intervention for LED drivers in Dubai is correct initial specification.</strong> A driver selected for Dubai's thermal and electrical environment will outlast a misspecified driver by 3:1 or more. The specifications below represent the minimum threshold for any new facade lighting installation in the UAE.</p>
+
+                    <h3>Minimum driver specification for Dubai exterior installations</h3>
+                    <ul>
+                        <li><strong>Operating temperature range:</strong> Ta -20°C to +50°C minimum; Tc rating 80°C minimum. The Tc (case temperature) rating is more meaningful than Ta for driver longevity — it is the temperature at the electrolytic capacitor case that determines lifespan. Always request Tc-based lifespan data from the manufacturer, not just Ta ratings.</li>
+                        <li><strong>Surge protection:</strong> 4kV minimum line-to-line, 6kV line-to-earth per IEC 61000-4-5. This is a minimum — for exposed rooftop or parapet installations, specify 10kV/10kA surge immunity.</li>
+                        <li><strong>IP rating:</strong> IP65 minimum for remote-mounted drivers. IP67 where the driver must be mounted within a fixture body. Never use IP20 or open-frame drivers in external enclosures regardless of secondary protection.</li>
+                        <li><strong>Insulation class:</strong> Class II (double insulated) preferred for all exterior circuits where an earth path cannot be guaranteed due to corrosion or connection degradation over time.</li>
+                        <li><strong>Control protocol:</strong> DALI-2 or DMX512 as appropriate; drivers without a digital control interface cannot participate in fault-reporting architectures and require physical inspection to identify failures.</li>
+                        <li><strong>Lifespan certification:</strong> L70 &ge;50,000 hours at Tc 80°C. Request the manufacturer's MTBF (mean time between failures) data at Tc 80°C specifically, not the standard test temperature.</li>
+                    </ul>
+
+                    <h3>Budget vs premium driver comparison for Dubai conditions</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Specification</th>
+                                <th>Budget Grade</th>
+                                <th>Premium Grade</th>
+                                <th>Why It Matters in Dubai</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tc rating</td>
+                                <td>60–70°C</td>
+                                <td>80–90°C</td>
+                                <td>Budget drivers exceed Tc in summer; capacitor lifespan halves per 10°C over Tc</td>
+                            </tr>
+                            <tr>
+                                <td>Surge protection</td>
+                                <td>1–2kV (if any)</td>
+                                <td>4–10kV per IEC 61000-4-5</td>
+                                <td>UAE grid transients and lightning events require higher threshold</td>
+                            </tr>
+                            <tr>
+                                <td>Capacitor grade</td>
+                                <td>Standard grade; 85°C rated</td>
+                                <td>Long-life grade; 105°C rated</td>
+                                <td>105°C capacitors at 80°C ambient have 4x the lifespan of 85°C capacitors at same condition</td>
+                            </tr>
+                            <tr>
+                                <td>Dimming protocol</td>
+                                <td>PWM or 0-10V only</td>
+                                <td>DALI-2 with fault reporting</td>
+                                <td>DALI-2 enables remote fault detection, eliminating need for physical inspection cycles</td>
+                            </tr>
+                            <tr>
+                                <td>Typical Dubai service life</td>
+                                <td>3–5 years</td>
+                                <td>8–12 years</td>
+                                <td>Premium drivers reduce replacement labour cost by 60–70% over 10-year horizon</td>
+                            </tr>
+                            <tr>
+                                <td>Warranty</td>
+                                <td>1–2 years</td>
+                                <td>5–7 years</td>
+                                <td>Warranty coverage for first replacement cycle reduces operating cost significantly</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For guidance on sourcing decisions for drivers and fixtures as a combined procurement, see the <a href="/sourcing/budget-vs-premium/">budget vs premium sourcing comparison</a>. The driver specification must be aligned with the fixture specification — a premium fixture fitted with a budget driver will still fail prematurely.</p>
+
+                    <h2>Driver replacement vs fixture replacement economics</h2>
+                    <p><strong>Not every driver failure requires a full fixture replacement.</strong> When a driver fails, the decision between driver-only replacement and full fixture replacement should be made systematically, not by default. The economics depend on four variables: the cost ratio of driver to fixture, the fixture's age and likely remaining LED module life, the availability of a compatible replacement driver, and the access cost to perform the work. See the broader <a href="/maintenance/replace-vs-repair/">replace vs repair decision framework</a> for the full system-level analysis.</p>
+
+                    <h3>Driver replacement decision criteria</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Factor</th>
+                                <th>Replace Driver Only</th>
+                                <th>Replace Full Fixture</th>
+                                <th>Decision Threshold</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Driver cost vs fixture cost</td>
+                                <td>Driver cost &lt;40% of fixture cost</td>
+                                <td>Driver cost &gt;50% of fixture cost (often indicates obsolete or custom model)</td>
+                                <td>If the only compatible replacement driver costs more than half the fixture, evaluate full replacement</td>
+                            </tr>
+                            <tr>
+                                <td>Fixture age</td>
+                                <td>Fixture &lt;5 years old; LED module likely at L90+ still</td>
+                                <td>Fixture &gt;8 years old; LED module likely at L70 or below</td>
+                                <td>At 8+ years, LED module will fail within 2–3 years regardless — replacing only the driver delays the inevitable</td>
+                            </tr>
+                            <tr>
+                                <td>Replacement driver availability</td>
+                                <td>Exact-spec replacement driver available from stock or within 2-week lead time</td>
+                                <td>Driver model discontinued; no compatible equivalent available without fixture modification</td>
+                                <td>Discontinued driver models are the primary trigger for fixture replacement decisions in the 5–8 year window</td>
+                            </tr>
+                            <tr>
+                                <td>Labour cost for access</td>
+                                <td>Ground-level or low-level fixture; access by standard ladder</td>
+                                <td>High-rise fixture requiring MEWP or rope access costing AED 3,000+ per visit</td>
+                                <td>When access cost exceeds AED 2,000 per fixture, full replacement (amortising access cost over new fixture lifespan) is almost always more economical</td>
+                            </tr>
+                            <tr>
+                                <td>Failure frequency</td>
+                                <td>First or second failure in system life</td>
+                                <td>Third or subsequent failure at same fixture or zone</td>
+                                <td>Repeated failures indicate systemic thermal or electrical environment issue — replace fixture and address root cause simultaneously</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Driver Replacement Service</h3>
+                            <p>Emergency and scheduled LED driver replacement across Dubai.</p><a
+                                href="/services/consultation/" class="btn btn-primary">Request Service</a>
+                        </div>
+                    </div>
+                    <div class="related-pages">
+                        <h3>Related Topics</h3>
+                        <div class="related-grid">
+                            <a href="/maintenance/replace-vs-repair/" class="related-card">
+                                <h4>Replace vs Repair</h4>
+                                <p>When to upgrade entire fixtures</p>
+                            </a>
+                            <a href="/maintenance/dmx-troubleshooting/" class="related-card">
+                                <h4>DMX Troubleshooting</h4>
+                                <p>Signal loss and control issues</p>
+                            </a>
+                            <a href="/climate/thermal-management/" class="related-card">
+                                <h4>Thermal Management</h4>
+                                <p>Heat mitigation strategies</p>
+                            </a>
+                            <a href="/sourcing/budget-vs-premium/" class="related-card">
+                                <h4>Budget vs Premium Sourcing</h4>
+                                <p>Driver and fixture procurement guidance</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Maintenance</div>
+                    <nav class="sidebar-nav"><a href="/maintenance/">Overview</a><a
+                            href="/maintenance/cleaning-schedule/">Cleaning Schedule</a><a
+                            href="/maintenance/led-driver-failure/" class="active">LED Driver Failure</a><a
+                            href="/maintenance/dmx-troubleshooting/">DMX Troubleshooting</a><a
+                            href="/maintenance/replace-vs-repair/">Replace vs Repair</a><a
+                            href="/maintenance/annual-inspection/">Annual Inspection</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Need Help?</h4>
+                    <p>Expert maintenance services.</p><a href="/contact/" class="btn btn-primary"
+                        style="width:100%;justify-content:center;">Contact Us</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="/js/main.js"></script>
+<script src="/js/inner-pages.js"></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>
