@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIALux for Facade Lighting: Tutorial &amp; Dubai Workflow</title>
+    <meta name="description"
+        content="Step-by-step DIALux evo tutorial for facade lighting design — import models, place luminaires, simulate daylight, and export Dubai-compliant reports.">
+    <link rel="canonical" href="https://facadelightingdubai.com/software/dialux/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "DIALux for Facade Lighting: Tutorial & Dubai Workflow", "url": "https://facadelightingdubai.com/software/dialux/", "datePublished": "2026-03-20", "dateModified": "2026-06-22", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/software/dialux/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://facadelightingdubai.com/software/" }, { "@type": "ListItem", "position": 3, "name": "DIALux", "item": "https://facadelightingdubai.com/software/dialux/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "Is DIALux evo free for commercial facade lighting projects?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, DIALux evo is completely free for all commercial and professional use. Developed by DIAL GmbH in Ludenscheid, Germany, DIALux evo has no license fees, no feature restrictions, and no project-count limitations. The software is funded by a consortium of 190+ lighting manufacturers who pay DIAL for hosting downloadable luminaire plug-ins within the platform. You can download DIALux evo at dial.de/en/dialux, install it on any Windows computer, and immediately use it for facade lighting design, photometric calculation, 3D rendering, and report generation for projects of any size or commercial value." } }, { "@type": "Question", "name": "How do you import a building model into DIALux for facade lighting?", "acceptedAnswer": { "@type": "Answer", "text": "DIALux evo supports DWG, DXF, and image file imports. For DWG/DXF: go to File > Import > CAD File, select the file, set the correct scale, and position the geometry on the DIALux workspace. The imported lines become reference geometry for building walls and surfaces. For facade projects without a CAD file, you can create the building geometry directly in DIALux using the building tool: draw the floor plan, set wall heights, add floors, and assign facade materials. For BIM projects, export the Revit model as IFC and import into DIALux evo via File > Import > IFC. Note that IFC import brings building geometry with surface assignments but does not transfer Revit lighting family data — luminaires must be placed separately in DIALux." } }, { "@type": "Question", "name": "Can DIALux calculate facade illuminance for Dubai climate conditions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. DIALux evo includes a location-based daylight simulation engine. Set the project location to Dubai (25.2°N, 55.3°E) and DIALux automatically calculates sun position, daylight illuminance, and facade solar exposure for any date and time. This enables simulation of the transition from daylight to artificial facade lighting during sunset/dusk conditions. For material accuracy in Dubai's climate, manually adjust surface reflectance values to account for typical facade materials: sand-colored stone (reflectance 0.40-0.55), glass curtain wall (0.08-0.15), brushed aluminum panels (0.55-0.70), and painted concrete (0.30-0.50). DIALux does not automatically account for dust soiling — apply a maintenance factor of 0.80-0.85 for Dubai's dusty environment." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="DIALux for Facade Lighting: Tutorial & Dubai Workflow">
+  <meta property="og:description" content="Step-by-step DIALux evo tutorial for facade lighting design — import models, place luminaires, simulate daylight, and export Dubai-compliant reports.">
+  <meta property="og:url" content="https://facadelightingdubai.com/software/dialux/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DIALux for Facade Lighting: Tutorial & Dubai Workflow">
+  <meta name="twitter:description" content="Step-by-step DIALux evo tutorial for facade lighting design — import models, place luminaires, simulate daylight, and export Dubai-compliant reports.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a
+                    href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a
+                    href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav"
+                aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/software/">Software</a></li>
+                <li><span class="current">DIALux</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Software Tutorial</span><span>Updated March 2026</span><span>15 min read</span></div>
+                        <h1>How Do You Design Facade Lighting in DIALux Evo?</h1>
+                        <p><strong>DIALux evo is the most widely used free lighting design software for facade projects — supporting exterior scene creation, vertical illuminance calculation on building surfaces, 3D rendering with photorealistic materials, and photometric report export — used by an estimated 800,000+ lighting professionals worldwide, with over 190 manufacturer plug-ins providing parametric luminaire data for immediate specification.</strong> For Dubai <a href="/facade-lighting-dubai/">facade lighting</a> designers, DIALux evo provides the complete workflow from building model import (DWG, DXF, IFC) through <a href="/design/color-temperature/">color temperature</a> simulation to final <a href="/engineering/photometric-reporting/">photometric report</a> delivery, at zero software cost.</p>
+                        <p>This tutorial covers the step-by-step DIALux evo workflow for facade lighting design, including outdoor project setup, model import, luminaire placement on vertical surfaces, calculation configuration, daylight interaction simulation for Dubai's specific solar conditions, and report generation for <a href="/regulations/al-safat/">Al Sa'fat</a> compliance documentation.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="DIALux for Facade Lighting Tutorial and Dubai Workflow" width="1600" height="900" loading="eager" fetchpriority="high">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#design-workflow">How do you design facade lighting in DIALux evo?</a></li>
+                            <li><a href="#outdoor-features">What are DIALux evo's outdoor lighting features for facades?</a></li>
+                            <li><a href="#import-model">How do you import a building model into DIALux for facade lighting?</a></li>
+                            <li><a href="#dubai-climate">Can DIALux calculate facade illuminance for Dubai climate conditions?</a></li>
+                            <li><a href="#export-report">How do you export a photometric report from DIALux evo?</a></li>
+                            <li><a href="#manufacturer-plugins">What luminaire manufacturers have DIALux plug-ins for facade fixtures?</a></li>
+                            <li><a href="#free-commercial">Is DIALux evo free for commercial facade lighting projects?</a></li>
+                            <li><a href="#daylight-simulation">How do you simulate daylight interaction with facade lighting in DIALux?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="design-workflow">How do you design facade lighting in DIALux evo?</h2>
+                    <p><strong>Facade lighting design in DIALux evo follows a seven-step workflow: create an exterior scene, import or build the building geometry, assign facade materials and reflectances, select and place luminaires from manufacturer plug-ins, define calculation surfaces on vertical facade planes, run the photometric calculation, and generate the project report — with each step configurable for Dubai-specific conditions including geographic location, ambient temperature, and local material reflectance values.</strong></p>
+
+                    <p>The workflow begins by launching DIALux evo and selecting "Exterior Scene" as the project type. Unlike indoor lighting projects (which use predefined room geometries), exterior scenes provide an open workspace where you construct or import the building, surrounding terrain, and any adjacent structures that affect inter-reflections. For facade lighting, the exterior scene is essential because it allows luminaire placement on vertical surfaces, ground-level fixture positioning (for <a href="/design/wall-washing/">wall washing</a> and <a href="/design/grazing/">grazing</a> techniques), and calculation surfaces oriented vertically on the facade plane.</p>
+
+                    <p>Step 1 is project configuration. Set the project location to Dubai (latitude 25.2048°N, longitude 55.2708°E) — this configures the sun position calculator for accurate daylight simulation at any date and time. Set the maintenance factor to account for Dubai's dust environment: 0.80-0.85 is appropriate for regularly maintained facade fixtures, while 0.70-0.75 applies to fixtures in exposed locations with infrequent cleaning. The maintenance factor directly reduces calculated illuminance values, providing a realistic assessment of the lighting performance after lens soiling.</p>
+
+                    <p>Step 2 is geometry creation or import. For most Dubai facade projects, the architect provides a DWG file of the building exterior. Import this via File > Import > CAD File. Position the imported geometry, set the correct scale (verify against known dimensions), and extrude the facade surfaces to their correct heights. If no CAD file is available, DIALux evo's building tool creates geometry from scratch: draw the floor plan outline, specify floor-to-floor heights, add the number of stories, and DIALux generates the 3D building volume with separate facade surfaces for each elevation.</p>
+
+                    <p>Step 3 is material assignment. Select each facade surface and assign the appropriate material from DIALux's library, or create custom materials with specific reflectance values. For Dubai facade materials, use the following reflectance values: glass curtain wall (0.08-0.15 depending on coating), sandstone or limestone cladding (0.40-0.55), white painted concrete (0.70-0.80), brushed aluminum composite panel (0.55-0.70), dark granite or basalt (0.10-0.20), and ceramic tile (0.25-0.45). Material assignment is critical for calculation accuracy — incorrect reflectance values produce misleading illuminance results, with errors potentially exceeding 30% for highly reflective or highly absorbent surfaces.</p>
+
+                    <p>Step 4 is luminaire selection and placement. Open the luminaire catalog and download manufacturer plug-ins for the specified fixtures. Search by product name, beam angle, or wattage. Drag luminaires onto the facade model — DIALux supports placement on vertical surfaces (for recessed wall fixtures), on horizontal surfaces (for ground-recessed uplights and surface-mounted <a href="/design/accent-spotlighting/">accent spots</a>), and on poles or brackets at specified heights. Each luminaire instance can be individually aimed (tilt, rotation, orientation) to direct the beam precisely onto the target facade zone.</p>
+
+                    <p>Step 5 is calculation surface definition. Place vertical calculation grids on each facade surface you want to analyze. Set the grid spacing (0.5m recommended for detailed analysis, 1.0m acceptable for overview calculations) and specify the calculation type: illuminance (lux) for standard compliance, luminance (cd/m2) for brightness assessment, or both. For multi-zone facades, create separate calculation surfaces for each zone (podium, tower shaft, crown) to generate zone-specific results.</p>
+
+                    <p>Step 6 is calculation execution. Click "Start Calculation" and DIALux processes the photometric model. Calculation time depends on model complexity: a simple 3-story facade with 20 fixtures takes 1-2 minutes, while a 40-story tower with 200+ fixtures and detailed material assignments may take 15-30 minutes. After calculation, review the results on-screen: false-color overlays, point-by-point illuminance grids, and 3D rendered views.</p>
+
+                    <p>Step 7 is <a href="/engineering/photometric-reporting/">report generation</a>. DIALux generates PDF reports containing project summary, luminaire schedule, calculation surface results, false-color renderings, and iso-contour plots. Customize the report template to include project-specific information (client name, consultant, project number) and select which calculation outputs to include. The report serves as the formal deliverable for <a href="/regulations/al-safat/">Al Sa'fat compliance</a> documentation and client approval.</p>
+
+                    <h2 id="outdoor-features">What are DIALux evo's outdoor lighting features for facades?</h2>
+                    <p><strong>DIALux evo's outdoor lighting module includes exterior scene construction with terrain and building geometry, vertical and horizontal calculation surfaces with user-defined grid density, ground-mounted and wall-mounted luminaire placement, multi-story building modeling with floor-by-floor facade analysis, and location-based sun position calculation for daylight/artificial light transition studies.</strong></p>
+
+                    <ul>
+                        <li><strong>Exterior scene module.</strong> The exterior scene provides an unlimited workspace for modeling building facades, surrounding streets, landscaping, and neighboring buildings. Unlike indoor room calculations, the exterior module does not confine calculations within closed boundaries — light can propagate in all directions, including upward (for light pollution assessment) and beyond the building boundary (for light spill evaluation on neighboring properties). This open-boundary calculation is essential for facade lighting where the primary illuminated surface (the facade) faces outward into the urban environment.</li>
+                        <li><strong>Vertical calculation surfaces.</strong> Facade illuminance must be calculated on vertical planes aligned with the building's exterior walls. DIALux evo supports calculation surface placement at any orientation — vertical, horizontal, or inclined — enabling analysis of irregular facade geometries common in Dubai's contemporary architecture. Each calculation surface generates independent illuminance results with minimum, maximum, and average values, plus uniformity ratios (Emin/Eavg and Emin/Emax).</li>
+                        <li><strong>Multi-story building tool.</strong> Create multi-story buildings by defining the floor plan, specifying floor-to-floor heights, and setting the number of stories. DIALux generates the complete building volume with individually selectable facade surfaces per floor level. This is particularly useful for Dubai towers where different floors may have different facade treatments — glass curtain wall on office levels, solid panels on mechanical floors, decorative cladding on the crown.</li>
+                        <li><strong>Terrain modeling.</strong> Import or create site terrain including slopes, elevation changes, and adjacent structures. For Dubai, terrain is typically flat, but the terrain tool is useful for modeling raised podium levels, sunken plazas, and landscape berms that affect the viewing angle and fixture positioning for facade lighting.</li>
+                        <li><strong>Photometric data support.</strong> DIALux evo imports IES (LM-63) and EULUMDAT (LDT) photometric files from any manufacturer. The 190+ manufacturer plug-ins provide enhanced functionality: parametric luminaire data (adjustable beam angles, color temperatures, dimming states), 3D luminaire models for accurate rendering, and automatic updates when manufacturers release new product data.</li>
+                    </ul>
+
+                    <h2 id="import-model">How do you import a building model into DIALux for facade lighting?</h2>
+                    <p><strong>DIALux evo supports three import paths for building geometry: DWG/DXF files from AutoCAD (the most common path for Dubai projects), IFC files from BIM/Revit models, and image files (JPG/PNG) that can be traced as reference backgrounds — each method bringing the building's geometric data into DIALux's exterior scene for luminaire placement and photometric calculation.</strong></p>
+
+                    <p>The DWG import process follows a specific sequence. Navigate to File > Import > CAD File and select the architect's DWG. DIALux displays a preview showing the CAD layers. Select the relevant layers — typically the building outline, floor plans, and elevation drawings. Set the import scale (verify against a known dimension in the drawing). Position the imported geometry on the DIALux workspace using the move and rotate tools. The imported CAD data appears as reference lines that guide the creation of DIALux building volumes.</p>
+
+                    <p>For IFC import from <a href="/software/bim-integration/">BIM models</a>, the process transfers the building's 3D geometry including wall surfaces, floor slabs, and facade panels. Navigate to File > Import > IFC and select the exported IFC file from Revit, ArchiCAD, or other BIM platforms. DIALux reads the IFC geometry with surface assignments, creating a 3D building model that preserves the facade's material zones. Note that IFC import does not transfer lighting fixture data from the BIM model — luminaires must be added separately in DIALux. For Dubai projects using BIM Level 2 delivery, the IFC import ensures geometric consistency between the architectural model and the lighting calculation.</p>
+
+                    <p>When no CAD or BIM file is available (common for smaller facade projects, renovations, and retrofit designs), DIALux evo's built-in building tool creates geometry from dimensions. Measure the building's floor plan dimensions, wall heights, and floor-to-floor distances. Enter these into DIALux's building creation interface. For facade lighting purposes, this approach is adequate when combined with accurate material reflectance values and correct luminaire positioning. Alternatively, import a photograph of the facade as a background image and use it as a scale reference for creating the building geometry — particularly useful for <a href="/building-types/heritage-historical/">heritage building</a> facade lighting where precise CAD documentation may not exist.</p>
+
+                    <h2 id="dubai-climate">Can DIALux calculate facade illuminance for Dubai climate conditions?</h2>
+                    <p><strong>DIALux evo calculates facade illuminance for any geographic location including Dubai — using the project's latitude (25.2°N) and longitude (55.3°E) to compute accurate sun positions for daylight simulation, though the designer must manually configure Dubai-specific factors: high-reflectance desert terrain albedo (0.25-0.40), dust-soiling maintenance factors (0.80-0.85), and facade material reflectances appropriate for local cladding materials.</strong></p>
+
+                    <p>Dubai's geographic and climatic conditions affect facade lighting calculations in several specific ways. The sun path at 25.2°N latitude produces near-vertical solar angles in summer (sun altitude up to 88° at solar noon in June), which means south-facing facades receive minimal direct sunlight during peak summer hours — making artificial facade lighting visible earlier in the evening than at higher latitudes. Conversely, during winter (December-January), solar altitude at noon is approximately 42°, producing longer afternoon shadow patterns on north-facing facades.</p>
+
+                    <p>The ambient temperature in Dubai (regularly exceeding 45°C in summer, with surface temperatures on exposed facades reaching 65-80°C) does not directly affect DIALux's photometric calculations, but it affects real-world fixture performance. LED luminous flux decreases at high junction temperatures — a 10-15% lumen reduction is typical for facade fixtures operating in Dubai's summer conditions. To account for this, apply an additional temperature derating factor within the maintenance factor: overall maintenance factor = cleaning factor (0.85) x temperature derating (0.90) x lamp lumen depreciation (0.90) = approximately 0.69. This compound maintenance factor ensures the DIALux calculation predicts the actual delivered illuminance after accounting for <a href="/climate/thermal-management/">thermal management</a> and <a href="/climate/uv-salt-spray/">environmental exposure</a> in Dubai's climate.</p>
+
+                    <p>Ground reflectance (albedo) is another Dubai-specific configuration. Default DIALux ground reflectance is 0.20 (typical for asphalt/concrete in temperate climates). Dubai's sand-colored hardscaping, light-colored pavers, and desert terrain produce higher ground reflectance values of 0.25-0.40. This affects facade illuminance calculations, particularly for lower floors where ground-reflected light contributes significantly to the facade surface illumination. Set ground reflectance in DIALux via the exterior scene properties to match the actual site conditions.</p>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need DIALux Design Support?</h3>
+                            <p>Professional facade lighting simulation, calculation, and report delivery for Dubai project submissions.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- CONTEXT BORDER -->
+
+                    <h2 id="export-report">How do you export a photometric report from DIALux evo?</h2>
+                    <p><strong>DIALux evo generates PDF photometric reports via the Documentation module — select the report template, choose which calculation outputs to include (illuminance grids, false-color renderings, luminaire schedules, iso-contour plots), add project information and consultant details, and export to PDF for submission to clients, architects, and Dubai regulatory authorities.</strong></p>
+
+                    <p>The report generation workflow in DIALux evo begins in the Documentation tab. DIALux provides pre-built report templates that include standard sections: cover page, project summary, luminaire data sheets, calculation surface results, and graphical outputs. Each section can be toggled on or off depending on the recipient's requirements. For <a href="/regulations/al-safat/">Al Sa'fat compliance</a> submissions, include: lighting power density (LPD) calculations showing total facade lighting wattage divided by illuminated area, illuminance distribution showing compliance with minimum and maximum levels, and the luminaire schedule listing each fixture's make, model, wattage, and quantity.</p>
+
+                    <p>Report customization includes adding the company logo, project number, revision number, and preparation/checking engineer names. For Dubai facade projects, the report typically includes the following sections in order: executive summary with design intent, site plan showing fixture locations, facade elevation views with luminaire positions overlaid, calculation surface results per facade zone (false-color and point-by-point grids), luminaire data sheets with photometric polar diagrams, energy summary (total wattage, LPD), and appendices with IES file references.</p>
+
+                    <p>False-color renderings are the most impactful component of the <a href="/engineering/photometric-reporting/">photometric report</a>. These map illuminance values to a color scale (typically blue for low values through green, yellow, and red for high values), enabling immediate visual identification of uniformity issues, hot spots, and under-lit zones. Include both the false-color rendering and the corresponding 3D photorealistic rendering — the false-color communicates technical performance to engineers and consultants, while the photorealistic render communicates design intent to architects and building owners.</p>
+
+                    <h2 id="manufacturer-plugins">What luminaire manufacturers have DIALux plug-ins for facade fixtures?</h2>
+                    <p><strong>Over 190 lighting manufacturers provide free DIALux plug-ins, including all major facade lighting brands specified in Dubai projects — Bega, iGuzzini, Erco, Zumtobel, Philips/Signify, Ligman, We-ef, Meyer, Simes, and Castaldi — each plug-in providing parametric luminaire data with adjustable beam angles, color temperatures, 3D models, and automatic IES file updates.</strong></p>
+
+                    <p>Manufacturer plug-ins provide significant advantages over generic IES file import. When you install a manufacturer's DIALux plug-in, the luminaire catalog within DIALux shows the complete product range with filtering by fixture type (wall washer, uplight, recessed, surface-mounted), IP rating, beam angle, wattage, and color temperature. Selecting a fixture from the plug-in catalog automatically loads the correct IES photometric data, 3D model geometry (for accurate rendering), and product specification data. When the manufacturer updates a product (revised photometric data, new beam angle options), the plug-in updates automatically upon next launch.</p>
+
+                    <p>For Dubai facade lighting projects, the following manufacturer plug-ins are most frequently used. Bega provides an extensive outdoor fixture range including <a href="/design/wall-washing/">wall washers</a>, in-ground uplights, and bollard fixtures — their DIALux plug-in is comprehensive with all IP66/67 rated exterior products. iGuzzini's plug-in includes the Linealuce, Palco, and Underscore lines commonly specified for commercial tower facades. Erco's plug-in provides the Grasshopper, Lightscan, and Beamer series for <a href="/design/accent-spotlighting/">accent spotlighting</a> and facade illumination. Philips/Signify offers the Color Kinetics and Vaya product lines for dynamic color-changing facades. Ligman's plug-in is particularly relevant for Dubai — Ligman manufactures in Thailand with products designed for hot-climate outdoor applications, providing IP66/67 rated fixtures with high ambient temperature ratings.</p>
+
+                    <p>To install a plug-in: open DIALux evo, navigate to the luminaire catalog panel, click "Online Catalogs," browse or search for the manufacturer, and click "Install." The plug-in downloads automatically. File sizes range from 50MB to over 1GB for manufacturers with extensive product ranges. Plug-ins require periodic updating — check for updates monthly to ensure your photometric data reflects the manufacturer's current product specifications.</p>
+
+                    <h2 id="free-commercial">Is DIALux evo free for commercial facade lighting projects?</h2>
+                    <p><strong>DIALux evo is completely free for all commercial and professional use, with no license fees, no feature restrictions, no project-count limitations, and no usage tracking — developed by DIAL GmbH and funded by a consortium of lighting manufacturers who subsidize the software's development by paying for plug-in hosting, making it the most accessible professional-grade lighting design tool available.</strong></p>
+
+                    <p>The funding model is worth understanding because it explains how a professional software platform with continuous development and support can be offered at zero cost. DIAL GmbH charges lighting manufacturers an annual fee to host their luminaire plug-ins within DIALux. The more designers use DIALux, the more valuable plug-in placement becomes to manufacturers, creating a network effect that sustains the development. This model has operated since DIALux's launch in 1994 (originally as DIALux 4, replaced by DIALux evo in 2012) and shows no indication of changing.</p>
+
+                    <p>For Dubai facade lighting consultancies, the zero cost means there is no barrier to entry for professional lighting simulation. A new consultancy can download DIALux evo, install manufacturer plug-ins for specified fixture brands, and produce photometric calculations and reports that meet the same technical standards as outputs from paid software like <a href="/software/agi32-relux/">AGi32</a>. The distinction is not capability — it is accuracy verification and calculation speed at scale. For most Dubai facade projects (residential, low-rise commercial, standard towers), DIALux evo's calculation quality is entirely adequate. The cost advantage allows consultancies to invest their software budget elsewhere — for example, in <a href="/software/bim-integration/">BIM integration tools</a> or visualization rendering software that complement DIALux's core simulation capability.</p>
+
+                    <h2 id="daylight-simulation">How do you simulate daylight interaction with facade lighting in DIALux?</h2>
+                    <p><strong>DIALux evo simulates daylight-to-artificial-light transition by calculating both natural daylight illuminance and artificial luminaire illuminance at any specified date, time, and geographic location — enabling designers to verify that the facade lighting concept achieves its intended visual effect during the critical dusk transition period (approximately 18:00-19:30 in Dubai) when both daylight and artificial light coexist on the facade surface.</strong></p>
+
+                    <p>The daylight simulation feature uses the project's geographic coordinates (Dubai: 25.2°N, 55.3°E) to compute sun position, direct sunlight illuminance, and diffuse sky illuminance for any date and time. The simulation produces three outputs: daylight-only illuminance on the facade (no artificial light), artificial-light-only illuminance (no daylight), and combined illuminance showing both sources simultaneously. This combined view is the most valuable — it reveals whether the artificial facade lighting is visible against the ambient daylight background at different times during dusk.</p>
+
+                    <p>For Dubai facade projects, simulate the following critical time points. 17:30 — late afternoon sunlight still dominant on west-facing facades, artificial lighting not yet visible. 18:15 — sunset (varies seasonally, approximately 17:45 in December to 19:15 in June), direct sunlight absent but significant twilight illuminance remains. 18:45 — civil twilight ending, artificial facade lighting becoming visually dominant. 19:15 — nautical twilight, facade lighting fully dominant against dark sky. By running calculations at each of these time points, the designer verifies that the lighting concept produces the intended illuminance hierarchy and visual effect throughout the transition.</p>
+
+                    <p>Material reflectance values change the daylight simulation results significantly. During daylight, high-reflectance facade materials (white stone, light-colored panels) reflect substantial ambient light, which reduces the perceived contrast of artificial lighting. At night, the same high-reflectance surfaces amplify the artificial lighting effect by reflecting incident light from fixtures back toward the viewer. DIALux's combined simulation captures this interaction, enabling the designer to optimize fixture aiming, dimming levels, and <a href="/design/color-temperature/">color temperature</a> for both dusk and full-darkness conditions. The recommended workflow is to design for full darkness first (the primary lighting condition), then verify the design's effectiveness during the dusk transition using the daylight simulation.</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/software/" class="related-card">
+                                <h4>Software Overview</h4>
+                                <p>Complete guide to facade lighting design software tools</p>
+                            </a>
+                            <a href="/software/agi32-relux/" class="related-card">
+                                <h4>AGi32 & Relux</h4>
+                                <p>Professional-tier simulation tools comparison</p>
+                            </a>
+                            <a href="/software/simulation-workflow/" class="related-card">
+                                <h4>Simulation Workflow</h4>
+                                <p>Step-by-step process from model to report</p>
+                            </a>
+                            <a href="/engineering/photometric-reporting/" class="related-card">
+                                <h4>Photometric Reporting</h4>
+                                <p>Engineering report deliverables and standards</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Software Topics</div>
+                    <nav class="sidebar-nav" aria-label="Software section navigation">
+                        <a href="/software/">Software Overview</a><a href="/software/dialux/" class="active">DIALux</a><a href="/software/agi32-relux/">AGi32 & Relux</a><a href="/software/bim-integration/">BIM Integration</a><a href="/software/simulation-workflow/">Simulation Workflow</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/engineering/">Engineering</a><a href="/engineering/photometric-reporting/">Photometric Reporting</a><a href="/design/">Design</a><a href="/regulations/al-safat/">Al Sa'fat</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>DIALux Design</h4>
+                    <p>Professional facade lighting simulation and reporting.</p>
+                    <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a><a href="/about/">About Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/inner-pages.js" defer></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

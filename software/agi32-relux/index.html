@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGi32 &amp; Relux for Facade Lighting Simulation</title>
+    <meta name="description"
+        content="AGi32 and Relux compared for facade and exterior lighting — radiosity engines, accuracy, pricing, and how each handles large-scale building simulations in Dubai.">
+    <link rel="canonical" href="https://facadelightingdubai.com/software/agi32-relux/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "AGi32 & Relux for Facade Lighting Simulation", "url": "https://facadelightingdubai.com/software/agi32-relux/", "datePublished": "2026-03-20", "dateModified": "2026-06-22", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/software/agi32-relux/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://facadelightingdubai.com/software/" }, { "@type": "ListItem", "position": 3, "name": "AGi32 & Relux", "item": "https://facadelightingdubai.com/software/agi32-relux/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "How much does AGi32 cost for lighting professionals?", "acceptedAnswer": { "@type": "Answer", "text": "AGi32 costs approximately USD 1,800–2,200 per year for a single-user subscription license from Lighting Analysts Inc. Network licenses for multi-user offices are priced based on concurrent-user count. ElumTools (the Revit add-in using AGi32's engine) is separately licensed at approximately USD 800–1,000 per year. Lighting Analysts offers educational licenses at reduced rates for universities. There is no free version of AGi32 — the 30-day trial provides full functionality for evaluation. For Dubai consultancies, the annual cost in AED is approximately 6,600–8,100 per seat." } }, { "@type": "Question", "name": "What is the radiosity calculation engine in AGi32?", "acceptedAnswer": { "@type": "Answer", "text": "AGi32 uses a full radiosity calculation engine that computes both direct and inter-reflected light components across all surfaces simultaneously. Unlike direct-only calculations that only compute light arriving directly from luminaires, full radiosity iteratively bounces light between surfaces until convergence, capturing how light reflected from one facade surface illuminates adjacent surfaces. AGi32's radiosity implementation has been validated against CIE (Commission Internationale de l'Eclairage) test cases to within ±2% accuracy — the only commercial lighting software with published, independently verifiable accuracy data against CIE standards." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="AGi32 & Relux for Facade Lighting Simulation">
+  <meta property="og:description" content="AGi32 and Relux compared for facade and exterior lighting — radiosity engines, accuracy, pricing, and how each handles large-scale building simulations in Dubai.">
+  <meta property="og:url" content="https://facadelightingdubai.com/software/agi32-relux/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AGi32 & Relux for Facade Lighting Simulation">
+  <meta name="twitter:description" content="AGi32 and Relux compared for facade and exterior lighting — radiosity engines, accuracy, pricing, and how each handles large-scale building simulations in Dubai.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a></div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/software/">Software</a></li>
+                <li><span class="current">AGi32 & Relux</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Software Guide</span><span>Updated March 2026</span><span>14 min read</span></div>
+                        <h1>How Do AGi32 and Relux Handle Facade Lighting Simulation?</h1>
+                        <p><strong>AGi32 (from Lighting Analysts Inc., founded 1984 in Colorado) and Relux Desktop (from Relux Informatik AG, Basel, Switzerland) are professional-grade lighting simulation platforms that serve as alternatives and complements to <a href="/software/dialux/">DIALux evo</a> — AGi32 distinguished by its full radiosity calculation engine with verified ±2% accuracy against CIE test cases, and Relux by its free licensing and strong European standards compliance.</strong> For Dubai <a href="/facade-lighting-dubai/">facade lighting</a> projects requiring documented calculation accuracy, large-scale simulation capability, or EN standard verification, these tools provide capabilities beyond DIALux's free offering.</p>
+                        <p>This guide covers AGi32's radiosity engine and accuracy advantages, Relux Desktop's outdoor and facade simulation features, how both compare for exterior lighting applications, and when each is the appropriate choice for Dubai facade projects.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="AGi32 and Relux for Facade Lighting Simulation" width="1600" height="900" loading="eager" fetchpriority="high">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#agi32-calculation">What is AGi32 and how does it calculate facade lighting?</a></li>
+                            <li><a href="#relux-simulation">How does Relux handle exterior and facade lighting simulation?</a></li>
+                            <li><a href="#agi32-vs-relux">What is the difference between AGi32 and Relux for facade projects?</a></li>
+                            <li><a href="#agi32-vs-dialux">When should you use AGi32 instead of DIALux for facades?</a></li>
+                            <li><a href="#radiosity-engine">What is the radiosity calculation engine in AGi32?</a></li>
+                            <li><a href="#agi32-cost">How much does AGi32 cost for lighting professionals?</a></li>
+                            <li><a href="#relux-facade-areas">Does ReluxDesktop support facade measurement areas?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="agi32-calculation">What is AGi32 and how does it calculate facade lighting?</h2>
+                    <p><strong>AGi32 is a professional lighting calculation software developed by Lighting Analysts Inc. (founded 1984 in Littleton, Colorado) that uses a full radiosity engine to compute both direct and inter-reflected illuminance across all surfaces simultaneously — providing the highest-accuracy photometric calculations commercially available, with published verification against CIE (Commission Internationale de l'Eclairage) standard test cases demonstrating ±2% accuracy.</strong></p>
+
+                    <p>For facade lighting calculation, AGi32 provides several capabilities that distinguish it from free alternatives. The full radiosity engine computes how light bounces between all surfaces in the scene — when a <a href="/design/wall-washing/">wall wash</a> luminaire illuminates a limestone facade panel, the reflected light from that panel illuminates adjacent glass curtain wall sections, the podium level, and the ground plane. These inter-reflections are calculated iteratively until convergence (typically 10-20 iterations), producing accurate illuminance values that account for the complete light environment rather than just direct luminaire contributions.</p>
+
+                    <p>AGi32 handles large-scale models efficiently. A 50-story tower facade with 500+ luminaires, multiple material zones, and surrounding buildings can be calculated in AGi32 with computation times of 5-15 minutes (depending on hardware), compared to 20-45 minutes in DIALux for equivalent model complexity. This performance difference becomes significant during design iteration — when a lighting designer tests 10 fixture layouts during a design session, the cumulative time saving with AGi32 is substantial.</p>
+
+                    <p>The software supports every luminaire photometric format: IES (LM-63), EULUMDAT (LDT), and CIE format. Unlike <a href="/software/dialux/">DIALux</a> (which relies on manufacturer plug-ins for enhanced fixture data), AGi32 uses generic photometric file import for all manufacturers. This means the designer imports the fixture's IES file, positions it in the model, and AGi32 calculates from the raw photometric data without requiring manufacturer-specific plug-in installation. For Dubai projects specifying niche or regional manufacturers who do not provide DIALux plug-ins, AGi32's generic import approach ensures any fixture with an IES file can be simulated.</p>
+
+                    <p>Report generation in AGi32 is fully customizable. Unlike DIALux and Relux (which use template-based reports), AGi32 allows complete control over report layout, content, and formatting. For Dubai facade projects where different consultants and authorities require different report formats, this flexibility is a practical advantage. The designer creates custom report templates matching client or municipality requirements and reuses them across projects.</p>
+
+                    <h2 id="relux-simulation">How does Relux handle exterior and facade lighting simulation?</h2>
+                    <p><strong>Relux Desktop provides free outdoor lighting simulation with facade calculation capabilities — including vertical measurement areas for illuminance mapping on building surfaces, EN 12464-2 compliance verification for outdoor workplaces, and ReluxCAD for Revit integration — positioning it as the free European alternative to AGi32 for projects requiring EN standard compliance.</strong></p>
+
+                    <p>Relux Desktop (currently marketed as ReluxDesktop 2026) is developed by Relux Informatik AG, headquartered in Basel, Switzerland. Like <a href="/software/dialux/">DIALux evo</a>, it is funded by lighting manufacturers who pay for luminaire catalog hosting, enabling free distribution to designers. Relux has approximately 170+ manufacturer catalogs available, fewer than DIALux's 190+ but including all major international brands.</p>
+
+                    <p>For facade lighting, Relux offers several relevant features. The outdoor lighting module creates exterior scenes with buildings, terrain, roads, and open areas. Vertical measurement areas (calculation surfaces) can be placed on facade walls to compute illuminance distribution. The software calculates horizontal and vertical illuminance, luminance, and glare metrics. Material assignment includes a library of surface reflectance values, though for Dubai-specific materials (sandstone, desert-colored finishes), custom reflectance values must be entered manually.</p>
+
+                    <p>Relux's distinguishing advantage is its European standards integration. The software includes built-in compliance checking against EN 12464-2 (lighting of outdoor work places), EN 13201 (road lighting), and EN 12193 (sports lighting). For Dubai projects referencing European standards — common when the design consultant or project specification originates from a European firm — Relux provides automatic compliance verification that DIALux and AGi32 require manual checking to achieve.</p>
+
+                    <p>ReluxCAD for Revit provides BIM integration similar to ElumTools, though with less market penetration than Lighting Analysts' product. ReluxCAD operates inside Autodesk Revit, performing lighting calculations on the BIM model geometry. For firms using Relux as their primary tool, ReluxCAD maintains workflow consistency between standalone and <a href="/software/bim-integration/">BIM-integrated</a> calculations. However, for Dubai's BIM market, ElumTools is more commonly specified by consultants, making ReluxCAD a secondary choice for most regional projects.</p>
+
+                    <h2 id="agi32-vs-relux">What is the difference between AGi32 and Relux for facade projects?</h2>
+                    <p><strong>AGi32 offers verified calculation accuracy (±2%), faster computation on large models, and fully customizable reports but costs approximately USD 2,000/year; Relux Desktop is free with European standards compliance built in but lacks published accuracy verification and has a smaller Middle East market presence — making AGi32 the choice for accuracy-critical premium projects and Relux the choice for budget-conscious firms with European standard requirements.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>AGi32</th>
+                                <th>Relux Desktop</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cost</td>
+                                <td>~USD 2,000/yr</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Calculation engine</td>
+                                <td>Full radiosity (verified)</td>
+                                <td>Proprietary</td>
+                            </tr>
+                            <tr>
+                                <td>Accuracy</td>
+                                <td>±2% (CIE verified)</td>
+                                <td>Not published</td>
+                            </tr>
+                            <tr>
+                                <td>Computation speed</td>
+                                <td>Faster on large models</td>
+                                <td>Comparable on small models</td>
+                            </tr>
+                            <tr>
+                                <td>Manufacturer catalogs</td>
+                                <td>Generic IES/LDT import</td>
+                                <td>170+ plug-in catalogs</td>
+                            </tr>
+                            <tr>
+                                <td>EN standard compliance</td>
+                                <td>Manual verification</td>
+                                <td>Built-in compliance checking</td>
+                            </tr>
+                            <tr>
+                                <td>BIM integration</td>
+                                <td>ElumTools (Revit)</td>
+                                <td>ReluxCAD (Revit)</td>
+                            </tr>
+                            <tr>
+                                <td>Report customization</td>
+                                <td>Fully customizable</td>
+                                <td>Template-based</td>
+                            </tr>
+                            <tr>
+                                <td>3D rendering</td>
+                                <td>Basic (exports to external)</td>
+                                <td>Built-in (good quality)</td>
+                            </tr>
+                            <tr>
+                                <td>Middle East market share</td>
+                                <td>High (premium sector)</td>
+                                <td>Low-moderate</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For Dubai facade projects, the selection between AGi32 and Relux follows a clear logic. AGi32 is chosen when the project specification requires documented accuracy verification (common in government, hospitality, and iconic buildings), when the model scale exceeds what free tools handle efficiently (500+ luminaires, complex inter-reflecting geometries), when reports must match specific consultant or authority formatting requirements, or when the firm already uses ElumTools for BIM-integrated calculations (since ElumTools uses AGi32's engine, maintaining calculation consistency). Relux is chosen when the project references EN standards (European-origin consultants or specifications), when budget constraints preclude AGi32's license cost, or when the firm's established workflow centers on Relux's ecosystem.</p>
+
+                    <h2 id="agi32-vs-dialux">When should you use AGi32 instead of DIALux for facades?</h2>
+                    <p><strong>Use AGi32 instead of <a href="/software/dialux/">DIALux evo</a> when the project requires: (1) documented calculation accuracy with CIE test case verification, (2) large-scale models with 200+ luminaires where calculation speed matters, (3) custom report formatting to meet specific consultant or authority requirements, or (4) consistency with ElumTools BIM calculations — for all other Dubai facade projects, DIALux evo's free platform with manufacturer plug-ins is adequate.</strong></p>
+
+                    <p>The accuracy distinction is the most significant. When a Dubai Municipality submission or a premium developer (Emaar, Nakheel, Meraas) requires the lighting consultant to declare calculation accuracy, AGi32 is the only tool that can cite independently verified accuracy data. The consultant's report can state: "Calculations performed in AGi32, verified to ±2% accuracy against CIE 171:2006 test cases" — a statement that carries technical weight because it references an independent standard. <a href="/software/dialux/">DIALux</a> and Relux produce reliable results, but neither publishes formal accuracy benchmarks, making comparable accuracy claims unsubstantiated.</p>
+
+                    <p>Calculation speed is the second deciding factor. During design development, a facade lighting designer may iterate through 15-25 fixture layout variations before presenting options to the architect. For a 30-story commercial tower with 300 luminaires, each AGi32 calculation takes approximately 5-8 minutes versus 15-25 minutes in DIALux. Over 20 iterations, this saves 3-6 hours of computation time — significant in fast-paced Dubai project timelines where design development phases are often compressed to 2-4 weeks.</p>
+
+                    <p>Report formatting flexibility addresses a practical market requirement. Major international lighting consultancies (Speirs Major, BDP, Arup) often have established report templates with specific branding, layout, and content requirements. AGi32's fully customizable report engine accommodates these requirements, while DIALux and Relux's template-based reports offer limited formatting control. For consultancies working on multiple projects with different client reporting requirements, AGi32's customization saves significant post-processing time.</p>
+
+                    <p>For firms using <a href="/software/bim-integration/">ElumTools</a> for BIM-integrated lighting analysis, AGi32 provides calculation consistency. ElumTools uses AGi32's engine — the calculation methodology, inter-reflection handling, and accuracy characteristics are identical. A facade lighting calculation performed in AGi32 standalone and the same calculation performed in ElumTools will produce identical results (same engine, same algorithms, same photometric data). This consistency eliminates the common problem of discrepant results between standalone and BIM-integrated calculations.</p>
+
+                    <h2 id="radiosity-engine">What is the radiosity calculation engine in AGi32?</h2>
+                    <p><strong>AGi32's full radiosity engine computes the complete light energy exchange between all surfaces in the scene — dividing surfaces into patches, calculating form factors (the geometric relationship between every pair of patches), and iteratively solving the energy balance equation until all inter-reflected light is accounted for — producing illuminance results that include both direct luminaire contribution and all subsequent reflections between facade surfaces, ground planes, and surrounding geometry.</strong></p>
+
+                    <p>Radiosity is a rendering and calculation technique derived from heat transfer engineering. In lighting calculation, radiosity models each surface as both a receiver and emitter of light. When a luminaire's beam strikes a facade surface, that surface absorbs some light (determined by the surface's absorptance, which is 1 minus reflectance) and reflects the remainder. The reflected light travels to other surfaces — the ground, adjacent facade panels, surrounding buildings — where it is again partially absorbed and partially reflected. This iterative process continues until the energy in each successive bounce becomes negligible.</p>
+
+                    <p>The radiosity approach contrasts with direct-only calculations, which compute only the light arriving directly from luminaires to calculation points and ignore inter-reflections. For facade lighting, the difference is significant. A limestone facade panel with 0.50 reflectance reflects half of the incident light back into the environment. In a courtyard or recessed facade geometry, these reflections can contribute 20-40% of the total illuminance on adjacent surfaces. A direct-only calculation underestimates illuminance by this same margin, potentially leading to over-specification of fixtures.</p>
+
+                    <p>AGi32's radiosity implementation uses an adaptive mesh — surfaces are automatically subdivided into smaller patches in areas with high illuminance gradients (near luminaire beams, at shadow boundaries) and larger patches in uniform areas. This optimization balances accuracy with computation time. The convergence criterion is typically set at 0.1% energy balance — the calculation stops when the remaining unresolved energy is less than 0.1% of the total, ensuring practically complete inter-reflection accounting.</p>
+
+                    <p>The CIE test case verification provides the critical credibility. CIE Publication 171:2006 ("Test Cases to Assess the Accuracy of Lighting Computer Programs") defines a series of geometric configurations with analytically calculable solutions. AGi32's published results against these test cases demonstrate agreement to within ±2%, confirming that the radiosity engine correctly implements the physics of light transport. For facade projects requiring formal accuracy documentation, this verification is the definitive technical reference.</p>
+
+                    <h2 id="agi32-cost">How much does AGi32 cost for lighting professionals?</h2>
+                    <p><strong>AGi32 costs approximately USD 1,800-2,200 per year for a single-user subscription license, with ElumTools (the Revit add-in) separately priced at approximately USD 800-1,000 per year — equating to approximately AED 6,600-8,100 per seat per year for AGi32 and AED 2,900-3,700 for ElumTools — a minor cost relative to project fees but a significant expense for solo practitioners compared to the free alternatives.</strong></p>
+
+                    <p>Lighting Analysts offers several licensing options. The annual subscription is the most common — the designer pays each year for continued software access and updates. Network licensing allows multiple users to share a pool of concurrent licenses, reducing per-seat cost for firms with 5+ designers. Educational licenses are available at reduced rates for universities and training institutions. A 30-day trial with full functionality is available for evaluation before purchasing.</p>
+
+                    <p>For Dubai facade lighting consultancies, the cost analysis depends on project volume and type. A firm producing 20+ facade lighting projects annually, with several being premium-tier developments requiring documented accuracy, justifies AGi32's cost easily — the annual license represents less than 0.5% of typical annual project fees. A solo practitioner handling 5-8 smaller projects per year may find the cost difficult to justify when <a href="/software/dialux/">DIALux evo</a> (free) produces adequate results for standard projects. The practical recommendation: maintain DIALux evo as the primary tool for standard projects and invest in AGi32 when the firm's project portfolio includes premium developments requiring accuracy documentation, or when calculation speed on large models justifies the productivity gain.</p>
+
+                    <p>ElumTools pricing is separate because it is a different product (Revit add-in versus standalone software). Firms using both AGi32 and ElumTools pay approximately USD 2,600-3,200 per year total (AED 9,500-11,800). This combined investment provides both standalone and <a href="/software/bim-integration/">BIM-integrated</a> calculation capability with consistent accuracy — the most comprehensive toolset available for professional facade lighting design.</p>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need Professional Simulation Support?</h3>
+                            <p>AGi32-grade calculations, photometric reports, and BIM coordination for Dubai facade projects.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- CONTEXT BORDER -->
+
+                    <h2 id="relux-facade-areas">Does ReluxDesktop support facade measurement areas?</h2>
+                    <p><strong>ReluxDesktop 2026 supports facade measurement areas — vertical calculation surfaces placed on building walls to compute illuminance distribution, uniformity, and luminance — with the ability to define multiple measurement areas per facade zone, set custom calculation grid spacing, and generate EN-compliant reports with standardized result summaries.</strong></p>
+
+                    <p>Facade measurement areas in Relux operate similarly to calculation surfaces in <a href="/software/dialux/">DIALux evo</a> and AGi32. The designer creates a rectangular or polygonal measurement area on the facade wall, specifies the grid density (number of calculation points in X and Y directions), and Relux computes illuminance at each grid point. Results include average illuminance (Eavg), minimum illuminance (Emin), maximum illuminance (Emax), uniformity ratio (Emin/Eavg), and diversity ratio (Emin/Emax).</p>
+
+                    <p>For Dubai facade projects, Relux's measurement area implementation handles the critical vertical illuminance calculation correctly — accounting for non-perpendicular light incidence (luminaire beams striking the facade at various angles from ground-mounted uplights, bracket-mounted spots, and recessed downlights). The measurement area can be subdivided into zones with different target illuminance values — for example, a podium zone targeting 150 lux average, a tower shaft zone targeting 75 lux, and a crown zone targeting 200 lux — matching the <a href="/design/">design hierarchy</a> of typical Dubai commercial facades.</p>
+
+                    <p>Relux's output format includes false-color visualization, point-by-point grids, and iso-contour plots — the same deliverable types available in AGi32 and DIALux. The EN 12464-2 compliance check automatically verifies whether the calculated illuminance values meet the standard's requirements for outdoor work areas, though this standard is not directly applicable to decorative facade lighting (it covers functional outdoor lighting). For facade applications, the measurement area results are primarily used for <a href="/engineering/photometric-reporting/">photometric report</a> generation and design verification rather than standards compliance checking.</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/software/" class="related-card">
+                                <h4>Software Overview</h4>
+                                <p>Complete guide to facade lighting design software</p>
+                            </a>
+                            <a href="/software/dialux/" class="related-card">
+                                <h4>DIALux Tutorial</h4>
+                                <p>Step-by-step DIALux evo facade lighting workflow</p>
+                            </a>
+                            <a href="/software/bim-integration/" class="related-card">
+                                <h4>BIM Integration</h4>
+                                <p>ElumTools, ReluxCAD, and Revit workflows</p>
+                            </a>
+                            <a href="/engineering/photometric-reporting/" class="related-card">
+                                <h4>Photometric Reporting</h4>
+                                <p>Engineering report deliverables and standards</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Software Topics</div>
+                    <nav class="sidebar-nav" aria-label="Software section navigation">
+                        <a href="/software/">Software Overview</a><a href="/software/dialux/">DIALux</a><a href="/software/agi32-relux/" class="active">AGi32 & Relux</a><a href="/software/bim-integration/">BIM Integration</a><a href="/software/simulation-workflow/">Simulation Workflow</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/engineering/">Engineering</a><a href="/design/">Design</a><a href="/building-types/">Building Types</a><a href="/cost/">Cost Guide</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Professional Simulation</h4>
+                    <p>High-accuracy facade lighting calculations for premium projects.</p>
+                    <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a><a href="/about/">About Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/inner-pages.js" defer></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

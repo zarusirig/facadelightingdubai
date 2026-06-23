@@ -7,3 +7,7 @@ node_modules/
 __pycache__/
 *.log
 .DS_Store
+
+# Build/research working artifacts (not part of the published site)
+outputs/
+research_results.json

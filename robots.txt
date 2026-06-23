@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 Sitemap: https://facadelightingdubai.com/sitemap.xml
 
-# No pages need blocking — all content pages are indexable
-# Disallow only utility paths:
-Disallow: /assets/
+# Allow image crawling (Google Images / rich results) — images live under /assets/images/
+# Disallow utility paths and missing functionality:
 Disallow: /outputs/
+Disallow: /search

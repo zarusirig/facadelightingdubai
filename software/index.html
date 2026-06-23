@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facade Lighting Design Software Guide: Tools &amp; Comparison</title>
+    <meta name="description"
+        content="Compare DIALux, AGi32, Relux, and BIM tools for facade lighting design — features, pricing, photometric formats, and Dubai project workflows in one guide.">
+    <link rel="canonical" href="https://facadelightingdubai.com/software/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "CollectionPage", "headline": "Facade Lighting Design Software Guide: Tools & Comparison", "url": "https://facadelightingdubai.com/software/", "datePublished": "2026-03-20", "dateModified": "2026-06-22", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/software/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://facadelightingdubai.com/software/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What software do lighting designers use for facade projects?", "acceptedAnswer": { "@type": "Answer", "text": "Professional lighting designers use DIALux evo (free, from DIAL GmbH), AGi32 (paid, from Lighting Analysts), Relux Desktop (free, from Relux Informatik AG), and BIM-integrated tools like ElumTools (Revit add-in using AGi32's engine). DIALux evo dominates the market due to its zero cost and extensive manufacturer plug-in library, while AGi32 is preferred for projects requiring full radiosity calculations and verified ±2% accuracy. For BIM-centric workflows, ElumTools performs illuminance calculations directly inside Autodesk Revit models." } }, { "@type": "Question", "name": "Is there free software for facade lighting design?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. DIALux evo from DIAL GmbH is completely free for commercial use with no feature restrictions — it supports 3D modeling, photometric calculation, rendering, and report generation for facade projects. Relux Desktop is also free and includes outdoor lighting modules. Both tools import IES and EULUMDAT photometric files from any manufacturer. AGi32 is the only major professional tool that requires a paid license (approximately USD 1,800–2,200 annually)." } }, { "@type": "Question", "name": "What file formats are used in facade lighting design software?", "acceptedAnswer": { "@type": "Answer", "text": "The two primary photometric data formats are IES (Illuminating Engineering Society, LM-63 standard, .ies extension) used predominantly in North America and the Middle East, and EULUMDAT (.ldt extension) used in Europe. TM-33 (IES TM-33-18) is a newer XML-based format supporting spectral data. For geometry exchange, DWG/DXF (AutoCAD), IFC (Industry Foundation Classes for BIM), and 3DS/OBJ (3D modeling) are standard. DIALux uses its own .dlx project format, while AGi32 uses .agi format." } }, { "@type": "Question", "name": "How does BIM integration change the facade lighting design workflow?", "acceptedAnswer": { "@type": "Answer", "text": "BIM integration enables lighting calculations directly inside the architectural model (via ElumTools in Revit), eliminates geometry re-modeling in standalone software, provides automatic clash detection between lighting conduit and structural elements, maintains a single source of truth for fixture specifications and locations, and enables coordinated scheduling and material take-offs. For Dubai projects where BIM Level 2 is increasingly mandated by Dubai Municipality, BIM-integrated lighting design ensures facade lighting is part of the coordinated building model from design through construction." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Facade Lighting Design Software Guide: Tools & Comparison">
+  <meta property="og:description" content="Compare DIALux, AGi32, Relux, and BIM tools for facade lighting design — features, pricing, photometric formats, and Dubai project workflows in one guide.">
+  <meta property="og:url" content="https://facadelightingdubai.com/software/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Facade Lighting Design Software Guide: Tools & Comparison">
+  <meta name="twitter:description" content="Compare DIALux, AGi32, Relux, and BIM tools for facade lighting design — features, pricing, photometric formats, and Dubai project workflows in one guide.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a
+                    href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a
+                    href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg
+                            width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            aria-hidden="true">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a
+                            href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a
+                            href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a>
+                    </div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav"
+                aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><span class="current">Software</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Software Guide</span><span>Updated March 2026</span><span>18 min read</span></div>
+                        <h1>What Software Do Lighting Designers Use for Facade Projects?</h1>
+                        <p><strong>Professional facade lighting design relies on photometric simulation software that calculates illuminance, luminance, and uniformity across building surfaces — with DIALux evo, AGi32, and Relux as the three dominant platforms, each supporting IES and EULUMDAT photometric data import, 3D rendering, and compliance verification against standards like Al Sa'fat and CIBSE SLL.</strong> For Dubai facade projects, where <a href="/regulations/al-safat/">Al Sa'fat green building regulations</a> require documented lighting power density compliance and <a href="/design/">design intent</a> must be validated before installation, lighting design software is not optional — it is a mandatory deliverable in the project workflow.</p>
+                        <p>This guide compares the major lighting design platforms used for <a href="/facade-lighting-dubai/">facade lighting</a> projects in Dubai, covering capabilities, pricing, photometric file formats, <a href="/software/bim-integration/">BIM integration</a>, and how each tool fits into the <a href="/software/simulation-workflow/">simulation-to-report workflow</a> that produces engineering deliverables for consultants, contractors, and municipal authorities.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="Facade Lighting Design Software Guide: Tools and Comparison" width="1600" height="900" loading="eager" fetchpriority="high">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#software-landscape">What software do lighting designers use for facade projects?</a></li>
+                            <li><a href="#choosing-software">How do you choose the right lighting design software for facades?</a></li>
+                            <li><a href="#dialux-agi32-relux">What is the difference between DIALux, AGi32, and Relux for exterior lighting?</a></li>
+                            <li><a href="#photometric-simulation">Which facade lighting software supports photometric simulation?</a></li>
+                            <li><a href="#bim-integration">How does BIM integration change the facade lighting design workflow?</a></li>
+                            <li><a href="#file-formats">What file formats are used in facade lighting design software?</a></li>
+                            <li><a href="#free-software">Is there free software for facade lighting design?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="software-landscape">What software do lighting designers use for facade projects?</h2>
+                    <p><strong>The three primary lighting design platforms for facade projects are DIALux evo (developed by DIAL GmbH, Germany), AGi32 (developed by Lighting Analysts Inc., USA), and Relux Desktop (developed by Relux Informatik AG, Switzerland) — each providing photometric calculation, 3D visualization, and report generation, but differing in licensing model, calculation engine, and integration capabilities.</strong></p>
+
+                    <p>For Dubai facade projects specifically, the software landscape includes additional tools that intersect with the primary platforms. ElumTools operates as a Revit add-in that brings AGi32's calculation engine directly into Autodesk Revit, enabling <a href="/software/bim-integration/">BIM-integrated lighting analysis</a>. LightStanza and Radiance serve specialized daylight analysis needs. Visual Lighting (from Acuity Brands) provides manufacturer-specific calculation for Acuity fixtures. The Grasshopper/Rhino combination enables parametric lighting design for complex facade geometries found in projects like the <a href="/case-studies/museum-of-the-future/">Museum of the Future</a>.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Software</th>
+                                <th>Developer</th>
+                                <th>License</th>
+                                <th>Calculation Engine</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DIALux evo</td>
+                                <td>DIAL GmbH</td>
+                                <td>Free</td>
+                                <td>Proprietary (radiosity-based)</td>
+                                <td>General facade design, manufacturer plug-ins</td>
+                            </tr>
+                            <tr>
+                                <td>AGi32</td>
+                                <td>Lighting Analysts</td>
+                                <td>Paid (~USD 2,000/yr)</td>
+                                <td>Full radiosity</td>
+                                <td>High-accuracy calculations, large-scale projects</td>
+                            </tr>
+                            <tr>
+                                <td>Relux Desktop</td>
+                                <td>Relux Informatik AG</td>
+                                <td>Free</td>
+                                <td>Proprietary</td>
+                                <td>European standards compliance, road/outdoor</td>
+                            </tr>
+                            <tr>
+                                <td>ElumTools</td>
+                                <td>Lighting Analysts</td>
+                                <td>Paid (~USD 900/yr)</td>
+                                <td>AGi32 engine</td>
+                                <td>BIM-integrated calculation in Revit</td>
+                            </tr>
+                            <tr>
+                                <td>Visual Lighting</td>
+                                <td>Acuity Brands</td>
+                                <td>Free (Acuity products)</td>
+                                <td>Proprietary</td>
+                                <td>Acuity fixture specification</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The market is segmented by project complexity and workflow. Small-to-medium facade projects in Dubai — including <a href="/building-types/villa/">villas</a>, <a href="/building-types/retail-mall/">retail buildings</a>, and low-rise commercial — typically use <a href="/software/dialux/">DIALux evo</a> because it is free, supports all major fixture manufacturers through downloadable plug-ins, and produces adequate photometric reports for <a href="/engineering/photometric-reporting/">engineering documentation</a>. Large-scale projects — <a href="/building-types/commercial-tower/">towers</a>, hospitality developments, and iconic structures — often require <a href="/software/agi32-relux/">AGi32</a> for its full radiosity engine and verified calculation accuracy, or <a href="/software/bim-integration/">ElumTools</a> when the project uses BIM-centric delivery.</p>
+
+                    <h2 id="choosing-software">How do you choose the right lighting design software for facades?</h2>
+                    <p><strong>Software selection for facade lighting depends on five factors: project scale and complexity, calculation accuracy requirements, BIM integration needs, available budget for software licensing, and the specific fixture manufacturers whose products are being specified — each factor narrowing the choice between DIALux, AGi32, Relux, and BIM-integrated tools.</strong></p>
+
+                    <ul>
+                        <li><strong>Project scale.</strong> A single-facade villa renovation may require only DIALux evo with a handful of fixtures. A 60-story mixed-use tower with four distinct facade zones, multiple fixture families, and staged construction requires AGi32's ability to handle models with thousands of luminaires and complex inter-reflections across curtain wall, stone, and metal panel surfaces. The calculation time difference is significant: DIALux may take 15-30 minutes for a large facade model, while AGi32's optimized radiosity engine can process the same model in 5-10 minutes with higher accuracy.</li>
+                        <li><strong>Accuracy requirements.</strong> For projects requiring documented accuracy verification — common in Dubai's premium developments where consultant specifications state "illuminance calculations shall demonstrate ±5% accuracy against CIE test cases" — AGi32 is the only platform with published, independently verified accuracy data (±2% against CIE test cases). DIALux and Relux produce reliable results for typical facade applications but do not publish formal accuracy benchmarks.</li>
+                        <li><strong>BIM mandate compliance.</strong> When the project contract requires BIM Level 2 delivery (increasingly standard for Dubai Municipality and Abu Dhabi Department of Municipalities and Transport), the lighting design must integrate with the coordinated Revit model. <a href="/software/bim-integration/">ElumTools</a> is the primary tool for this requirement, performing calculations directly inside Revit without exporting geometry to standalone software.</li>
+                        <li><strong>Manufacturer plug-in availability.</strong> DIALux dominates this category. Major facade lighting manufacturers — including Bega, iGuzzini, Erco, Zumtobel, Philips/Signify, and Ligman — provide free DIALux plug-ins with parametric luminaire data, 3D models, and automatically updated photometric files. AGi32 and Relux rely on generic IES/EULUMDAT file import, which is functional but lacks the plug-in convenience.</li>
+                        <li><strong>Budget.</strong> For sole practitioners and small consultancies in Dubai, the zero-cost entry of DIALux evo and Relux Desktop is decisive. Larger firms with established tool chains can justify AGi32's annual licensing cost (approximately AED 7,000-8,000/year) because of productivity gains on complex projects and the calculation accuracy advantage required by premium clients.</li>
+                    </ul>
+
+                    <h2 id="dialux-agi32-relux">What is the difference between DIALux, AGi32, and Relux for exterior lighting?</h2>
+                    <p><strong>DIALux evo is free with the largest manufacturer plug-in ecosystem but uses a proprietary calculation engine without published accuracy data; AGi32 costs approximately USD 2,000/year but provides full radiosity with verified ±2% accuracy and handles the largest project scales; Relux Desktop is free with strong European standards compliance but has a smaller market share in the Middle East.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>DIALux evo</th>
+                                <th>AGi32</th>
+                                <th>Relux Desktop</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Cost</td>
+                                <td>Free</td>
+                                <td>~USD 2,000/yr</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td>Calculation method</td>
+                                <td>Proprietary radiosity-based</td>
+                                <td>Full radiosity (verified)</td>
+                                <td>Proprietary</td>
+                            </tr>
+                            <tr>
+                                <td>Accuracy verification</td>
+                                <td>Not published</td>
+                                <td>±2% (CIE test cases)</td>
+                                <td>Not published</td>
+                            </tr>
+                            <tr>
+                                <td>Manufacturer plug-ins</td>
+                                <td>190+ manufacturers</td>
+                                <td>Generic IES/LDT import</td>
+                                <td>170+ manufacturers</td>
+                            </tr>
+                            <tr>
+                                <td>3D rendering</td>
+                                <td>Built-in (good quality)</td>
+                                <td>Basic (exports to external)</td>
+                                <td>Built-in (good quality)</td>
+                            </tr>
+                            <tr>
+                                <td>BIM integration</td>
+                                <td>IFC import, DWG import</td>
+                                <td>ElumTools (Revit add-in)</td>
+                                <td>ReluxCAD for Revit</td>
+                            </tr>
+                            <tr>
+                                <td>Outdoor/facade module</td>
+                                <td>Exterior scene module</td>
+                                <td>Full outdoor capability</td>
+                                <td>Road/outdoor module</td>
+                            </tr>
+                            <tr>
+                                <td>Vertical calculation surface</td>
+                                <td>Supported</td>
+                                <td>Supported (any orientation)</td>
+                                <td>Supported</td>
+                            </tr>
+                            <tr>
+                                <td>Daylight simulation</td>
+                                <td>Yes (built-in)</td>
+                                <td>Separate module</td>
+                                <td>Yes (built-in)</td>
+                            </tr>
+                            <tr>
+                                <td>Report customization</td>
+                                <td>Template-based</td>
+                                <td>Fully customizable</td>
+                                <td>Template-based</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>For Dubai facade lighting, the choice typically resolves as follows. <a href="/software/dialux/">DIALux evo</a> is the default platform for residential, low-rise commercial, and standard facade projects where manufacturers provide plug-ins. <a href="/software/agi32-relux/">AGi32</a> is specified for large-scale commercial towers, hospitality landmarks, and government projects where calculation accuracy must be documented and verified. <a href="/software/agi32-relux/">Relux Desktop</a> is used by firms with European origins that have established workflows around Relux's EN standard compliance. All three platforms produce photometric reports that satisfy <a href="/regulations/al-safat/">Al Sa'fat</a> lighting power density documentation requirements, but AGi32's report customization allows consultant-specific formatting that some premium projects require.</p>
+
+                    <h2 id="photometric-simulation">Which facade lighting software supports photometric simulation?</h2>
+                    <p><strong>All three major platforms — DIALux evo, AGi32, and Relux Desktop — support full photometric simulation for facade applications, including vertical illuminance calculation on building surfaces, luminance mapping for glare assessment, uniformity ratio analysis, and false-color visualization — the critical difference is the calculation engine accuracy and the level of inter-reflection modeling each platform provides.</strong></p>
+
+                    <p>Photometric simulation for <a href="/facade-lighting-dubai/">facade lighting</a> differs from interior lighting analysis in three key aspects. First, the primary calculation surface is vertical (the facade itself) rather than horizontal (floor/workplane), which requires software that correctly handles vertical illuminance calculations with non-uniform light incidence angles. Second, facade surfaces are typically large (hundreds or thousands of square meters) with varying material reflectances across different cladding zones — glass curtain wall (reflectance 0.08-0.15), stone or tile (0.25-0.45), metal panel (0.15-0.70 depending on finish), and painted concrete (0.30-0.60). Third, the lighting designer must account for light spill beyond the building boundary, which is regulated under <a href="/energy/light-pollution-reduction/">light pollution standards</a> and affects neighboring properties.</p>
+
+                    <ul>
+                        <li><strong>Illuminance calculation.</strong> All platforms calculate vertical illuminance (lux) on the facade surface using point-by-point methods. The designer places a calculation grid on the facade, specifies grid spacing (typically 0.5m-1.0m for accuracy), and the software computes the direct and inter-reflected light at each point. For Dubai facade projects, target illuminance ranges from 50-100 lux for residential facades to 150-300 lux for commercial and hospitality facades, with uniformity ratios (Emin/Eavg) above 0.4 for quality installations.</li>
+                        <li><strong>Luminance mapping.</strong> Advanced facade analysis requires luminance (cd/m2) rather than illuminance — luminance represents what the human eye perceives and is the correct metric for assessing brightness differences between facade zones, glare potential toward neighboring buildings, and visual hierarchy in the lighting composition. AGi32 provides the most robust luminance calculation capability, while DIALux and Relux handle standard luminance scenarios.</li>
+                        <li><strong>False-color visualization.</strong> False-color rendering maps illuminance or luminance values to a color scale, enabling immediate visual identification of hot spots, dark zones, and uniformity issues. This visualization is standard in all three platforms and is the most effective communication tool in the <a href="/engineering/photometric-reporting/">photometric report</a> for explaining design intent to architects and building owners.</li>
+                        <li><strong>Daylight interaction.</strong> Facade lighting simulation must account for ambient daylight conditions during twilight hours (when both natural and artificial light are present) and full darkness. DIALux evo includes a built-in daylight simulation engine that models sun position for any geographic location — including Dubai at 25.2048°N latitude. This enables designers to verify that the facade lighting concept achieves its intended visual effect as daylight transitions to darkness, particularly important for facades designed to be visible from sunset onward.</li>
+                    </ul>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need Professional Facade Lighting Design?</h3>
+                            <p>From software simulation to <a href="/engineering/photometric-reporting/">photometric reporting</a> and <a href="/installation/commissioning/">commissioning verification</a>, our team delivers complete design documentation.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Design Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- CONTEXT BORDER -->
+
+                    <h2 id="bim-integration">How does BIM integration change the facade lighting design workflow?</h2>
+                    <p><strong>BIM integration embeds lighting calculations directly within the architectural Revit model — eliminating redundant geometry modeling, enabling automatic clash detection between lighting conduit and building structure, maintaining a single-source-of-truth for fixture specifications, and producing coordinated construction documentation — a workflow increasingly mandated for Dubai Municipality projects requiring BIM Level 2 delivery.</strong></p>
+
+                    <p>The traditional facade lighting design workflow requires exporting building geometry from the architect's CAD or Revit model, importing it into standalone lighting software (DIALux, AGi32), performing calculations, and then communicating results back to the coordinated building model. This creates version-control problems: when the architect modifies the facade geometry (which occurs frequently during design development), the lighting model becomes outdated and must be re-imported and recalculated.</p>
+
+                    <p><a href="/software/bim-integration/">BIM-integrated lighting design</a> eliminates this loop. ElumTools (from Lighting Analysts, using AGi32's calculation engine) operates inside Autodesk Revit, calculating illuminance directly on the Revit model geometry. When the architect modifies a facade panel or shifts a window opening, the lighting designer recalculates without re-importing geometry. Fixture families in Revit contain embedded IES photometric data, ensuring that the lighting calculation uses the same fixture specification as the electrical engineer's panel schedule and the quantity surveyor's bill of quantities.</p>
+
+                    <p>For Dubai's construction market, BIM integration is shifting from optional to mandatory. <a href="/regulations/dewa/">DEWA</a> requires BIM submissions for certain project categories. Dubai Municipality has published BIM guidelines encouraging Level 2 adoption. The practical impact for facade lighting: every luminaire, driver, cable tray, and junction box appears in the coordinated BIM model, enabling automated clash detection against structural steel, mechanical ducts, and plumbing risers — preventing the installation conflicts that cause costly site rework. The full workflow is detailed in our <a href="/software/bim-integration/">BIM integration guide</a>.</p>
+
+                    <h2 id="file-formats">What file formats are used in facade lighting design software?</h2>
+                    <p><strong>Facade lighting design uses two categories of file formats — photometric data formats (IES LM-63 and EULUMDAT/LDT for luminaire distribution data) and geometry exchange formats (DWG, DXF, IFC, 3DS, OBJ for building models) — with IES being the dominant photometric format in the Middle East because UAE-market fixture manufacturers predominantly publish in IES format.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Format</th>
+                                <th>Type</th>
+                                <th>Standard</th>
+                                <th>Usage</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>IES (.ies)</td>
+                                <td>Photometric</td>
+                                <td>IESNA LM-63</td>
+                                <td>Luminaire light distribution (North America, Middle East)</td>
+                            </tr>
+                            <tr>
+                                <td>EULUMDAT (.ldt)</td>
+                                <td>Photometric</td>
+                                <td>European convention</td>
+                                <td>Luminaire light distribution (Europe)</td>
+                            </tr>
+                            <tr>
+                                <td>TM-33 (.tm33)</td>
+                                <td>Photometric</td>
+                                <td>IES TM-33-18</td>
+                                <td>Extended spectral data (emerging)</td>
+                            </tr>
+                            <tr>
+                                <td>DWG (.dwg)</td>
+                                <td>Geometry</td>
+                                <td>Autodesk</td>
+                                <td>2D/3D CAD geometry exchange</td>
+                            </tr>
+                            <tr>
+                                <td>IFC (.ifc)</td>
+                                <td>Geometry/BIM</td>
+                                <td>buildingSMART</td>
+                                <td>Open BIM model exchange</td>
+                            </tr>
+                            <tr>
+                                <td>3DS (.3ds)</td>
+                                <td>Geometry</td>
+                                <td>Autodesk</td>
+                                <td>3D mesh import for visualization</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The IES file format is the critical deliverable input for any facade lighting calculation. Each luminaire manufacturer provides IES files generated from goniophotometric testing in accredited laboratories. The IES file encodes the luminous intensity distribution in all directions around the fixture, enabling the simulation software to calculate exactly how much light reaches each point on the facade surface. For <a href="/led-technology/specifications/">LED facade fixtures</a>, the IES file also captures the beam angle, field angle, and luminaire efficiency (lumens output divided by input watts). When specifying fixtures for a Dubai facade project, always verify that the manufacturer provides IES files measured per IES LM-79 (the testing standard for LED luminaires) rather than calculated or estimated data.</p>
+
+                    <p>EULUMDAT (.ldt) files contain equivalent data in a different encoding format. All major lighting software reads both IES and EULUMDAT formats. In practice, the format choice depends on the manufacturer's geographic origin: European manufacturers (Bega, Erco, iGuzzini, Zumtobel) typically publish EULUMDAT first and IES as a secondary format, while North American and Asian manufacturers publish IES natively. For Dubai projects, ensure you have the correct format for your chosen software, though conversion between formats is supported by utility tools like Photometric Toolbox.</p>
+
+                    <h2 id="free-software">Is there free software for facade lighting design?</h2>
+                    <p><strong>DIALux evo and Relux Desktop are both completely free for commercial use with no feature restrictions, supporting the full workflow from 3D model creation through photometric calculation to report generation — making professional-grade facade lighting simulation accessible to every designer and engineer regardless of firm size or project budget.</strong></p>
+
+                    <p><a href="/software/dialux/">DIALux evo</a>, developed by DIAL GmbH in Ludenscheid, Germany, is the most widely used free lighting design software globally. It is funded by a consortium of lighting manufacturers who pay DIAL GmbH for plug-in hosting, meaning the software's development cost is subsidized by the industry rather than by user licenses. For facade lighting in Dubai, DIALux evo provides exterior scene creation (buildings, terrain, streets), vertical calculation surface placement on facade walls, sun position simulation for any geographic coordinate (Dubai at 25.2°N, 55.3°E), 3D rendering with material textures, and PDF report generation. The 190+ manufacturer plug-ins include all major facade lighting brands specified in the UAE market.</p>
+
+                    <p><a href="/software/agi32-relux/">Relux Desktop</a>, from Relux Informatik AG in Basel, Switzerland, is the second major free platform. Its outdoor lighting module supports facade lighting calculation with features comparable to DIALux evo, though with a smaller market share in the Middle East. Relux's distinguishing strength is its EN standard compliance verification — useful for projects referencing European lighting standards (EN 12464-2 for outdoor workplaces, EN 13201 for road lighting) that are sometimes specified alongside Dubai Municipality regulations.</p>
+
+                    <p>The only major paid lighting software in the facade category is <a href="/software/agi32-relux/">AGi32</a> from Lighting Analysts Inc., which costs approximately USD 1,800-2,200 per year. AGi32's paid license is justified for projects requiring: full radiosity calculation with documented accuracy, projects with thousands of luminaires (where calculation speed differences become significant), custom report formatting to meet specific consultant or client requirements, and integration with ElumTools for <a href="/software/bim-integration/">BIM-based lighting analysis</a>.</p>
+
+                    <p>For teams considering the free-vs-paid decision, the practical guideline is: start with <a href="/software/dialux/">DIALux evo</a> for all facade projects and upgrade to AGi32 only when a specific project requires its accuracy verification or calculation scale capabilities. Most Dubai facade lighting consultancies maintain both DIALux evo (for standard projects and manufacturer-specific plug-in access) and AGi32 (for premium projects and formal accuracy documentation) in their toolsets. Costs for software are a minor line item in the overall <a href="/cost/project-budgeting/">project budget</a> — even AGi32's annual license represents less than 0.1% of a typical commercial facade lighting project value.</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/software/dialux/" class="related-card">
+                                <h4>DIALux for Facade Lighting</h4>
+                                <p>Step-by-step tutorial for facade lighting design in DIALux evo</p>
+                            </a>
+                            <a href="/software/agi32-relux/" class="related-card">
+                                <h4>AGi32 & Relux</h4>
+                                <p>Professional-tier simulation tools for exterior lighting</p>
+                            </a>
+                            <a href="/software/bim-integration/" class="related-card">
+                                <h4>BIM Integration</h4>
+                                <p>ElumTools, Revit, and IFC for facade lighting design</p>
+                            </a>
+                            <a href="/software/simulation-workflow/" class="related-card">
+                                <h4>Simulation Workflow</h4>
+                                <p>Complete process from 3D model to photometric report</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Software Topics</div>
+                    <nav class="sidebar-nav" aria-label="Software section navigation">
+                        <a href="/software/" class="active">Software Overview</a><a href="/software/dialux/">DIALux</a><a href="/software/agi32-relux/">AGi32 & Relux</a><a href="/software/bim-integration/">BIM Integration</a><a href="/software/simulation-workflow/">Simulation Workflow</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/engineering/">Engineering</a><a href="/engineering/photometric-reporting/">Photometric Reporting</a><a href="/design/">Design</a><a href="/controls/">Controls</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Design Software Support</h4>
+                    <p>Professional simulation and photometric reporting for facade projects.</p>
+                    <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a><a href="/about/">About Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/inner-pages.js" defer></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

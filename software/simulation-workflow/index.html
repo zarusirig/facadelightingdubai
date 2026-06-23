@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facade Lighting Simulation Workflow: Model to Report</title>
+    <meta name="description"
+        content="Facade lighting simulation workflow — 3D model setup, material assignment, fixture placement, calculation, and photometric report delivery for Dubai projects.">
+    <link rel="canonical" href="https://facadelightingdubai.com/software/simulation-workflow/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "Facade Lighting Simulation Workflow: Model to Report", "url": "https://facadelightingdubai.com/software/simulation-workflow/", "datePublished": "2026-03-20", "dateModified": "2026-06-22", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/software/simulation-workflow/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://facadelightingdubai.com/software/" }, { "@type": "ListItem", "position": 3, "name": "Simulation Workflow", "item": "https://facadelightingdubai.com/software/simulation-workflow/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "How long does a facade lighting simulation take?", "acceptedAnswer": { "@type": "Answer", "text": "Simulation time depends on model complexity, software, and calculation method. A simple 3-story facade with 20 luminaires in DIALux evo takes 1-3 minutes. A 30-story tower with 200 luminaires using full radiosity in AGi32 takes 5-15 minutes. A complex media facade with 1,000+ pixel nodes takes 20-45 minutes. The total simulation workflow — from model preparation through final report — typically takes 2-4 hours for a standard facade project and 1-2 days for complex multi-facade tower projects, including design iteration time." } }, { "@type": "Question", "name": "What are common simulation mistakes in facade lighting design?", "acceptedAnswer": { "@type": "Answer", "text": "The six most common simulation mistakes are: (1) using default material reflectance values instead of project-specific values, producing 15-30% illuminance errors; (2) omitting maintenance factors, over-predicting illuminance by 20-35%; (3) placing calculation grids at incorrect distances from the facade surface; (4) using calculated/estimated IES data instead of laboratory-measured photometric files; (5) ignoring surrounding structures that block or reflect light; (6) failing to account for LED thermal derating in Dubai's high-temperature environment, over-predicting lumen output by 10-15%." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Facade Lighting Simulation Workflow: Model to Report">
+  <meta property="og:description" content="Facade lighting simulation workflow — 3D model setup, material assignment, fixture placement, calculation, and photometric report delivery for Dubai projects.">
+  <meta property="og:url" content="https://facadelightingdubai.com/software/simulation-workflow/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Facade Lighting Simulation Workflow: Model to Report">
+  <meta name="twitter:description" content="Facade lighting simulation workflow — 3D model setup, material assignment, fixture placement, calculation, and photometric report delivery for Dubai projects.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a></div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/software/">Software</a></li>
+                <li><span class="current">Simulation Workflow</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Software Guide</span><span>Updated March 2026</span><span>14 min read</span></div>
+                        <h1>What Are the Steps in a Facade Lighting Simulation Workflow?</h1>
+                        <p><strong>The facade lighting simulation workflow follows eight sequential steps: gather project data, prepare the 3D building model, assign facade materials and surface reflectances, select and place luminaires, define calculation grids on facade surfaces, execute the photometric calculation, validate results against design targets, and generate the deliverable report — a process that transforms the lighting designer's concept into quantified, verifiable performance data that satisfies both client expectations and <a href="/regulations/al-safat/">regulatory requirements</a>.</strong> This workflow is software-agnostic — it applies identically whether using <a href="/software/dialux/">DIALux evo</a>, <a href="/software/agi32-relux/">AGi32</a>, Relux, or <a href="/software/bim-integration/">BIM-integrated ElumTools</a>.</p>
+                        <p>This guide details each step with Dubai-specific parameters, common errors, and quality checkpoints that ensure the simulation produces accurate, defensible results for <a href="/engineering/photometric-reporting/">photometric reporting</a> and <a href="/installation/commissioning/">commissioning verification</a>.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="Facade Lighting Simulation Workflow from Model to Report" width="1600" height="900" loading="eager" fetchpriority="high">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#workflow-steps">What are the steps in a facade lighting simulation workflow?</a></li>
+                            <li><a href="#model-preparation">How do you prepare a 3D model for lighting simulation?</a></li>
+                            <li><a href="#material-reflectance">How do you assign materials and reflectances for facade simulation?</a></li>
+                            <li><a href="#photometric-metrics">What photometric metrics should a facade simulation report include?</a></li>
+                            <li><a href="#validation">How do you validate simulation results against real-world measurements?</a></li>
+                            <li><a href="#common-mistakes">What are common simulation mistakes in facade lighting design?</a></li>
+                            <li><a href="#simulation-time">How long does a facade lighting simulation take?</a></li>
+                            <li><a href="#presenting-results">How do you present simulation results to clients and authorities?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="workflow-steps">What are the steps in a facade lighting simulation workflow?</h2>
+                    <p><strong>The complete facade lighting simulation workflow consists of eight steps executed in sequence: (1) project data gathering, (2) 3D model preparation, (3) material and reflectance assignment, (4) luminaire selection and placement, (5) calculation surface definition, (6) calculation execution, (7) result validation, and (8) report generation — with quality checkpoints between each step to prevent error propagation through the workflow.</strong></p>
+
+                    <p>Step 1: Project data gathering. Before opening any software, collect the essential inputs: architect's building geometry (DWG, IFC, or dimensional drawings), facade material specifications (cladding types, finishes, colors), site context (adjacent buildings, landscape, terrain), fixture specifications from the lighting designer's concept (<a href="/led-technology/specifications/">LED specifications</a>, beam angles, mounting types), target illuminance levels per facade zone, applicable standards and regulations (<a href="/regulations/al-safat/">Al Sa'fat</a>, <a href="/regulations/dewa/">DEWA</a>, CIBSE SLL), and the project location coordinates (Dubai: 25.2°N, 55.3°E for sun position calculation). Missing data at this stage creates assumptions that reduce simulation accuracy.</p>
+
+                    <p>Step 2: 3D model preparation. Import or construct the building geometry in the lighting software. Verify scale against known dimensions. Include all facade surfaces that will be illuminated, plus adjacent surfaces that contribute to inter-reflections (ground plane, neighboring buildings within 20m, landscape walls, water features). For Dubai projects, model the podium, tower, and crown as separate geometric zones if they have different facade treatments. Include recesses, setbacks, and projections that create shadow zones affecting illuminance distribution.</p>
+
+                    <p>Step 3: Material assignment. Assign surface reflectance values to every facade material zone. This step has the highest impact on calculation accuracy — a 0.10 error in reflectance value produces a 10-20% error in calculated illuminance for adjacent surfaces. Use measured reflectance values from manufacturer data sheets when available, or the reference values provided in the material table below for common Dubai facade materials.</p>
+
+                    <p>Step 4: Luminaire selection and placement. Load the specified fixtures using IES/EULUMDAT photometric files or manufacturer plug-ins. Position each luminaire at the correct location, mounting height, setback distance, and aim angle. For <a href="/design/wall-washing/">wall wash</a> fixtures, verify the setback-to-height ratio (typically 1:3 to 1:4 for uniform wash). For <a href="/design/accent-spotlighting/">accent spots</a>, verify beam angle and aiming direction. For <a href="/design/grazing/">grazing fixtures</a>, verify the mounting distance from the facade surface (typically 150-300mm).</p>
+
+                    <p>Step 5: Calculation surface definition. Place vertical calculation grids on each facade zone. Grid spacing of 0.5m provides standard analysis resolution; use 0.25m for detailed zones. Ensure calculation surfaces are positioned 50-100mm off the facade surface (not coincident with the wall, which causes calculation artifacts in some software).</p>
+
+                    <p>Step 6: Calculation execution. Run the photometric calculation with full radiosity enabled (not direct-only). Verify that the calculation converges (residual energy below 0.1%). Review the calculation log for warnings about geometric errors, missing photometric data, or luminaire placement issues.</p>
+
+                    <p>Step 7: Result validation. Compare calculated illuminance against design targets. Check uniformity ratios against specification requirements (typically Emin/Eavg > 0.4 for quality facade lighting). Verify that no zones exceed maximum illuminance limits (prevents glare and light spill). Cross-check total lighting power against <a href="/regulations/al-safat/">Al Sa'fat</a> LPD limits. Review 3D renders for visual acceptability — technical metrics may be satisfied while the visual effect is unsatisfactory (e.g., scallop patterns from fixtures spaced too far apart).</p>
+
+                    <p>Step 8: <a href="/engineering/photometric-reporting/">Report generation</a>. Compile the deliverable report with all required sections: design narrative, fixture schedule, calculation methodology, results per facade zone, false-color and photorealistic renderings, compliance verification, and energy summary.</p>
+
+                    <h2 id="model-preparation">How do you prepare a 3D model for lighting simulation?</h2>
+                    <p><strong>3D model preparation for lighting simulation requires: importing or constructing accurate building geometry, simplifying complex architectural details that do not affect illuminance distribution, verifying scale and dimensions against architectural drawings, including surrounding context geometry within a 20-30m radius, and creating separate surface zones for each distinct facade material — balancing geometric detail against calculation efficiency.</strong></p>
+
+                    <p>The model geometry must represent all surfaces that significantly affect light distribution on the facade. Primary surfaces include the building's facade walls (all elevations that will be illuminated), the ground plane (extending at least 15m from the building base to capture ground-reflected light contributions), and adjacent building facades (within 20m, which can contribute significant inter-reflected light in dense urban areas like <a href="/areas/downtown-business-bay/">Downtown Dubai</a> and <a href="/areas/marina-jbr/">Dubai Marina</a>).</p>
+
+                    <p>Model simplification is appropriate for architectural details that do not meaningfully affect illuminance on the primary facade surfaces. Window mullions, door frames, small decorative elements (under 100mm projection), and rooftop equipment can be omitted if they do not cast significant shadows on the illuminated facade zones. However, major architectural features must be modeled: overhanging canopies (which shadow the facade below), recessed window bays (which create shadow boxes), projecting balconies (which interrupt wall wash uniformity), and decorative screens or mashrabiya panels (which create complex shadow patterns that are often the design intent of the facade lighting concept).</p>
+
+                    <p>For Dubai high-rise projects, the podium-tower-crown geometry relationship is critical. The tower's facade shadow falls on the podium during certain viewing angles. Ground-level fixtures uplighting the tower may over-illuminate the podium edge. The crown may be visible from angles where the tower shaft is in shadow. Model all three zones with correct geometric relationships and separate material assignments to capture these interactions accurately.</p>
+
+                    <h2 id="material-reflectance">How do you assign materials and reflectances for facade simulation?</h2>
+                    <p><strong>Material reflectance assignment requires specifying the fraction of incident light reflected by each facade surface — with values ranging from 0.05 (dark, absorptive surfaces like black granite) to 0.90 (highly reflective surfaces like white-painted steel) — and the reflectance type (diffuse/Lambertian for matte finishes, specular for polished surfaces, or mixed for semi-gloss materials).</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dubai Facade Material</th>
+                                <th>Reflectance</th>
+                                <th>Type</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Glass curtain wall (clear, coated)</td>
+                                <td>0.08-0.15</td>
+                                <td>Specular</td>
+                            </tr>
+                            <tr>
+                                <td>Glass curtain wall (reflective coating)</td>
+                                <td>0.20-0.40</td>
+                                <td>Specular</td>
+                            </tr>
+                            <tr>
+                                <td>Sandstone / limestone cladding</td>
+                                <td>0.40-0.55</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>White painted concrete</td>
+                                <td>0.70-0.80</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Light grey concrete (exposed)</td>
+                                <td>0.35-0.45</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Brushed aluminum composite panel</td>
+                                <td>0.55-0.70</td>
+                                <td>Mixed</td>
+                            </tr>
+                            <tr>
+                                <td>Polished aluminum panel</td>
+                                <td>0.70-0.85</td>
+                                <td>Specular</td>
+                            </tr>
+                            <tr>
+                                <td>Dark granite / basalt</td>
+                                <td>0.10-0.20</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Ceramic tile (light)</td>
+                                <td>0.40-0.60</td>
+                                <td>Mixed</td>
+                            </tr>
+                            <tr>
+                                <td>Ceramic tile (dark)</td>
+                                <td>0.15-0.30</td>
+                                <td>Mixed</td>
+                            </tr>
+                            <tr>
+                                <td>GRC/GRP panel (white)</td>
+                                <td>0.65-0.80</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Terracotta cladding</td>
+                                <td>0.25-0.40</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Desert sand/hardscape ground</td>
+                                <td>0.25-0.40</td>
+                                <td>Diffuse</td>
+                            </tr>
+                            <tr>
+                                <td>Asphalt road surface</td>
+                                <td>0.07-0.10</td>
+                                <td>Diffuse</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>Most lighting simulation software assumes Lambertian (perfectly diffuse) reflection by default. This is appropriate for matte-finish materials (concrete, stone, plaster) but not for specular or semi-specular materials (glass, polished metal, glossy tile). Specular surfaces reflect light directionally — a polished aluminum panel reflects incident light at the angle of incidence, creating bright reflections visible from specific viewing positions rather than the uniform scattered light assumed by Lambertian models. <a href="/software/agi32-relux/">AGi32's</a> radiosity engine handles specular reflection through adaptive meshing, while <a href="/software/dialux/">DIALux</a> uses a simplified specular model. For facades with significant glass or polished metal areas, the specular component can produce visible "hot spot" reflections that a purely diffuse calculation misses.</p>
+
+                    <p>For Dubai projects, apply a dust-soiling correction to reflectance values. After 3-6 months without cleaning, facade surfaces accumulate a dust layer that reduces reflectance by 5-15% depending on surface orientation and texture. Include this reduction in the maintenance factor rather than modifying the base reflectance value — this allows the simulation to show "as-new" performance while the report's maintenance factor adjustment predicts "in-service" performance. The <a href="/design/facade-materials/">facade material selection</a> directly impacts both the lighting design and the maintenance schedule.</p>
+
+                    <h2 id="photometric-metrics">What photometric metrics should a facade simulation report include?</h2>
+                    <p><strong>A facade simulation report should include six core metrics: average illuminance (Eavg in lux) per facade zone, minimum and maximum illuminance (Emin, Emax), uniformity ratio (Emin/Eavg, target above 0.40), diversity ratio (Emin/Emax), total lighting power density (W/m2 of illuminated facade area), and luminance values (cd/m2) for brightness and glare assessment — with each metric presented per facade zone rather than as a single whole-building average.</strong></p>
+
+                    <ul>
+                        <li><strong>Average illuminance (Eavg).</strong> The mean illuminance across all calculation grid points on a facade zone. Target values depend on facade importance and viewing distance: residential facades 30-75 lux, commercial facades 75-150 lux, hospitality and landmark facades 150-300 lux, feature elements (entrances, signage) 300-500 lux. These ranges are guidelines, not rigid standards — the appropriate level depends on the surrounding ambient brightness, viewing distance, and the <a href="/design/">design hierarchy</a>.</li>
+                        <li><strong>Uniformity ratio (Emin/Eavg).</strong> Measures how evenly light is distributed across the facade zone. A ratio of 1.0 means perfectly uniform illumination. For facade lighting, target 0.40 or above for <a href="/design/wall-washing/">wall wash</a> zones, 0.25-0.40 for zones mixing uniform wash with <a href="/design/accent-spotlighting/">accent elements</a>, and no minimum for intentionally non-uniform dramatic lighting effects.</li>
+                        <li><strong>Lighting power density (LPD).</strong> Total installed facade lighting wattage divided by the illuminated facade area (W/m2). This metric is required for <a href="/regulations/al-safat/">Al Sa'fat</a> compliance documentation. Typical values: 5-10 W/m2 for standard LED facade lighting, 10-20 W/m2 for color-changing or dynamic facades, 2-5 W/m2 for minimal accent-only approaches.</li>
+                        <li><strong>Luminance (cd/m2).</strong> The brightness perceived by an observer looking at the illuminated facade. Unlike illuminance (which measures light arriving at the surface), luminance measures light leaving the surface toward the viewer. Luminance depends on both illuminance and surface reflectance — a high-reflectance white panel at 100 lux illuminance produces much higher luminance than a dark granite panel at 100 lux. Include luminance data for glare assessment on facades visible from roads, residential areas, and neighboring buildings.</li>
+                    </ul>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>Need Simulation Support?</h3>
+                            <p>Professional facade lighting simulation, calculation, and <a href="/engineering/photometric-reporting/">report delivery</a> for Dubai projects.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- CONTEXT BORDER -->
+
+                    <h2 id="validation">How do you validate simulation results against real-world measurements?</h2>
+                    <p><strong>Simulation validation compares calculated illuminance values against field measurements taken with a calibrated lux meter at the same grid points used in the simulation — acceptable agreement is within ±15% for most facade applications, with discrepancies typically arising from three sources: incorrect material reflectance assumptions, IES data that does not match the installed luminaire's actual performance, and environmental factors (dust soiling, vegetation growth, nearby construction) not present in the simulation model.</strong></p>
+
+                    <p>The validation process should occur during <a href="/installation/commissioning/">commissioning</a>. The commissioning engineer takes spot illuminance measurements at representative points on the facade — typically 10-20 measurement points per facade zone, including the calculated maximum, minimum, and several mid-range points. Measurements must be taken at night (after astronomical twilight) with a calibrated illuminance meter positioned flush against the facade surface (for vertical illuminance) or at the specified measurement distance for luminance readings.</p>
+
+                    <p>When discrepancies exceed ±15%, systematic investigation identifies the cause. If all measurements are proportionally lower than calculated values, the likely cause is lumen depreciation, thermal derating, or dust soiling — apply the measured reduction as a revised maintenance factor and update the simulation. If specific zones show large discrepancies while others agree, check fixture aiming, individual fixture operation (some may be non-functional or incorrectly wired), and local material conditions (a facade panel that differs from the assumed reflectance). If the pattern of light distribution matches the simulation but the absolute values differ, the IES data may not represent the installed fixture accurately — request updated IES data from the manufacturer and recalculate.</p>
+
+                    <h2 id="common-mistakes">What are common simulation mistakes in facade lighting design?</h2>
+                    <p><strong>The six most common facade lighting simulation mistakes are: (1) using default material reflectance values instead of project-specific reflectances, producing 15-30% illuminance errors; (2) omitting or incorrectly applying maintenance factors, over-predicting delivered illuminance by 20-35%; (3) using direct-only calculations instead of full radiosity, under-predicting illuminance on surfaces that receive significant inter-reflected light; (4) using estimated or calculated IES data instead of laboratory-measured photometric files; (5) ignoring surrounding geometry that affects light distribution; and (6) failing to account for LED thermal derating in Dubai's high-temperature environment.</strong></p>
+
+                    <ul>
+                        <li><strong>Default reflectance values.</strong> Most software assigns default reflectance values (typically 0.50 for walls, 0.20 for floors) when no specific material is assigned. These defaults rarely match actual facade materials. A dark granite facade (reflectance 0.12) assigned a default 0.50 reflectance over-predicts inter-reflected light by approximately 300%. Always assign measured or reference reflectance values for every surface in the model.</li>
+                        <li><strong>Maintenance factor omission.</strong> Calculations without maintenance factors predict the illuminance on Day 1 with clean fixtures and new LEDs. In Dubai's dusty environment, actual illuminance after 6-12 months of operation is 20-35% lower. Apply a compound maintenance factor: lens soiling (0.85), LED lumen depreciation (0.90-0.95), and thermal derating (0.85-0.90 for Dubai summer) = approximately 0.65-0.77 overall.</li>
+                        <li><strong>Direct-only calculation.</strong> Running a direct-only calculation (skipping the radiosity inter-reflection passes) dramatically under-predicts illuminance in concave geometries — courtyards, recessed facade bays, and L-shaped building corners where reflected light contributes 20-40% of the total illuminance. Always use full radiosity for facade calculations.</li>
+                        <li><strong>Incorrect IES data.</strong> Using IES files from a different fixture variant (e.g., the 24° beam data when the specified fixture is 36°), estimated/calculated IES data (not from a goniophotometric test), or IES data from an older product revision produces inaccurate results. Verify that the IES filename, date, and product code match the specified fixture exactly.</li>
+                        <li><strong>Missing context geometry.</strong> A facade simulation that includes only the target building, without adjacent buildings, landscape walls, or ground-level structures within 15-20m, misses light reflected from these surfaces. In dense Dubai urban areas, adjacent building facades contribute measurable inter-reflected light to the target facade.</li>
+                        <li><strong>Thermal derating ignored.</strong> LED luminous flux decreases at elevated junction temperatures. A fixture rated at 10,000 lumens at 25°C Ta may produce only 8,500-9,000 lumens at 50°C Ta (Dubai summer conditions). If the IES file was measured at 25°C (standard test conditions), the simulation over-predicts actual Dubai summer performance by 10-15%.</li>
+                    </ul>
+
+                    <h2 id="simulation-time">How long does a facade lighting simulation take?</h2>
+                    <p><strong>Simulation time varies from 1-3 minutes for a simple 3-story facade with 20 luminaires to 20-45 minutes for a complex media facade with 1,000+ pixel nodes — with the total workflow (model preparation through final report) typically requiring 2-4 hours for a standard project and 1-2 days for a complex multi-facade tower, including design iteration time and report preparation.</strong></p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Project Scale</th>
+                                <th>Luminaires</th>
+                                <th>Calculation Time</th>
+                                <th>Total Workflow</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Small facade (villa, retail)</td>
+                                <td>10-30</td>
+                                <td>1-3 min</td>
+                                <td>2-4 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Medium facade (low-rise commercial)</td>
+                                <td>30-100</td>
+                                <td>3-10 min</td>
+                                <td>4-8 hours</td>
+                            </tr>
+                            <tr>
+                                <td>Large facade (tower, hotel)</td>
+                                <td>100-500</td>
+                                <td>10-25 min</td>
+                                <td>1-2 days</td>
+                            </tr>
+                            <tr>
+                                <td>Complex media facade</td>
+                                <td>500-5,000+</td>
+                                <td>20-45+ min</td>
+                                <td>2-5 days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>The calculation time depends on four factors: number of luminaires (each adds computational load), number of calculation points (finer grids = more points), calculation method (full radiosity takes 5-10x longer than direct-only), and hardware (multi-core processors with 32GB+ RAM significantly reduce calculation time). <a href="/software/agi32-relux/">AGi32</a> generally calculates faster than <a href="/software/dialux/">DIALux evo</a> on equivalent models due to its optimized radiosity engine.</p>
+
+                    <p>The total workflow time includes model preparation (1-4 hours depending on model complexity and whether geometry is imported or built from scratch), material assignment (30-60 minutes), luminaire placement (1-3 hours for large models), multiple calculation iterations (3-5 runs during design optimization), result analysis and adjustment (30-60 minutes per iteration), and report generation (1-2 hours). For Dubai projects with tight design development timelines, efficiency in model preparation and fixture placement determines the overall workflow speed.</p>
+
+                    <h2 id="presenting-results">How do you present simulation results to clients and authorities?</h2>
+                    <p><strong>Present simulation results in two formats: technical reports for engineers and regulatory authorities (containing quantified metrics, compliance verification, and calculation methodology) and visual presentations for architects and building owners (containing photorealistic renderings, before/after comparisons, and false-color overlays that communicate the design intent intuitively) — the same simulation data serves both audiences through different report sections.</strong></p>
+
+                    <p>For regulatory submissions (Dubai Municipality, DCD NOC applications, <a href="/regulations/al-safat/">Al Sa'fat</a> compliance), the report must include: calculation methodology statement (software used, calculation method, accuracy), luminaire schedule with make/model/wattage/quantity, lighting power density calculation, illuminance distribution results per facade zone, and the designer's professional certification. Include false-color renderings as supporting evidence — regulatory reviewers can quickly assess uniformity and identify potential light pollution issues from the color-mapped visualization.</p>
+
+                    <p>For client presentations (architects, building owners, developer marketing teams), emphasize the visual deliverables. Photorealistic night renders show the building as it will appear when illuminated — these renders communicate the emotional and aesthetic impact that numerical data cannot convey. Before/after renderings (building in daylight versus illuminated at night) demonstrate the transformation that facade lighting creates. Animation sequences (available from DIALux, AGi32 walkthrough, and visualization add-ons) show the facade from multiple viewing angles and distances, simulating the pedestrian and vehicular experience. For presentations to non-technical stakeholders, include key metrics in simplified format: "The facade will be illuminated to the brightness of a well-lit hotel entrance, with even light distribution and no glare to neighboring properties."</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/software/" class="related-card">
+                                <h4>Software Overview</h4>
+                                <p>Complete guide to facade lighting design software</p>
+                            </a>
+                            <a href="/software/dialux/" class="related-card">
+                                <h4>DIALux Tutorial</h4>
+                                <p>Step-by-step DIALux evo facade lighting workflow</p>
+                            </a>
+                            <a href="/engineering/photometric-reporting/" class="related-card">
+                                <h4>Photometric Reporting</h4>
+                                <p>Engineering report deliverables and standards</p>
+                            </a>
+                            <a href="/installation/commissioning/" class="related-card">
+                                <h4>Commissioning</h4>
+                                <p>On-site measurement and simulation validation</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Software Topics</div>
+                    <nav class="sidebar-nav" aria-label="Software section navigation">
+                        <a href="/software/">Software Overview</a><a href="/software/dialux/">DIALux</a><a href="/software/agi32-relux/">AGi32 & Relux</a><a href="/software/bim-integration/">BIM Integration</a><a href="/software/simulation-workflow/" class="active">Simulation Workflow</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/engineering/">Engineering</a><a href="/engineering/photometric-reporting/">Photometric Reporting</a><a href="/design/">Design</a><a href="/installation/commissioning/">Commissioning</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>Simulation Services</h4>
+                    <p>Professional facade lighting simulation and reporting.</p>
+                    <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a><a href="/about/">About Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/inner-pages.js" defer></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>

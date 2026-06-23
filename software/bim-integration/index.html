@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIM Integration for Facade Lighting: Revit &amp; IFC Guide</title>
+    <meta name="description"
+        content="Integrate facade lighting into BIM workflows — ElumTools in Revit, IFC data exchange, clash detection, and LOD specifications for Dubai building projects.">
+    <link rel="canonical" href="https://facadelightingdubai.com/software/bim-integration/">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/upgrades.css">
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle", "headline": "BIM Integration for Facade Lighting: Revit & IFC Guide", "url": "https://facadelightingdubai.com/software/bim-integration/", "datePublished": "2026-03-20", "dateModified": "2026-06-22", "publisher": { "@type": "Organization", "name": "Facade Lighting Dubai" }, "mainEntityOfPage": { "@type": "WebPage", "@id": "https://facadelightingdubai.com/software/bim-integration/" } }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://facadelightingdubai.com/" }, { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://facadelightingdubai.com/software/" }, { "@type": "ListItem", "position": 3, "name": "BIM Integration", "item": "https://facadelightingdubai.com/software/bim-integration/" } ] }
+  </script>
+    <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [ { "@type": "Question", "name": "What is ElumTools and how does it work inside Revit?", "acceptedAnswer": { "@type": "Answer", "text": "ElumTools is a Revit add-in developed by Lighting Analysts Inc. that uses AGi32's full radiosity calculation engine to perform illuminance calculations directly inside an Autodesk Revit model. It calculates on the actual Revit geometry without exporting to external software. Luminaires use Revit lighting families with embedded IES photometric data. ElumTools places calculation grids on any Revit surface (floors, walls, ceilings, facades), runs the radiosity calculation, and displays results as false-color overlays or point-by-point grids directly in the Revit viewport. It costs approximately USD 800-1,000/year and requires Autodesk Revit 2022 or later." } }, { "@type": "Question", "name": "What is the IFC format and why does it matter for lighting?", "acceptedAnswer": { "@type": "Answer", "text": "IFC (Industry Foundation Classes) is an open-standard file format for Building Information Modeling developed by buildingSMART. IFC enables data exchange between different BIM platforms (Revit, ArchiCAD, Vectorworks, Bentley) without proprietary format lock-in. For lighting design, IFC matters because it transfers building geometry, room boundaries, surface materials, and fixture locations between the architect's BIM model and the lighting designer's simulation software. IFC4 (the current version) includes IfcLightFixture and IfcLightDistributionData entities specifically for lighting data exchange, enabling photometric information to travel with the fixture object through the BIM workflow." } } ] }
+  </script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="BIM Integration for Facade Lighting: Revit & IFC Guide">
+  <meta property="og:description" content="Integrate facade lighting into BIM workflows — ElumTools in Revit, IFC data exchange, clash detection, and LOD specifications for Dubai building projects.">
+  <meta property="og:url" content="https://facadelightingdubai.com/software/bim-integration/">
+  <meta property="og:site_name" content="Facade Lighting Dubai">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BIM Integration for Facade Lighting: Revit & IFC Guide">
+  <meta name="twitter:description" content="Integrate facade lighting into BIM workflows — ElumTools in Revit, IFC data exchange, clash detection, and LOD specifications for Dubai building projects.">
+  <meta name="twitter:image" content="https://facadelightingdubai.com/assets/images/technical/photometric-report.webp">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <div class="scroll-progress" id="scroll-progress"></div>
+  <div class="cursor-glow"></div>
+  <div class="noise-overlay"></div>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="/" class="logo">Facade Lighting <span>Dubai</span></a>
+            <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+                <a href="/design/">Design</a><a href="/led-technology/">Technology</a><a href="/regulations/">Regulations</a><a href="/installation/">Installation</a><a href="/building-types/">Building Types</a><a href="/cost/">Cost</a>
+                <div class="nav-dropdown"><a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg></a>
+                    <div class="nav-dropdown-menu"><a href="/services/">Services</a><a href="/solutions/">Solutions</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/services/uae/">UAE Coverage</a></div>
+                </div>
+                <a href="/case-studies/">Case Studies</a><a href="/contact/">Contact</a>
+            </nav>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation" aria-controls="main-nav" aria-expanded="false"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg></button>
+        </div>
+    </header>
+
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <ol>
+                <li><a href="/">Home</a></li>
+                <li><a href="/software/">Software</a></li>
+                <li><span class="current">BIM Integration</span></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-layout">
+            <main id="main-content" class="main-content">
+                <article class="article-content">
+                    <div class="article-header">
+                        <div class="article-meta"><span>Software Guide</span><span>Updated March 2026</span><span>14 min read</span></div>
+                        <h1>How Does BIM Integration Improve Facade Lighting Design?</h1>
+                        <p><strong>Building Information Modeling (BIM) integration transforms facade lighting design from an isolated discipline into a coordinated component of the unified building model — enabling lighting calculations directly inside Autodesk Revit via ElumTools, automatic clash detection between lighting infrastructure and building structure, single-source-of-truth fixture specifications, and coordinated construction documentation that eliminates the version-control failures inherent in traditional CAD-based workflows.</strong> For Dubai projects where <a href="/regulations/dewa/">DEWA</a> and Dubai Municipality increasingly mandate BIM delivery, facade lighting must integrate with the coordinated model rather than exist as a standalone simulation exercise.</p>
+                        <p>This guide covers BIM integration methods for <a href="/facade-lighting-dubai/">facade lighting</a>, including ElumTools workflow in Revit, IFC data exchange between BIM platforms and standalone simulation software like <a href="/software/dialux/">DIALux</a> and <a href="/software/agi32-relux/">AGi32</a>, LOD specifications for lighting fixtures, clash detection workflows, and the emerging Dubai Municipality BIM mandate's implications for facade lighting designers.</p>
+                    </div>
+
+          <div class="article-hero-image">
+            <img src="/assets/images/technical/photometric-report.webp" alt="BIM Integration for Facade Lighting Design in Dubai" width="1600" height="900" loading="eager" fetchpriority="high">
+          </div>
+
+                    <div class="toc">
+                        <div class="toc-title">In This Guide</div>
+                        <ol>
+                            <li><a href="#bim-improves">How does BIM integration improve facade lighting design?</a></li>
+                            <li><a href="#elumtools">What is ElumTools and how does it work inside Revit?</a></li>
+                            <li><a href="#revit-calculations">How do you perform lighting calculations inside a Revit model?</a></li>
+                            <li><a href="#ifc-format">What is the IFC format and why does it matter for lighting?</a></li>
+                            <li><a href="#revit-export">Can you export facade lighting data from Revit to DIALux or AGi32?</a></li>
+                            <li><a href="#collaboration">How do architects and lighting designers collaborate in BIM?</a></li>
+                            <li><a href="#photometric-formats">What photometric file formats work with Revit lighting families?</a></li>
+                        </ol>
+                    </div>
+
+                    <h2 id="bim-improves">How does BIM integration improve facade lighting design?</h2>
+                    <p><strong>BIM integration improves facade lighting design in five specific ways: it eliminates redundant geometry modeling (the lighting designer works on the same model as the architect), enables automatic clash detection between lighting conduit and structural elements, maintains a single source of truth for fixture specifications across all disciplines, provides coordinated scheduling and material take-offs, and produces construction documentation that is inherently consistent with the architectural and structural models.</strong></p>
+
+                    <p>The traditional facade lighting workflow creates a fundamental coordination problem. The architect develops the building model in Revit or ArchiCAD. The lighting designer exports the facade geometry (typically as DWG or IFC), imports it into standalone software like <a href="/software/dialux/">DIALux evo</a> or <a href="/software/agi32-relux/">AGi32</a>, performs calculations, and communicates results back via PDF reports and fixture schedule spreadsheets. When the architect modifies the facade — changing curtain wall panel dimensions, repositioning a main entrance canopy, or adding a decorative screen to the parking podium — the lighting model becomes outdated. The lighting designer must re-import the geometry, re-position luminaires that were displaced by the geometric changes, and recalculate. On a complex Dubai tower project with 6-10 design iterations during schematic and design development phases, this manual synchronization consumes significant time and introduces error risk.</p>
+
+                    <p>BIM integration eliminates this loop by keeping the lighting design within the coordinated Revit model. When the architect modifies a facade panel, the lighting designer's luminaires remain in their parametric positions (tied to the facade geometry via Revit hosting relationships). Recalculation using ElumTools uses the updated geometry automatically. The fixture schedule updates in real-time. The electrical engineer's panel schedules reflect the current fixture wattages. The quantity surveyor's cost estimate uses the current fixture quantities. Every discipline sees the same model, the same fixtures, and the same specifications.</p>
+
+                    <p>Clash detection is the second major advantage. In a <a href="/building-types/commercial-tower/">commercial tower</a> facade, lighting conduit routes through the ceiling void above the curtain wall spandrel panel. In BIM, the electrical engineer routes conduit in the Revit model, and Navisworks (or Revit's built-in clash detection) automatically identifies conflicts with structural steel, HVAC ducts, fire sprinkler pipes, and plumbing risers. Without BIM, these conflicts are discovered during construction — requiring expensive site rework to reroute conduit or relocate fixtures. For Dubai's fast-track construction market, where <a href="/installation/">installation</a> schedules are compressed and rework delays are costly, BIM-based clash detection provides tangible cost savings.</p>
+
+                    <h2 id="elumtools">What is ElumTools and how does it work inside Revit?</h2>
+                    <p><strong>ElumTools is a Revit add-in developed by Lighting Analysts Inc. that uses AGi32's full radiosity calculation engine to perform illuminance and luminance calculations directly inside an Autodesk Revit model — the luminaires are Revit lighting families with embedded IES photometric data, the calculation surfaces are Revit room or area boundaries, and the results display as false-color overlays or point-by-point grids in the Revit viewport.</strong></p>
+
+                    <p>ElumTools installs as a Revit add-in via the standard Autodesk App Store or direct download from Lighting Analysts. After installation, an ElumTools tab appears in the Revit ribbon. The workflow begins by ensuring that all luminaire families in the Revit model contain valid IES photometric files. Revit lighting families support IES file embedding — each luminaire family includes the .ies file in its type properties, which ElumTools reads for the photometric distribution data used in calculation.</p>
+
+                    <p>To perform a facade calculation in ElumTools, the designer selects the facade wall surfaces as calculation targets. ElumTools automatically detects the Revit luminaire instances in the vicinity, reads their IES data and geometric positions (location, aim, tilt), and runs the radiosity calculation using AGi32's engine. The calculation processes directly on the Revit model geometry — walls, floors, ceilings, curtain wall panels — without any geometry export or re-import. Results appear as color-mapped overlays on the Revit surfaces or as tabular data in the ElumTools results panel.</p>
+
+                    <p>For facade lighting specifically, ElumTools handles vertical illuminance on exterior walls, which is the primary metric for facade design. The designer creates a calculation area on the facade surface, specifies grid density (number of calculation points), and ElumTools computes illuminance at each point including both direct luminaire contribution and inter-reflected light from the ground plane and adjacent surfaces. The results match the accuracy of AGi32 standalone calculations because ElumTools uses the identical calculation engine — a significant advantage over alternative BIM lighting tools that use simplified calculation methods.</p>
+
+                    <p>ElumTools costs approximately USD 800-1,000 per year (AED 2,900-3,700), separate from both Revit licensing and AGi32 licensing. For Dubai consultancies that already use Revit for project delivery, ElumTools provides the most seamless path to BIM-integrated facade lighting analysis.</p>
+
+                    <h2 id="revit-calculations">How do you perform lighting calculations inside a Revit model?</h2>
+                    <p><strong>Lighting calculations inside Revit require three components: luminaire families with embedded IES photometric data, ElumTools (or ReluxCAD for Revit) as the calculation engine, and properly defined calculation areas on the target surfaces — the step-by-step process is: verify IES files in luminaire families, place luminaires on the facade, define calculation areas on facade walls, configure calculation parameters, run the analysis, and review results in the Revit viewport.</strong></p>
+
+                    <p>Step 1: Verify luminaire families. Each Revit lighting family must contain a valid IES file. Open the luminaire family, navigate to Type Properties, and check the Photometric Web File parameter. If the IES file is missing, download the correct .ies file from the manufacturer's website and assign it to the family type. For facade projects, ensure the IES file is from a tested luminaire matching the actual specified fixture — generic or approximate IES data produces inaccurate calculations. Major facade fixture manufacturers (Bega, iGuzzini, Erco, Ligman) provide IES files on their product pages, often alongside downloadable Revit families.</p>
+
+                    <p>Step 2: Place luminaires on the facade. Use Revit's standard placement tools to position lighting families on walls, floors, or hosted on face-based families. For ground-recessed uplights, place the family on the floor surface at the correct setback distance from the facade wall. For wall-mounted fixtures, host the family on the facade wall at the specified mounting height. Verify that fixture aim angles are correct in the Revit properties — ElumTools reads the Revit family's orientation data for calculation.</p>
+
+                    <p>Step 3: Define calculation areas. In the ElumTools ribbon, select "Calculation Points" and draw a calculation area on the target facade surface. Specify the grid density — for standard facade analysis, a 0.5m x 0.5m grid provides adequate resolution. For detailed analysis of specific zones (entrance features, signage bands, crown elements), use a finer grid (0.25m x 0.25m). ElumTools supports multiple calculation areas in a single model, enabling simultaneous analysis of all facade elevations.</p>
+
+                    <p>Step 4: Configure and run. Set the calculation parameters: direct-only or full radiosity (always use full radiosity for facade projects where inter-reflections are significant), surface reflectance assignments (verify that Revit material assignments include correct reflectance values for facade materials), and maintenance factors. Click "Calculate" and ElumTools processes the model. Calculation time depends on model size and number of luminaires — a typical facade calculation with 50-100 luminaires takes 3-8 minutes on a modern workstation.</p>
+
+                    <p>Step 5: Review results. ElumTools displays results as false-color overlays directly on the Revit facade surfaces. Toggle between illuminance (lux) and luminance (cd/m2) views. Export results to PDF or CSV for inclusion in the <a href="/engineering/photometric-reporting/">photometric report</a>. The results remain persistent in the Revit model — reopening the model displays the last calculated results, enabling the design team to reference lighting performance data during coordination meetings without recalculating.</p>
+
+                    <h2 id="ifc-format">What is the IFC format and why does it matter for lighting?</h2>
+                    <p><strong>IFC (Industry Foundation Classes) is an open-standard file format developed by buildingSMART for exchanging building data between different BIM platforms — enabling architects using Revit, ArchiCAD, or Vectorworks to share coordinated building models with lighting designers using <a href="/software/dialux/">DIALux</a> or <a href="/software/agi32-relux/">AGi32</a> without proprietary format lock-in, with IFC4 including specific entities for lighting fixtures (IfcLightFixture) and photometric data (IfcLightDistributionData).</strong></p>
+
+                    <p>The IFC format matters for facade lighting in three practical ways. First, it enables geometric data transfer. When the architect provides the building model as an IFC file, the lighting designer imports it into DIALux evo or AGi32 with building geometry intact — walls, floors, ceilings, curtain wall panels, and facade cladding zones are transferred with their spatial relationships preserved. This eliminates the need to reconstruct the building geometry from scratch in the lighting software, saving significant modeling time on complex facades.</p>
+
+                    <p>Second, IFC supports Open BIM workflows. Not all project teams use Revit — some architects use ArchiCAD (Graphisoft), some use Vectorworks (Nemetschek), and some use Bentley platforms. IFC provides the neutral exchange format that allows any BIM platform to export and any lighting software to import, ensuring the facade lighting designer can receive geometric data regardless of the architect's software choice. For Dubai's international construction market, where project teams often include firms from different countries using different platforms, IFC is the practical interoperability solution.</p>
+
+                    <p>Third, IFC4 includes lighting-specific entities. IfcLightFixture represents a luminaire in the building model with properties for mounting type, wattage, and photometric data reference. IfcLightDistributionData encodes the photometric distribution curve (equivalent to IES file data) within the IFC file itself. While these lighting-specific IFC entities are not yet widely implemented by all BIM platforms, they represent the future direction of integrated lighting data exchange — where the architect's BIM model contains not just the fixture's geometric position but also its photometric performance data, enabling downstream lighting calculations without separate IES file management.</p>
+
+                    <p>For Dubai projects, IFC is relevant in several scenarios. Dubai Municipality's BIM guidelines reference IFC as the preferred open exchange format. Projects with multiple BIM platforms across the design team require IFC for model coordination. Lighting designers using standalone software (rather than ElumTools inside Revit) import the architect's model via IFC to maintain geometric accuracy. The current practical workflow: export IFC from Revit/ArchiCAD, import into <a href="/software/dialux/">DIALux evo</a> for calculation, and reference the IFC file version in the lighting report to ensure traceability between the calculation model and the coordinated BIM.</p>
+
+                    <div class="cta-banner">
+                        <div class="cta-content">
+                            <h3>BIM-Integrated Lighting Design</h3>
+                            <p>ElumTools calculations, Revit coordination, and <a href="/engineering/photometric-reporting/">photometric reporting</a> for Dubai BIM projects.</p>
+                            <a href="/services/consultation/" class="btn btn-primary">Book BIM Consultation</a>
+                        </div>
+                    </div>
+
+                    <!-- CONTEXT BORDER -->
+
+                    <h2 id="revit-export">Can you export facade lighting data from Revit to DIALux or AGi32?</h2>
+                    <p><strong>Yes — export Revit geometry as IFC for import into DIALux evo, or as DWG/DXF for import into AGi32 — the geometric data (building walls, facade panels, floor levels) transfers correctly, but photometric data (IES files embedded in Revit families) does not transfer through IFC/DWG and must be re-assigned in the standalone software, making the export workflow suitable for geometric consistency but not a complete data transfer.</strong></p>
+
+                    <p>The Revit-to-DIALux workflow proceeds as follows. In Revit, select File > Export > IFC and choose the IFC4 schema (or IFC2x3 for broader compatibility). Select the building views and categories to include — ensure walls, floors, curtain wall panels, and facade elements are included. Export the IFC file. In <a href="/software/dialux/">DIALux evo</a>, select File > Import > IFC and open the exported file. DIALux reads the building geometry with surface assignments. The designer then assigns material reflectance values to the imported surfaces (IFC transfers material names but not always reflectance values used by lighting calculations), places luminaires from the DIALux manufacturer plug-in catalog, and performs the photometric calculation.</p>
+
+                    <p>The Revit-to-AGi32 workflow uses DWG as the intermediate format, which is <a href="/software/agi32-relux/">AGi32's</a> native import format. Export a 3D DWG from Revit (File > Export > CAD Formats > DWG), import into AGi32, assign materials and luminaires, and calculate. Alternatively, use ElumTools within Revit — eliminating the export-import cycle entirely and maintaining full data integrity.</p>
+
+                    <p>The key limitation of all export workflows is photometric data loss. Revit stores IES files within luminaire families, but IFC and DWG export do not include these photometric files. When the geometry arrives in DIALux or AGi32, the lighting designer must independently load the correct IES files and position luminaires to match the Revit layout. This introduces the risk of using different IES data in the standalone software versus the Revit model — a coordination failure that produces inconsistent calculation results. For projects requiring absolute consistency between BIM and standalone calculations, ElumTools within Revit (using AGi32's engine) eliminates this risk entirely.</p>
+
+                    <h2 id="collaboration">How do architects and lighting designers collaborate in BIM?</h2>
+                    <p><strong>BIM collaboration between architects and lighting designers follows a structured process: the architect provides the building model (central Revit model or IFC export), the lighting designer works within the model (using ElumTools) or imports the geometry to standalone software, clash detection identifies conflicts between lighting infrastructure and other building systems, and coordinated submissions ensure all disciplines reference the same model version — with BIM Execution Plans (BEP) defining responsibilities, LOD requirements, and exchange protocols.</strong></p>
+
+                    <p>The BIM Execution Plan (BEP) is the foundational document for collaboration. For facade lighting, the BEP defines several critical parameters. The lighting designer's scope within the BIM model includes: luminaire family placement with embedded IES data, cable tray and conduit routing for facade lighting circuits, junction box locations, driver/transformer positions, and control equipment locations. The BEP specifies the Level of Development (LOD) for each element at each project stage: LOD 200 for schematic design (generic luminaire with approximate location), LOD 300 for design development (specific luminaire product with exact position and IES data), LOD 350 for construction documentation (fixture with mounting detail, cable connections, and coordination clearances), and LOD 400 for fabrication (manufacturer-specific model with installation hardware).</p>
+
+                    <p>For Dubai facade projects, the collaboration workflow typically follows this sequence. During schematic design, the lighting designer receives the architect's Revit model (or IFC export), performs preliminary calculations in <a href="/software/dialux/">DIALux</a> or AGi32, and provides an initial fixture layout and beam analysis to the architect for design review. During design development, luminaire families are placed in the coordinated Revit model with correct IES data, ElumTools calculations are performed within the model, and the first formal clash detection is run against structural and MEP disciplines. During construction documentation, all lighting elements are at LOD 350+, clash detection has resolved all conflicts, and the coordinated model produces construction drawings directly from Revit — fixture plans, cable tray layouts, circuit diagrams, and material schedules.</p>
+
+                    <p>Clash detection reporting follows an established protocol. The coordination lead (typically the MEP coordinator) runs weekly or bi-weekly clash detection scans using Navisworks or Revit's built-in tools. Clashes involving facade lighting infrastructure — typically conduit conflicting with structural steel in the spandrel zone, or junction boxes conflicting with fire-rated wall assemblies — are logged, assigned to responsible parties (electrical engineer for conduit rerouting, lighting designer for fixture relocation), and tracked to resolution. For Dubai high-rise projects with complex facade systems, facade lighting clashes are common because the spandrel zone is heavily congested with curtain wall supports, <a href="/installation/electrical-infrastructure/">electrical infrastructure</a>, fire-stopping, and mechanical services.</p>
+
+                    <h2 id="photometric-formats">What photometric file formats work with Revit lighting families?</h2>
+                    <p><strong>Revit lighting families support IES (LM-63 format, .ies extension) as the primary photometric data format — embedded within the luminaire family's type properties as a "Photometric Web File" — enabling ElumTools and Revit's built-in rendering engine to use the fixture's actual light distribution for calculations and visualizations, with EULUMDAT (.ldt) files requiring conversion to IES before embedding in Revit families.</strong></p>
+
+                    <p>The IES file embedding process works as follows. When creating or modifying a Revit lighting family, open the Family Editor, navigate to Type Properties, and locate the "Photometric Web File" parameter. Click "Browse" and select the .ies file for the specified luminaire. Revit embeds the IES data within the family file — the .ies file becomes part of the Revit family and does not need to be separately distributed when sharing the model. When ElumTools performs a calculation, it reads the embedded IES data directly from the Revit family, ensuring that the photometric distribution matches the specified luminaire.</p>
+
+                    <p>EULUMDAT files (.ldt), the European photometric format, are not natively supported by Revit. To use EULUMDAT data in Revit, convert the .ldt file to IES format using Photometric Toolbox (from Lighting Analysts) or similar conversion utilities. The conversion is lossless — IES and EULUMDAT contain equivalent data in different encodings. After conversion, embed the resulting .ies file in the Revit lighting family. For Dubai projects specifying European-origin fixtures (Bega, iGuzzini, Zumtobel, Erco), manufacturers typically provide both IES and EULUMDAT formats on their product pages, so conversion is usually unnecessary — simply download the IES version directly.</p>
+
+                    <p>TM-33 (IES TM-33-18), the newer XML-based photometric format that supports spectral data, is not yet supported by Revit or ElumTools. As TM-33 adoption grows and software platforms add support, it will eventually replace both IES and EULUMDAT by combining their functionality with additional spectral and colorimetric data. For current Dubai projects, IES remains the required format for Revit integration. Ensure all <a href="/led-technology/specifications/">specified fixtures</a> have IES files measured per IES LM-79 (LED testing standard) — not calculated or estimated data — to guarantee calculation accuracy in ElumTools and compliance with <a href="/regulations/al-safat/">Al Sa'fat</a> documentation requirements.</p>
+
+                    <div class="related-pages">
+                        <h3>Continue Reading</h3>
+                        <div class="related-grid">
+                            <a href="/software/" class="related-card">
+                                <h4>Software Overview</h4>
+                                <p>Complete guide to facade lighting design software</p>
+                            </a>
+                            <a href="/software/dialux/" class="related-card">
+                                <h4>DIALux Tutorial</h4>
+                                <p>DIALux evo facade lighting design workflow</p>
+                            </a>
+                            <a href="/software/simulation-workflow/" class="related-card">
+                                <h4>Simulation Workflow</h4>
+                                <p>Model-to-report process for facade projects</p>
+                            </a>
+                            <a href="/engineering/digital-twin/" class="related-card">
+                                <h4>Digital Twin</h4>
+                                <p>BIM-to-digital-twin pipeline for facade lighting</p>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </main>
+
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Software Topics</div>
+                    <nav class="sidebar-nav" aria-label="Software section navigation">
+                        <a href="/software/">Software Overview</a><a href="/software/dialux/">DIALux</a><a href="/software/agi32-relux/">AGi32 & Relux</a><a href="/software/bim-integration/" class="active">BIM Integration</a><a href="/software/simulation-workflow/">Simulation Workflow</a>
+                    </nav>
+                </div>
+                <div class="sidebar-section">
+                    <div class="sidebar-title">Related Sections</div>
+                    <nav class="sidebar-nav"><a href="/engineering/">Engineering</a><a href="/engineering/digital-twin/">Digital Twin</a><a href="/installation/">Installation</a><a href="/regulations/dewa/">DEWA Regulations</a></nav>
+                </div>
+                <div class="sidebar-cta">
+                    <h4>BIM Coordination</h4>
+                    <p>Facade lighting BIM integration for Dubai projects.</p>
+                    <a href="/services/consultation/" class="btn btn-primary" style="width:100%;justify-content:center;">Book Consultation</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-col"><h4>Explore</h4><a href="/facade-lighting-dubai/">Complete Guide</a><a href="/case-studies/">Case Studies</a><a href="/areas/">Areas</a><a href="/building-types/">Building Types</a><a href="/sourcing/">Sourcing</a></div><div class="footer-col"><h4>Resources</h4><a href="/faq/">FAQ</a><a href="/trends/">Trends</a><a href="/developer-compliance/">Developer Compliance</a><a href="/maintenance/">Maintenance</a></div><div class="footer-col"><h4>Technical</h4><a href="/controls/">Controls</a><a href="/climate/">Climate</a><a href="/engineering/">Engineering</a><a href="/led-technology/">LED Technology</a></div><div class="footer-col"><h4>Company</h4><a href="/services/">Services</a><a href="/services/consultation/">Consultation</a><a href="/contractors-suppliers/">Contractors</a><a href="/specialty/">Specialty</a><a href="/about/">About Us</a></div></div><div class="footer-bottom"><span>&copy; 2026 Facade Lighting Dubai. All rights reserved. <a href="/privacy-policy/" style="margin-left:1rem;color:var(--text-muted);text-decoration:underline;">Privacy Policy</a></span><a href="/" class="logo" style="font-size: var(--text-sm);">Facade Lighting <span>Dubai</span></a></div></div></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="/js/main.js" defer></script>
+<script src="/js/inner-pages.js" defer></script>
+
+  <!-- Firebase Initialization -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBpRgFUwNbl7HHC7WbnfyeR2WDYGscKH7A",
+      authDomain: "facadelightingdubai.firebaseapp.com",
+      projectId: "facadelightingdubai",
+      storageBucket: "facadelightingdubai.firebasestorage.app",
+      messagingSenderId: "209553024154",
+      appId: "1:209553024154:web:3def167272fa1eba9d6b23",
+      measurementId: "G-8VYG15GG5B"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+
+</html>
