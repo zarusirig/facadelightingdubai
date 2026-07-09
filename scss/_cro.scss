@@ -457,6 +457,43 @@
   margin-top: $space-10;
 }
 
+/* --- BUTTON COLOR GUARD --- */
+// .article-content a { color: $gold-primary } outspecifies .btn-primary,
+// leaving gold text on gold buttons. Re-assert button colors at higher
+// specificity wherever content-link styles can reach them.
+a.btn,
+.article-content a.btn,
+.sidebar a.btn {
+  text-decoration: none;
+}
+
+a.btn.btn-primary,
+.article-content a.btn-primary,
+.sidebar a.btn-primary,
+.cta-banner a.btn-primary {
+  color: $bg-void;
+
+  &:hover,
+  &:focus { color: $bg-void; }
+}
+
+a.btn.btn-outline,
+.article-content a.btn-outline,
+.sidebar a.btn-outline {
+  color: $text-primary;
+
+  &:hover,
+  &:focus { color: $gold-primary; }
+}
+
+a.btn.btn-ghost,
+.article-content a.btn-ghost {
+  color: $gold-primary;
+
+  &:hover,
+  &:focus { color: $gold-bright; }
+}
+
 /* --- CTA BANNER contact row --- */
 .cta-contact-row {
   display: flex;
