@@ -659,9 +659,9 @@
     gap: $space-8;
   }
 
+  // Content first on mobile — sidebar nav follows the article
   .sidebar {
     position: static;
-    order: -1;
   }
 
   .article-header h1 {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- 1. Initialize Lenis (Smooth Scrolling) ---
   let lenis = null;
 
-  if (!prefersReducedMotion) {
+  if (!prefersReducedMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

@@ -1,0 +1,486 @@
+/* ============================================
+   FACADE LIGHTING DUBAI — CRO Components
+   Header CTA, sticky mobile bar, WhatsApp float,
+   forms, process grid, trust microcopy
+   ============================================ */
+
+/* --- HEADER CTA --- */
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: $space-4;
+  margin-left: $space-4;
+  flex-shrink: 0;
+
+  @media (max-width: 1600px) {
+    .header-phone { display: none; }
+  }
+
+  @media (max-width: $bp-lg) {
+    display: none;
+  }
+}
+
+.header-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-2;
+  font-family: $font-heading;
+  font-size: $text-xs;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: $text-primary;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color $duration-fast ease-out;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    color: $gold-primary;
+  }
+
+  &:hover { color: $gold-bright; }
+}
+
+.btn-header {
+  padding: $space-3 $space-6;
+  font-size: $text-xs;
+  white-space: nowrap;
+}
+
+/* --- STICKY MOBILE CTA BAR --- */
+.mobile-cta-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 95;
+  background: rgba($bg-void, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba($gold-base, 0.25);
+  padding: $space-2 $space-3;
+  padding-bottom: calc(#{$space-2} + env(safe-area-inset-bottom, 0px));
+  gap: $space-2;
+
+  @media (max-width: $bp-md) {
+    display: flex;
+  }
+
+  a {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $space-2;
+    min-height: 48px;
+    font-family: $font-heading;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: $radius-md;
+    transition: all $duration-fast ease-out;
+
+    svg { width: 16px; height: 16px; flex-shrink: 0; }
+  }
+
+  .cta-call,
+  .cta-whatsapp {
+    color: $text-primary;
+    border: $border-light;
+    background: rgba($bg-elevated, 0.6);
+
+    &:active { background: rgba($gold-base, 0.12); }
+  }
+
+  .cta-whatsapp svg { color: #4fce5d; }
+  .cta-call svg { color: $gold-primary; }
+
+  .cta-quote {
+    background: $gold-primary;
+    color: $bg-void;
+    font-weight: 700;
+
+    &:active { background: $gold-bright; }
+  }
+}
+
+// Keep page content clear of the fixed bar on mobile
+@media (max-width: $bp-md) {
+  body { padding-bottom: 68px; }
+  .site-footer { padding-bottom: $space-8; }
+}
+
+/* --- WHATSAPP FLOAT --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: $space-8;
+  right: $space-8;
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: $radius-full;
+  background: #25d366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.4);
+  transition: transform $duration-normal $ease-out-expo, box-shadow $duration-normal ease;
+  animation: whatsappPulse 3s infinite;
+
+  svg { width: 28px; height: 28px; }
+
+  &:hover {
+    transform: translateY(-3px) scale(1.06);
+    color: #fff;
+  }
+
+  @media (max-width: $bp-md) {
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+    right: $space-4;
+    width: 50px;
+    height: 50px;
+
+    svg { width: 24px; height: 24px; }
+  }
+}
+
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.35); }
+  70% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-float { animation: none; }
+}
+
+/* --- HERO TRUST MICROCOPY --- */
+.hero-trust-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-2 $space-6;
+  margin-top: $space-6;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    font-family: $font-heading;
+    font-size: $text-xs;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: $text-secondary;
+
+    &::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      background: $gold-primary;
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+  }
+}
+
+/* --- FORMS (dark-brand lead forms) --- */
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-5;
+
+  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  text-align: left;
+
+  label {
+    font-family: $font-heading;
+    font-size: $text-xs;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $text-secondary;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: $space-4 $space-5;
+    font-family: $font-body;
+    font-size: $text-base;
+    color: $text-primary;
+    background: rgba($bg-elevated, 0.55);
+    border: $border-light;
+    border-radius: $radius-md;
+    transition: border-color $duration-fast ease, background $duration-fast ease;
+
+    &::placeholder { color: $text-dim; }
+
+    &:focus {
+      border-color: rgba($gold-base, 0.5);
+      background: rgba($bg-elevated, 0.85);
+      outline: none;
+    }
+  }
+
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23cfad4e' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $space-5 center;
+    padding-right: $space-10;
+
+    option { background: $bg-elevated; color: $text-primary; }
+  }
+
+  textarea { resize: vertical; min-height: 120px; }
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-5;
+
+  .btn[disabled] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+
+.form-privacy-note {
+  font-size: $text-xs;
+  color: $text-dim;
+  margin: 0;
+}
+
+.form-status {
+  display: none;
+  padding: $space-4 $space-5;
+  border-radius: $radius-md;
+  font-size: $text-sm;
+  font-weight: 500;
+
+  &.visible { display: block; }
+
+  &.success {
+    background: rgba(79, 206, 93, 0.08);
+    border: 1px solid rgba(79, 206, 93, 0.3);
+    color: #8fe89a;
+  }
+
+  &.error {
+    background: rgba(230, 122, 61, 0.08);
+    border: 1px solid rgba(230, 122, 61, 0.35);
+    color: #f0a679;
+  }
+}
+
+.form-alt-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-3 $space-6;
+  padding-top: $space-5;
+  border-top: $border-subtle;
+  font-size: $text-sm;
+  color: $text-dim;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    color: $text-primary;
+    font-weight: 500;
+    text-decoration: none;
+
+    svg { width: 16px; height: 16px; color: $gold-primary; }
+
+    &:hover { color: $gold-bright; }
+  }
+
+  a.whatsapp-link svg { color: #4fce5d; }
+}
+
+/* --- QUOTE PANEL (embedded homepage form) --- */
+.quote-panel {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: $space-12;
+  background: $bg-warm-subtle;
+  border: $border-gold;
+  padding: $space-16;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba($gold-base, 0.06) 100%);
+    pointer-events: none;
+  }
+
+  > * { position: relative; z-index: 1; }
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+    padding: $space-10 $space-6;
+    gap: $space-8;
+  }
+}
+
+.quote-panel-info {
+  h2 { margin-top: 0; }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: $space-6 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+
+    li {
+      display: flex;
+      gap: $space-3;
+      font-size: $text-sm;
+      color: $text-secondary;
+
+      &::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border: 1px solid $gold-primary;
+        transform: rotate(45deg);
+        flex-shrink: 0;
+        margin-top: 7px;
+      }
+
+      strong { color: $text-primary; }
+    }
+  }
+}
+
+.quote-panel-contact {
+  margin-top: $space-8;
+  display: flex;
+  flex-direction: column;
+  gap: $space-3;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-3;
+    font-family: $font-heading;
+    font-size: $text-sm;
+    font-weight: 500;
+    color: $text-primary;
+    text-decoration: none;
+
+    svg { width: 17px; height: 17px; color: $gold-primary; flex-shrink: 0; }
+
+    &:hover { color: $gold-bright; }
+  }
+
+  a.whatsapp-link svg { color: #4fce5d; }
+}
+
+/* --- PROCESS GRID (How It Works) --- */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: $space-6;
+
+  @media (max-width: $bp-lg) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
+}
+
+.process-card {
+  position: relative;
+  background: rgba($bg-surface, 0.6);
+  border: $border-subtle;
+  border-radius: $radius-sm;
+  padding: $space-8;
+  transition: all $duration-slow $ease-out-expo;
+
+  .process-num {
+    font-family: $font-display;
+    font-size: $text-3xl;
+    color: rgba($gold-base, 0.35);
+    line-height: 1;
+    display: block;
+    margin-bottom: $space-5;
+  }
+
+  h3 {
+    font-size: $text-lg;
+    margin-bottom: $space-3;
+  }
+
+  p {
+    font-size: $text-sm;
+    color: $text-secondary;
+    margin: 0;
+  }
+
+  &:hover {
+    border-color: rgba($gold-base, 0.2);
+    transform: translateY(-3px);
+    box-shadow: $shadow-gold;
+  }
+}
+
+.section-cta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-5;
+  margin-top: $space-10;
+}
+
+/* --- CTA BANNER contact row --- */
+.cta-contact-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: $space-4 $space-8;
+  margin-top: $space-6;
+  position: relative;
+  z-index: 1;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    font-family: $font-heading;
+    font-size: $text-sm;
+    font-weight: 500;
+    color: $text-secondary;
+    text-decoration: none;
+
+    svg { width: 16px; height: 16px; color: $gold-primary; }
+
+    &:hover { color: $text-primary; }
+  }
+
+  a.whatsapp-link svg { color: #4fce5d; }
+}
