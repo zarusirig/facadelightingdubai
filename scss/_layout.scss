@@ -413,7 +413,14 @@
   .main-nav {
     display: none !important;
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0; left: 0; right: 0;
+    // The header's backdrop-filter makes it the containing block for fixed
+    // descendants, so bottom:0 would resolve to the header box (~60px) and
+    // the overlay background would stop there. Explicit viewport height
+    // keeps the menu full-screen regardless.
+    height: 100vh;
+    height: 100dvh;
+    overflow-y: auto;
     background: rgba($bg-void, 0.98);
     backdrop-filter: blur(24px) saturate(1.5);
     -webkit-backdrop-filter: blur(24px) saturate(1.5);
