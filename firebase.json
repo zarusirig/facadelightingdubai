@@ -9,7 +9,12 @@
             "package.json",
             "package-lock.json",
             "skills-lock.json",
-            "outputs/**"
+            "outputs/**",
+            "scripts/**",
+            "prompts/**",
+            "research_results.json",
+            "process_images.py",
+            "process_images.sh"
         ],
         "cleanUrls": true,
         "trailingSlash": true,
