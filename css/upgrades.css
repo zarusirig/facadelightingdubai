@@ -516,3 +516,97 @@ p,
     padding: 4rem 0 1.5rem;
   }
 }
+
+/* ============================================================
+   INJECTED PAGE CONVERSION CTA  (site-wide inline lead form)
+   Added to give every interior page an on-page lead capture
+   so visitors convert without navigating to /contact/.
+   ============================================================ */
+.page-conversion {
+  background: linear-gradient(135deg, #0a0d14 0%, #12100a 55%, #0a0d14 100%);
+  border-top: 1px solid rgba(207, 173, 78, 0.18);
+  padding: clamp(3rem, 2rem + 4vw, 5.5rem) 0;
+  position: relative;
+  overflow: hidden;
+}
+.page-conversion::after {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -10%;
+  width: 55%;
+  height: 180%;
+  background: radial-gradient(ellipse, rgba(207, 173, 78, 0.05) 0%, transparent 62%);
+  pointer-events: none;
+}
+.page-conversion .container { position: relative; z-index: 1; }
+.page-conversion-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  align-items: center;
+}
+.page-conversion-info .text-overline { color: #cfad4e; }
+.page-conversion-info h2 { color: #fff; margin-bottom: 1rem; }
+.page-conversion-info > p { margin-bottom: 1.5rem; }
+.page-conversion-points {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.page-conversion-points li {
+  position: relative;
+  padding-left: 1.85rem;
+  color: #c9c4b6;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+  line-height: 1.5;
+  max-width: none;
+  margin: 0;
+}
+.page-conversion-points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.2em;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cfad4e' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+.page-conversion-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.75rem;
+  align-items: center;
+}
+.page-conversion-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f0ede4;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: clamp(0.9rem, 0.85rem + 0.2vw, 1rem);
+}
+.page-conversion-contact a svg { width: 18px; height: 18px; color: #cfad4e; }
+.page-conversion-contact a.pcc-whatsapp svg { color: #4fce5d; }
+.page-conversion-contact a:hover { color: #e8c84a; }
+.page-conversion-form {
+  background: rgba(10, 13, 20, 0.6);
+  border: 1px solid hsla(0, 0%, 100%, 0.08);
+  border-radius: 8px;
+  padding: clamp(1.5rem, 1rem + 2vw, 2.25rem);
+  gap: 1rem;
+}
+.page-conversion-form .form-heading {
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
+  font-weight: 600;
+  color: #f5f3ed;
+  margin-bottom: 0.25rem;
+}
+@media (max-width: 860px) {
+  .page-conversion-inner { grid-template-columns: 1fr; gap: 2rem; }
+}
