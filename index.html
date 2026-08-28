@@ -15,9 +15,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
 
-  <link rel="preload" as="image" href="/assets/images/heroes/home-hero.webp" type="image/webp">
-  <link rel="stylesheet" href="/css/styles.css?v=20260710c">
-  <link rel="stylesheet" href="/css/upgrades.css?v=20260710c">
+  <link rel="preload" as="image" href="/assets/images/heroes/home-hero-v2.webp" type="image/webp">
+  <link rel="stylesheet" href="/css/styles.css?v=20260828">
+  <link rel="stylesheet" href="/css/upgrades.css?v=20260828">
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Facade Lighting Dubai | Design, Installation &amp; Maintenance">
@@ -37,16 +37,17 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["Electrician", "ProfessionalService"],
     "@id": "https://facadelightingdubai.com/#organization",
     "name": "Facade Lighting Dubai",
-    "alternateName": "FLD",
+    "alternateName": ["FLD", "UNQOOD ALNUJOOM ELECTRICAL FITTING CONTRACTING L.L.C"],
+    "legalName": "UNQOOD ALNUJOOM ELECTRICAL FITTING CONTRACTING L.L.C",
     "url": "https://facadelightingdubai.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://facadelightingdubai.com/favicon.png",
-      "width": 600,
-      "height": 60
+      "url": "https://facadelightingdubai.com/assets/images/brand/logo.png",
+      "width": 512,
+      "height": 512
     },
     "image": "https://facadelightingdubai.com/assets/images/facade-lighting-dubai-og.jpg",
     "description": "Professional facade lighting design, installation, and maintenance services for commercial and residential buildings in Dubai and the UAE. Engineering-first approach with full regulatory compliance.",
@@ -54,14 +55,15 @@
     "email": "info@facadelightingdubai.com",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Abu Hail, Deira",
       "addressLocality": "Dubai",
       "addressRegion": "Dubai",
       "addressCountry": "AE"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "25.2048",
-      "longitude": "55.2708"
+      "latitude": "25.2787575",
+      "longitude": "55.3271354"
     },
     "areaServed": [
       {
@@ -117,57 +119,24 @@
         "closes": "14:00"
       }
     ],
+    "hasMap": "https://www.google.com/maps?cid=11118681450332476342",
     "sameAs": [
+      "https://www.google.com/maps?cid=11118681450332476342",
       "https://www.linkedin.com/company/facade-lighting-dubai",
       "https://www.instagram.com/facadelightingdubai",
       "https://www.facebook.com/facadelightingdubai",
       "https://www.youtube.com/@facadelightingdubai"
     ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Facade Lighting Services",
-      "itemListElement": [
-        {
-          "@type": "OfferCatalog",
-          "name": "Design Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Facade Lighting Design Consultation"
-              }
-            }
-          ]
-        },
-        {
-          "@type": "OfferCatalog",
-          "name": "Installation Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Facade Lighting Installation"
-              }
-            }
-          ]
-        },
-        {
-          "@type": "OfferCatalog",
-          "name": "Maintenance Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Facade Lighting Maintenance"
-              }
-            }
-          ]
-        }
-      ]
-    }
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Lighting Design Consultation", "serviceType": "Architectural lighting design", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Lighting Installation", "serviceType": "Facade lighting installation", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facade Lighting Maintenance", "serviceType": "Facade lighting maintenance", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "LED Facade Lighting Supply", "serviceType": "LED lighting supply", "areaServed": { "@type": "Country", "name": "United Arab Emirates" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Electrical Fitting and Contracting", "serviceType": "Electrical contracting", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lighting Control System Programming", "serviceType": "DMX and DALI lighting controls", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Outdoor and Landscape Lighting", "serviceType": "Exterior lighting", "areaServed": { "@type": "City", "name": "Dubai" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Photometric Design and Compliance Reporting", "serviceType": "Lighting engineering consultancy", "areaServed": { "@type": "Country", "name": "United Arab Emirates" }, "provider": { "@id": "https://facadelightingdubai.com/#organization" } } }
+    ]
   }
   </script>
 
@@ -189,38 +158,69 @@
 
   <!-- FAQ Schema -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How much does facade lighting cost in Dubai?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Facade lighting projects in Dubai typically range from AED 10,000 for villa accent schemes to AED 500,000+ for full high-rise systems. Cost depends on building size, fixture grade, and control complexity." }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need permits or approvals for facade lighting in Dubai?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes — most Dubai facade lighting projects require compliance with Al Sa'fat, DEWA electrical codes, and in some cases a DCD NOC. Facade Lighting Dubai maps regulatory requirements before design begins and prepares all documentation." }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does a facade lighting project take?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A villa scheme is usually designed and installed within 3–6 weeks. Commercial towers run 2–6 months depending on access, approvals, and facade complexity." }
-      },
-      {
-        "@type": "Question",
-        "name": "Will facade lighting fixtures survive Dubai's heat and coastal air?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Dubai-grade systems are rated for 48°C ambient temperatures, IP67 coastal protection, and IK08 impact resistance, delivering 50,000+ hour LED lifespans." }
-      },
-      {
-        "@type": "Question",
-        "name": "What does the free site assessment include?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A 30-minute consultation plus an evaluation of facade materials, orientation, electrical infrastructure, and regulatory position — followed by a scoped proposal with no obligation to proceed." }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does facade lighting cost in Dubai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Facade lighting in Dubai typically ranges from AED 10,000 for a villa accent scheme to AED 500,000 or more for a full high-rise system. The figure is driven by building height, facade area, fixture grade, access method, and control complexity — a 40-storey Business Bay tower and a Dubai Hills villa are not comparable jobs. Facade Lighting Dubai issues a transparent line-item budget with every proposal. See the full facade lighting cost guide for published benchmarks."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need permits or approvals for facade lighting in Dubai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Most Dubai facade lighting projects require compliance with the Al Sa’fat Green Building Evaluation System and DEWA electrical standards, and many need a Dubai Civil Defence NOC where the scheme touches emergency or egress circuits. Buildings inside Emaar, Nakheel, DAMAC or Meraas communities also face master-developer design review. Facade Lighting Dubai maps every applicable requirement before design begins and prepares the submission documents, so approvals stay off your critical path."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a facade lighting project take in Dubai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A villa scheme in Dubai is usually designed, approved and installed within three to six weeks. A commercial tower runs two to six months, because containment and cabling follow the access equipment up the building and DEWA approval timing sits on the critical path. Facade Lighting Dubai issues a milestone timeline with your proposal after the free site assessment, so you know the approval, installation and commissioning dates before you commit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will facade lighting fixtures survive Dubai’s heat and coastal air?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Only if they are specified for it. Facade Lighting Dubai specifies Dubai-grade systems rated for 48°C ambient temperatures, IP67 sealing against coastal salt spray, and IK08 impact resistance, which is what delivers a 50,000-hour LED service life here. Fixtures rated for European conditions routinely fail within two years on a Dubai facade. Our Dubai Grade specification sets out the full standard we hold every product to."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the free site assessment include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The free site assessment is a 30-minute consultation plus an on-site evaluation of your facade materials, building orientation, existing electrical infrastructure, access constraints, and regulatory position under Al Sa’fat and DEWA. You receive initial design guidance and a scoped proposal covering approach, timeline and budget range, with no obligation to proceed. Book it through our facade lighting consultation in Dubai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who handles the electrical work on a facade lighting project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We do. Facade Lighting Dubai is the lighting division of UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C, a licensed electrical fitting contractor, so cabling, containment, earthing, LED drivers, control panels and the DEWA submission are delivered under the same contract as the design and the fixtures. That matters because most facade lighting failures in Dubai are electrical rather than optical. See our electrical contracting services in Dubai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which areas of Dubai do you cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Facade Lighting Dubai works across the whole emirate from our base in Abu Hail, Deira — within roughly a 35-minute drive of every major development zone. We regularly deliver projects in Downtown Dubai, Business Bay, Dubai Marina, JBR, Palm Jumeirah, Bluewaters, DIFC, City Walk, Emirates Hills, Dubai Hills and Al Quoz, with wider coverage across Abu Dhabi, Sharjah and the Northern Emirates. See our Dubai area guides."
+      }
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -246,7 +246,7 @@
         <a href="/led-technology/">Technology</a>
         <a href="/regulations/">Regulations</a>
         <a href="/installation/">Installation</a>
-        <a href="/building-types/">Building Types</a>
+        <a href="/building-types/">Buildings</a>
         <a href="/cost/">Cost</a>
         <div class="nav-dropdown">
           <a href="/services/" aria-haspopup="true" aria-expanded="false">Services <svg width="10" height="6"
@@ -281,7 +281,7 @@
 
     <!-- ========== HERO ========== -->
     <section class="hero"
-      style="background-image: linear-gradient(to bottom, rgba(4, 6, 12, 0.6), rgba(4, 6, 12, 0.95)), url('/assets/images/heroes/home-hero.webp'); background-size: cover; background-position: center;">
+      style="background-image: linear-gradient(to bottom, rgba(4, 6, 12, 0) 55%, rgba(4, 6, 12, 0.55) 80%, rgba(4, 6, 12, 0.8) 100%), linear-gradient(100deg, rgba(4, 6, 12, 0.94) 0%, rgba(4, 6, 12, 0.86) 40%, rgba(4, 6, 12, 0.58) 72%, rgba(4, 6, 12, 0.4) 100%), url('/assets/images/heroes/home-hero-v2.webp'); background-size: cover, cover, cover; background-position: center, center, center right;">
 
       <!-- Ambient light blobs -->
       <div class="hero-ambient">
@@ -292,15 +292,23 @@
 
       <div class="container">
         <div class="hero-content">
-          <span class="text-overline">Engineering-Led Facade Illumination</span>
-          <h1>Facade Lighting <span class="highlight">Dubai</span></h1>
-          <p>We design, install, and maintain regulation-compliant facade lighting for villas, hotels, and towers
-            across Dubai — engineered for the 48&#176;C desert climate and managed by one team from concept to
-            commissioning.</p>
+          <span class="text-overline">Licensed Electrical Contractor &middot; Facade Lighting Specialists</span>
+          <h1>Facade Lighting in Dubai, <span class="highlight">Wired by the Team That Designs It</span></h1>
+          <p>Most facade lighting failures in Dubai are electrical, not optical &mdash; undersized cable, a driver
+            cooked in a sealed riser, earthing nobody ever tested. We are a licensed electrical fitting contractor as
+            well as a lighting specialist, so the design, the fixtures, the cabling and the DEWA submission all sit
+            under one contract. When something goes wrong, there is nobody to point at but us.</p>
+
+          <ul class="hero-icp">
+            <li>Property developers</li>
+            <li>Architects &amp; consultants</li>
+            <li>Main contractors</li>
+            <li>Building owners &amp; FM teams</li>
+          </ul>
 
           <div class="hero-cta-wrap" style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-top: 2rem;">
             <a href="/contact/#quote-form" class="btn btn-primary"><span>Get a Free Site Assessment</span></a>
-            <a href="/case-studies/" class="btn btn-outline"><span>View Our Work</span></a>
+            <a href="/case-studies/" class="btn btn-outline"><span>How Dubai Landmarks Are Lit</span></a>
           </div>
 
           <div class="hero-trust-note">
@@ -311,20 +319,20 @@
 
           <div class="hero-stats">
             <div class="hero-stat">
-              <span class="hero-stat-value" data-count="50000" data-suffix="+">0</span>
-              <span class="hero-stat-label">Hours LED Lifespan</span>
+              <span class="hero-stat-value" data-count="1">0</span>
+              <span class="hero-stat-label">Contract &mdash; design, supply, install, wire</span>
             </div>
             <div class="hero-stat">
-              <span class="hero-stat-value" data-count="80" data-prefix="70-" data-suffix="%">0</span>
-              <span class="hero-stat-label">Energy Reduction</span>
-            </div>
-            <div class="hero-stat">
-              <span class="hero-stat-value" data-count="100" data-suffix="%">0</span>
-              <span class="hero-stat-label">Al Sa'fat Compliant</span>
+              <span class="hero-stat-value" data-count="4">0</span>
+              <span class="hero-stat-label">Authorities handled &mdash; Al Sa'fat, DEWA, DCD, ESMA</span>
             </div>
             <div class="hero-stat">
               <span class="hero-stat-value" data-count="48" data-suffix="&#176;C">0</span>
-              <span class="hero-stat-label">Dubai-Grade Rated</span>
+              <span class="hero-stat-label">Ambient every fixture is specified for</span>
+            </div>
+            <div class="hero-stat">
+              <span class="hero-stat-value" data-count="24" data-suffix="h">0</span>
+              <span class="hero-stat-label">Response to every enquiry</span>
             </div>
           </div>
         </div>
@@ -573,6 +581,33 @@
       </div>
     </section>
 
+    <!-- ========== SERVICE AREA (local signals) ========== -->
+    <section class="home-section" id="service-area">
+      <div class="container">
+        <div class="section-header">
+          <h2>Serving Dubai and the Northern Emirates</h2>
+          <p>We work from Abu Hail in Deira, which puts our survey and maintenance crews within a 35-minute drive of
+            every major development zone in Dubai.</p>
+        </div>
+        <div class="home-local-signals">
+          <ul class="area-link-list">
+            <li><a href="/areas/downtown-business-bay/">Downtown Dubai &amp; Business Bay</a></li>
+            <li><a href="/areas/marina-jbr/">Dubai Marina &amp; JBR</a></li>
+            <li><a href="/areas/palm-bluewaters/">Palm Jumeirah &amp; Bluewaters</a></li>
+            <li><a href="/areas/difc-city-walk/">DIFC &amp; City Walk</a></li>
+            <li><a href="/areas/emirates-dubai-hills/">Emirates Hills &amp; Dubai Hills</a></li>
+            <li><a href="/areas/al-quoz-design-district/">Al Quoz &amp; Design District</a></li>
+            <li><a href="/areas/deira-creek/">Deira &amp; Dubai Creek</a></li>
+            <li><a href="/services/uae/">Abu Dhabi, Sharjah &amp; Northern Emirates</a></li>
+          </ul>
+          <p>Each area brings its own constraints. Waterfront towers in the Marina need severe-marine-zone corrosion
+            protection; Downtown and DIFC buildings sit under stricter master-developer facade guidelines; heritage
+            zones around Dubai Creek limit fixture visibility and colour temperature. Our
+            <a href="/areas/">area guides</a> set out what changes where.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== FAQ ========== -->
     <section class="home-section home-section--alt">
       <div class="container">
@@ -586,42 +621,43 @@
           <div class="faq-item">
             <button class="faq-question" type="button">How much does facade lighting cost in Dubai?</button>
             <div class="faq-answer">
-              <p>Facade lighting projects in Dubai typically range from AED 10,000 for villa accent schemes to AED
-                500,000+ for full high-rise systems. Cost depends on building size, fixture grade, and control
-                complexity. Our proposal includes a transparent line-item budget — see the
-                <a href="/cost/">full cost guide</a> for benchmarks.</p>
+              <p>Facade lighting in Dubai typically ranges from AED 10,000 for a villa accent scheme to AED 500,000 or more for a full high-rise system. The figure is driven by building height, facade area, fixture grade, access method, and control complexity — a 40-storey Business Bay tower and a Dubai Hills villa are not comparable jobs. Facade Lighting Dubai issues a transparent line-item budget with every proposal. See the <a href="/cost/">full facade lighting cost guide</a> for published benchmarks.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button">Do I need permits or approvals for facade lighting?</button>
+            <button class="faq-question" type="button">Do I need permits or approvals for facade lighting in Dubai?</button>
             <div class="faq-answer">
-              <p>Yes — most Dubai facade lighting projects require compliance with Al Sa'fat, DEWA electrical codes,
-                and in some cases a DCD NOC. We map the regulatory requirements before design begins and prepare all
-                documentation on your behalf, so approvals do not delay your project.</p>
+              <p>Yes. Most Dubai facade lighting projects require compliance with the Al Sa’fat Green Building Evaluation System and DEWA electrical standards, and many need a Dubai Civil Defence NOC where the scheme touches emergency or egress circuits. Buildings inside Emaar, Nakheel, DAMAC or Meraas communities also face master-developer design review. Facade Lighting Dubai maps every applicable requirement before design begins and prepares the submission documents, so approvals stay off your critical path.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button">How long does a typical project take?</button>
+            <button class="faq-question" type="button">How long does a facade lighting project take in Dubai?</button>
             <div class="faq-answer">
-              <p>A villa scheme is usually designed and installed within 3–6 weeks. Commercial towers run 2–6 months
-                depending on access, approvals, and facade complexity. You receive a timeline with milestones in your
-                proposal after the free site assessment.</p>
+              <p>A villa scheme in Dubai is usually designed, approved and installed within three to six weeks. A commercial tower runs two to six months, because containment and cabling follow the access equipment up the building and DEWA approval timing sits on the critical path. Facade Lighting Dubai issues a milestone timeline with your proposal after the free site assessment, so you know the approval, installation and commissioning dates before you commit.</p>
             </div>
           </div>
           <div class="faq-item">
-            <button class="faq-question" type="button">Will the fixtures survive Dubai's heat and coastal air?</button>
+            <button class="faq-question" type="button">Will facade lighting fixtures survive Dubai’s heat and coastal air?</button>
             <div class="faq-answer">
-              <p>We specify only Dubai-grade systems: rated for 48&#176;C ambient temperatures, IP67 coastal
-                protection, and IK08 impact resistance. That is why our installations carry 50,000+ hour LED
-                lifespans — see our <a href="/climate/dubai-grade-specification/">Dubai Grade specification</a>.</p>
+              <p>Only if they are specified for it. Facade Lighting Dubai specifies Dubai-grade systems rated for 48°C ambient temperatures, IP67 sealing against coastal salt spray, and IK08 impact resistance, which is what delivers a 50,000-hour LED service life here. Fixtures rated for European conditions routinely fail within two years on a Dubai facade. Our <a href="/climate/dubai-grade-specification/">Dubai Grade specification</a> sets out the full standard we hold every product to.</p>
             </div>
           </div>
           <div class="faq-item">
             <button class="faq-question" type="button">What does the free site assessment include?</button>
             <div class="faq-answer">
-              <p>A 30-minute consultation plus an evaluation of your facade materials, orientation, electrical
-                infrastructure, and regulatory position. You receive initial guidance and a scoped proposal — with no
-                obligation to proceed.</p>
+              <p>The free site assessment is a 30-minute consultation plus an on-site evaluation of your facade materials, building orientation, existing electrical infrastructure, access constraints, and regulatory position under Al Sa’fat and DEWA. You receive initial design guidance and a scoped proposal covering approach, timeline and budget range, with no obligation to proceed. Book it through our <a href="/services/consultation/">facade lighting consultation in Dubai</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Who handles the electrical work on a facade lighting project?</button>
+            <div class="faq-answer">
+              <p>We do. Facade Lighting Dubai is the lighting division of UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C, a licensed electrical fitting contractor, so cabling, containment, earthing, LED drivers, control panels and the DEWA submission are delivered under the same contract as the design and the fixtures. That matters because most facade lighting failures in Dubai are electrical rather than optical. See our <a href="/services/electrical-contracting/">electrical contracting services in Dubai</a>.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button">Which areas of Dubai do you cover?</button>
+            <div class="faq-answer">
+              <p>Facade Lighting Dubai works across the whole emirate from our base in Abu Hail, Deira — within roughly a 35-minute drive of every major development zone. We regularly deliver projects in Downtown Dubai, Business Bay, Dubai Marina, JBR, Palm Jumeirah, Bluewaters, DIFC, City Walk, Emirates Hills, Dubai Hills and Al Quoz, with wider coverage across Abu Dhabi, Sharjah and the Northern Emirates. See our <a href="/areas/">Dubai area guides</a>.</p>
             </div>
           </div>
         </div>
@@ -701,6 +737,37 @@
       </div>
     </section>
 
+
+    <!-- ========== NAP + GBP (entity signals) ========== -->
+    <section class="home-section home-section--alt" id="visit-us">
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Facade Lighting Dubai</h2>
+          <p>Call us, email us, or find us on Google Maps. These details match our Google Business Profile exactly.</p>
+        </div>
+        <div class="home-nap-grid">
+          <div class="company-details">
+            <address>
+              <strong>UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C</strong><br>
+              trading as Facade Lighting Dubai<br>
+              Abu Hail, Deira, Dubai, United Arab Emirates<br>
+              Telephone: <a href="tel:+97145807370">+971 4 580 7370</a><br>
+              Email: <a href="mailto:info@facadelightingdubai.com">info@facadelightingdubai.com</a><br>
+              Opening hours: Sunday&ndash;Thursday 08:00&ndash;18:00, Saturday 09:00&ndash;14:00<br>
+              <a href="https://www.google.com/maps?cid=11118681450332476342" target="_blank" rel="noopener">View our Google Business Profile</a>
+            </address>
+          </div>
+          <div class="gbp-embed">
+            <iframe
+              src="https://maps.google.com/maps?cid=11118681450332476342&amp;output=embed"
+              title="Facade Lighting Dubai on Google Maps &mdash; Abu Hail, Deira, Dubai"
+              width="100%" height="340" style="border:0;" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -752,7 +819,7 @@
           <a href="/about/">About Us</a>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-nap"><address><strong>UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C</strong><span>trading as Facade Lighting Dubai</span><span>Abu Hail, Deira, Dubai, United Arab Emirates</span><span><a href="tel:+97145807370">+971 4 580 7370</a> &middot; <a href="mailto:info@facadelightingdubai.com">info@facadelightingdubai.com</a></span><span>Sun&ndash;Thu 08:00&ndash;18:00 &middot; Sat 09:00&ndash;14:00</span></address><a class="footer-nap-map" href="https://www.google.com/maps?cid=11118681450332476342" target="_blank" rel="noopener">View Facade Lighting Dubai on Google Maps</a></div><div class="footer-bottom">
         <span>&copy; 2026 Facade Lighting Dubai. All rights reserved.</span>
         <span><a href="/privacy-policy/">Privacy Policy</a></span>
       </div>
@@ -765,7 +832,7 @@
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
 
   <!-- Custom JS -->
-  <script src="/js/main.js?v=20260710" defer></script>
+  <script src="/js/main.js?v=20260828" defer></script>
 
   <!-- Firebase Initialization -->
   <script type="module">

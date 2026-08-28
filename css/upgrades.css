@@ -610,3 +610,314 @@ p,
 @media (max-width: 860px) {
   .page-conversion-inner { grid-template-columns: 1fr; gap: 2rem; }
 }
+
+/* ── Local SEO: sitewide NAP block (Name / Address / Phone) ───────────── */
+.footer-nap {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  padding-top: 2rem;
+  margin-top: 1rem;
+}
+.footer-nap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(207, 173, 78, 0.12), transparent);
+}
+.footer-nap address {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: clamp(0.78rem, 0.74rem + 0.2vw, 0.875rem);
+  line-height: 1.65;
+  color: #8a8578;
+}
+.footer-nap address strong {
+  color: #f5f3ed;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.footer-nap address a {
+  color: #8a8578;
+  text-decoration: none;
+  transition: color 0.2s ease-out;
+}
+.footer-nap address a:hover { color: #cfad4e; }
+.footer-nap-map {
+  align-self: center;
+  flex-shrink: 0;
+  font-size: clamp(0.75rem, 0.72rem + 0.15vw, 0.8125rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #cfad4e;
+  text-decoration: none;
+  border: 1px solid rgba(207, 173, 78, 0.28);
+  border-radius: 4px;
+  padding: 0.55rem 1rem;
+  transition: background 0.2s ease-out, border-color 0.2s ease-out;
+}
+.footer-nap-map:hover {
+  background: rgba(207, 173, 78, 0.08);
+  border-color: rgba(207, 173, 78, 0.5);
+}
+@media (max-width: 700px) {
+  .footer-nap { flex-direction: column; align-items: flex-start; }
+  .footer-nap-map { align-self: stretch; text-align: center; }
+}
+
+/* ── Local SEO: entity definition block (GEO/AEO extraction target) ───── */
+.article-content .entity-definition {
+  background: #12100a;
+  border-left: 2px solid #b8982f;
+  padding: clamp(1.5rem, 1rem + 2vw, 2rem);
+  margin: 0 0 3rem;
+  border-radius: 0 2px 2px 0;
+}
+.article-content .entity-definition p {
+  margin-bottom: 0;
+  max-width: none;
+  color: #cfc9bb;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  line-height: 1.8;
+}
+.article-content .entity-definition strong { color: #f5f3ed; }
+
+/* ── Local SEO: crawlable NAP block on About / Contact ────────────────── */
+.article-content .company-details {
+  background: #080b14;
+  border: 1px solid rgba(207, 173, 78, 0.16);
+  border-radius: 4px;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
+  margin: 2rem 0 3rem;
+}
+.article-content .company-details address {
+  font-style: normal;
+  margin: 0;
+  color: #8a8578;
+  line-height: 2;
+  font-size: clamp(0.9rem, 0.87rem + 0.2vw, 1rem);
+}
+.article-content .company-details address strong {
+  color: #f5f3ed;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+
+/* ── Local SEO: Google Business Profile map embed ─────────────────────── */
+.gbp-embed {
+  margin: 2rem 0 3rem;
+  border: 1px solid rgba(207, 173, 78, 0.16);
+  border-radius: 4px;
+  overflow: hidden;
+  line-height: 0;
+}
+.gbp-embed iframe { display: block; width: 100%; filter: grayscale(0.35) contrast(1.05); }
+
+/* ── Local SEO: per-area service + NAP block on location pages ────────── */
+.article-content .area-service-block { margin-top: 3rem; }
+
+/* ── Local SEO: homepage service-area + NAP sections ──────────────────── */
+.home-local-signals { max-width: 900px; }
+.home-local-signals p { color: #8a8578; max-width: 900px; }
+.area-link-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 0.5rem 1.5rem;
+}
+.area-link-list li { margin: 0; }
+.area-link-list a {
+  display: block;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(207, 173, 78, 0.16);
+  border-radius: 4px;
+  color: #cfc9bb;
+  text-decoration: none;
+  font-size: clamp(0.88rem, 0.85rem + 0.2vw, 0.95rem);
+  transition: border-color 0.2s ease-out, color 0.2s ease-out, background 0.2s ease-out;
+}
+.area-link-list a:hover {
+  border-color: rgba(207, 173, 78, 0.45);
+  background: rgba(207, 173, 78, 0.06);
+  color: #f5f3ed;
+}
+.home-nap-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 2rem;
+  align-items: start;
+}
+.home-nap-grid .company-details {
+  background: #080b14;
+  border: 1px solid rgba(207, 173, 78, 0.16);
+  border-radius: 4px;
+  padding: clamp(1.25rem, 1rem + 1.5vw, 1.75rem);
+  margin: 0;
+}
+.home-nap-grid .company-details address {
+  font-style: normal;
+  margin: 0;
+  color: #8a8578;
+  line-height: 2;
+  font-size: clamp(0.9rem, 0.87rem + 0.2vw, 1rem);
+}
+.home-nap-grid .company-details address strong {
+  color: #f5f3ed;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+}
+.home-nap-grid .company-details address a { color: #cfad4e; }
+.home-nap-grid .gbp-embed { margin: 0; }
+@media (max-width: 860px) {
+  .home-nap-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Local SEO: contextual bridge paragraph (outer → core money pages) ── */
+.article-content .contextual-bridge {
+  margin: 2.5rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid rgba(207, 173, 78, 0.14);
+  color: #9d978a;
+  font-size: clamp(0.95rem, 0.9rem + 0.25vw, 1.0625rem);
+  max-width: 680px;
+}
+
+/* ── Local SEO: hub paragraph linking under-linked child pages ────────── */
+.article-content .link-hub-extra {
+  margin-top: 2rem;
+  color: #9d978a;
+  max-width: 680px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CRO FIXES — ICP: developers, architects, consultants, main contractors.
+   High-ticket B2B (AED 10k–500k+). They call before they fill in forms.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* 1. Logo was wrapping to two lines on desktop, detaching "Dubai" from the
+      wordmark. First impression for a premium B2B buyer. */
+.site-header .logo {
+  white-space: nowrap;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+}
+
+/* 2. The header phone was hidden below 1600px — i.e. on virtually every
+      laptop. For a contracting business the click-to-call IS the funnel.
+      Restore it from 1200px up, and tighten the nav so it still fits. */
+@media (min-width: 1200px) {
+  .header-cta .header-phone { display: inline-flex !important; }
+  .main-nav { gap: 0; }
+  .main-nav > a,
+  .main-nav .nav-dropdown > a {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+  .header-cta { gap: 0.5rem; margin-left: 0.5rem; }
+  .header-cta .btn-header { padding-left: 0.85rem; padding-right: 0.85rem; }
+}
+/* 1200–1439px cannot hold 9 nav items + phone + quote button. For a
+   contracting business the phone is the higher-value action, and the hero
+   already carries a full-width "Get a Free Site Assessment" CTA — so the
+   header keeps one primary action here rather than cramming two. */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .header-cta .btn-header { display: none; }
+  .main-nav > a,
+  .main-nav .nav-dropdown > a { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .header-cta { gap: 0.4rem; margin-left: 0.75rem; }
+  .site-header .header-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1560px) {
+  .main-nav > a,
+  .main-nav .nav-dropdown > a { padding-left: 0.65rem; padding-right: 0.65rem; font-size: 0.76rem; }
+  .header-cta { gap: 0.85rem; margin-left: 1rem; }
+}
+
+/* 3. Header phone deserves button weight — it is a primary conversion path,
+      not a footnote. */
+@media (min-width: 1200px) {
+  .header-cta .header-phone {
+    border: 1px solid rgba(207, 173, 78, 0.3);
+    border-radius: 4px;
+    padding: 0.6rem 0.85rem;
+    transition: border-color 0.2s ease-out, background 0.2s ease-out;
+  }
+  .header-cta .header-phone:hover {
+    border-color: rgba(207, 173, 78, 0.6);
+    background: rgba(207, 173, 78, 0.08);
+  }
+}
+
+/* 4. Mobile had two WhatsApp entry points 76px apart — the floating bubble
+      and the sticky bar button. The bar wins: always visible, three clear
+      options, 48px targets. Drop the redundant bubble where the bar shows. */
+@media (max-width: 768px) {
+  .whatsapp-float { display: none !important; }
+}
+
+/* 5. ICP callout under the hero H1 — names the buyer, the way the market
+      leader does with "We are Architect Friendly". */
+.hero-icp {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.75rem;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+.hero-icp li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin: 0;
+  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.9rem);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #cfc9bb;
+}
+.hero-icp li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #cfad4e;
+}
+@media (max-width: 600px) {
+  .hero-icp { gap: 0.35rem 1.25rem; }
+}
+
+/* 6. Hero H1 is now a statement, not a two-word brand lockup. Cap the display
+      size so a longer line still reads as one confident block rather than
+      four giant rows, and keep the stat labels legible at two lines. */
+.hero h1 {
+  font-size: clamp(2.3rem, 1.7rem + 2.2vw, 4rem);
+  line-height: 1.08;
+  max-width: 15ch;
+}
+@media (min-width: 992px) {
+  .hero h1 { max-width: 20ch; }
+}
+.hero-stat-label {
+  max-width: 22ch;
+  line-height: 1.35;
+}
+
+/* Hero stat labels sat at #5c574e — fine over a flat dark backdrop, too dark
+   over the new lit-facade image. Lift them and add a scrim-safe shadow. */
+.hero .hero-stat-label { color: #b5afa1; text-shadow: 0 1px 4px rgba(4, 6, 12, 0.85); }
+.hero .hero-trust-note span { color: #a8a294; text-shadow: 0 1px 4px rgba(4, 6, 12, 0.85); }
+.hero .hero-content p { text-shadow: 0 1px 6px rgba(4, 6, 12, 0.6); }

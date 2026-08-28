@@ -294,9 +294,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let isMouseMoving = false;
 
   if (cursorGlow && window.innerWidth > 991 && !prefersReducedMotion) {
+    // Position via transform, never left/top: layout properties make every mouse
+    // move a layout shift, which pushed CLS to 0.11 (fails Google's 0.1 budget).
+    let glowX = 0, glowY = 0, glowQueued = false;
+
     document.addEventListener('mousemove', (e) => {
-      cursorGlow.style.left = `${e.clientX}px`;
-      cursorGlow.style.top = `${e.clientY}px`;
+      glowX = e.clientX;
+      glowY = e.clientY;
+      if (!glowQueued) {
+        glowQueued = true;
+        requestAnimationFrame(() => {
+          cursorGlow.style.transform =
+            `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+          glowQueued = false;
+        });
+      }
       if (!isMouseMoving) { cursorGlow.classList.add('active'); isMouseMoving = true; }
     });
 
