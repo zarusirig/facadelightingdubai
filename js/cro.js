@@ -6,7 +6,9 @@
 (function () {
   'use strict';
 
-  var FORM_ENDPOINT = 'https://formsubmit.co/ajax/info@facadelightingdubai.com';
+  // Firebase Hosting rewrites this to the `contact` Cloud Function, which
+  // relays the enquiry over the domain's own Purelymail SMTP.
+  var FORM_ENDPOINT = '/api/contact';
 
   function trackEvent(name, params) {
     try {
@@ -29,10 +31,8 @@
 
       var data = {};
       new FormData(form).forEach(function (value, key) {
-        if (key !== '_honey') data[key] = value;
+        data[key] = value;
       });
-      data._subject = 'New enquiry — facadelightingdubai.com';
-      data._template = 'table';
 
       if (button) {
         button.disabled = true;
@@ -48,8 +48,17 @@
         body: JSON.stringify(data)
       })
         .then(function (res) {
-          if (!res.ok) throw new Error('Request failed');
-          return res.json();
+          return res.json().catch(function () { return {}; }).then(function (payload) {
+            // Surface the server's own validation wording where there is one,
+            // so "add a phone or email" reaches the visitor instead of a
+            // generic failure message.
+            if (!res.ok || payload.ok !== true) {
+              var err = new Error(payload.error || 'Request failed');
+              err.userFacing = Boolean(payload.error);
+              throw err;
+            }
+            return payload;
+          });
         })
         .then(function () {
           if (status) {
@@ -59,9 +68,11 @@
           form.reset();
           trackEvent('generate_lead', { method: 'lead_form', form_id: form.id || 'lead-form' });
         })
-        .catch(function () {
+        .catch(function (err) {
           if (status) {
-            status.innerHTML = 'Something went wrong sending your message. Please call us on <a href="tel:+97145807370">+971 4 580 7370</a> or use WhatsApp below.';
+            status.innerHTML = (err && err.userFacing)
+              ? String(err.message)
+              : 'Something went wrong sending your message. Please call us on <a href="tel:+97145807370">+971 4 580 7370</a> or use WhatsApp below.';
             status.classList.add('visible', 'error');
           }
           trackEvent('lead_form_error', { form_id: form.id || 'lead-form' });

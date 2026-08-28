@@ -1,0 +1,13 @@
+{
+  "name": "facadelightingdubai-functions",
+  "description": "Contact form handler — sends enquiries over Purelymail SMTP",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.1.0",
+    "nodemailer": "^6.9.16"
+  },
+  "private": true
+}
