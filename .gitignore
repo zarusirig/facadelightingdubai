@@ -11,3 +11,4 @@ __pycache__/
 # Build/research working artifacts (not part of the published site)
 outputs/
 research_results.json
+.playwright-mcp/

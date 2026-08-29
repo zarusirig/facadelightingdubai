@@ -1024,3 +1024,34 @@ p,
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
 }
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BRAND MARK — the gold "F" facade icon that now leads the wordmark in the
+   header, the footer brand block and the footer bottom bar. Sized in `em`
+   so it tracks whatever font-size the surrounding .logo is set to, which
+   keeps one rule correct across all three placements and both breakpoints.
+   ═══════════════════════════════════════════════════════════════════════ */
+.logo-mark {
+  height: 1.85em;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+  align-self: center;          /* .logo aligns on the baseline; the mark does not have one */
+  filter: drop-shadow(0 0 10px rgba(207, 173, 78, 0.16));
+  transition: filter 0.4s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logo:hover .logo-mark {
+  filter: drop-shadow(0 0 18px rgba(232, 200, 74, 0.42));
+  transform: translateY(-1px);
+}
+
+.footer-brand .logo-mark { height: 2em; }
+
+/* The footer bottom bar sets .logo to var(--text-sm); keep the mark from
+   shrinking to a smudge there. */
+.footer-bottom .logo-mark { height: 2.1em; }
+
+@media (max-width: 768px) {
+  .logo-mark { height: 1.75em; }
+}
