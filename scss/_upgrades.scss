@@ -601,7 +601,7 @@ p,
   gap: 1rem;
 }
 .page-conversion-form .form-heading {
-  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "DM Sans", "DM Sans Fallback", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(1.05rem, 1rem + 0.3vw, 1.25rem);
   font-weight: 600;
   color: #f5f3ed;
@@ -880,7 +880,7 @@ p,
   position: relative;
   padding-left: 1.1rem;
   margin: 0;
-  font-family: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "DM Sans", "DM Sans Fallback", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(0.82rem, 0.78rem + 0.2vw, 0.9rem);
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -921,3 +921,106 @@ p,
 .hero .hero-stat-label { color: #b5afa1; text-shadow: 0 1px 4px rgba(4, 6, 12, 0.85); }
 .hero .hero-trust-note span { color: #a8a294; text-shadow: 0 1px 4px rgba(4, 6, 12, 0.85); }
 .hero .hero-content p { text-shadow: 0 1px 6px rgba(4, 6, 12, 0.6); }
+
+/* ============================================
+   TEAM GRID — /about/ Our Team
+   ============================================ */
+
+.team-groups {
+  margin: 2rem 0 3rem;
+}
+
+.team-group + .team-group {
+  margin-top: 2.5rem;
+}
+
+.team-group h3 {
+  font-size: clamp(0.8rem, 0.75rem + 0.25vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-primary, #cfad4e);
+  margin-bottom: 1rem;
+}
+
+.team-grid,
+.article-content ul.team-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* kill the inherited gold bullet + indent from .article-content ul li */
+.article-content ul.team-grid li {
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.article-content ul.team-grid li::before {
+  content: none;
+  display: none;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.9rem;
+  align-items: center;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(207, 173, 78, 0.14);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.team-card:hover {
+  border-color: rgba(207, 173, 78, 0.32);
+  background: rgba(207, 173, 78, 0.04);
+}
+
+.team-initials {
+  grid-row: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(207, 173, 78, 0.3);
+  color: var(--gold-primary, #cfad4e);
+  font-family: "DM Sans", "DM Sans Fallback", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.team-name {
+  color: #f5f3ed;
+  font-family: "DM Sans", "DM Sans Fallback", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.team-role {
+  color: #8a8578;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animated hero counters: fixed-width digits so the number does not
+   jitter as it counts up from 0. */
+.hero-stat-value {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}

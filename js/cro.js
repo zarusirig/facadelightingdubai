@@ -72,7 +72,7 @@
           if (status) {
             status.innerHTML = (err && err.userFacing)
               ? String(err.message)
-              : 'Something went wrong sending your message. Please call us on <a href="tel:+97145807370">+971 4 580 7370</a> or use WhatsApp below.';
+              : 'Something went wrong sending your message. Please call us on <a href="tel:+971565688660">+971 56 568 8660</a> or use WhatsApp below.';
             status.classList.add('visible', 'error');
           }
           trackEvent('lead_form_error', { form_id: form.id || 'lead-form' });
