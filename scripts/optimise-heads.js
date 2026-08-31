@@ -8,7 +8,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const V = '20260829b';
+const V = '20260831';
 const critical = fs.readFileSync(path.join(ROOT, 'css', 'critical.css'), 'utf8').trim();
 
 const HEAD_BLOCK = `  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/satoshi-400.woff2" crossorigin>

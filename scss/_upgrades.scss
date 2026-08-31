@@ -668,9 +668,14 @@ p,
   background: rgba(207, 173, 78, 0.08);
   border-color: rgba(207, 173, 78, 0.5);
 }
+.footer-nap .footer-social {
+  align-self: center;
+  flex-shrink: 0;
+}
 @media (max-width: 700px) {
   .footer-nap { flex-direction: column; align-items: flex-start; }
   .footer-nap-map { align-self: stretch; text-align: center; }
+  .footer-nap .footer-social { align-self: flex-start; }
 }
 
 /* ── Local SEO: entity definition block (GEO/AEO extraction target) ───── */
