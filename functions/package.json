@@ -1,11 +1,19 @@
 {
   "name": "facadelightingdubai-functions",
-  "description": "Contact form handler — sends enquiries over Purelymail SMTP",
+  "description": "Quote/contact form handler — persists leads to Firestore, notifies the owner over Purelymail SMTP",
   "main": "index.js",
   "engines": {
     "node": "20"
   },
+  "scripts": {
+    "lint": "node --check index.js && node --check lib/normalize.js && node --check lib/mail.js && node --check scripts/smoke.js",
+    "test": "node --test test/*.test.js",
+    "serve": "firebase emulators:start --only functions,firestore",
+    "smoke": "node scripts/smoke.js",
+    "smoke:emulator": "firebase emulators:exec --only functions,firestore \"node scripts/smoke.js\""
+  },
   "dependencies": {
+    "firebase-admin": "^13.10.0",
     "firebase-functions": "^6.1.0",
     "nodemailer": "^6.9.16"
   },
