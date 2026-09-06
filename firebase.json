@@ -89,6 +89,13 @@
                     }
                 ]
             }
+        ],
+        "redirects": [
+            {
+                "source": "/facade-lighting-dubai{,/**}",
+                "destination": "/",
+                "type": 301
+            }
         ]
     },
     "functions": [

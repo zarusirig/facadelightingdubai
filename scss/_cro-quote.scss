@@ -1,0 +1,511 @@
+/* ============================================
+   FACADE LIGHTING DUBAI — CRO v2: quote form
+   Two-step quote form, trust strip, chips,
+   inline validation, compact in-article CTA,
+   desktop scroll-intent nudge, sticky-bar
+   clearance. Loaded after _upgrades so it wins.
+   ============================================ */
+
+/* --- Anchor landing + sticky-bar clearance --- */
+html {
+  scroll-padding-top: 96px;
+
+  @media (max-width: $bp-md) {
+    scroll-padding-top: 72px;
+    scroll-padding-bottom: 88px;
+  }
+}
+
+@media (max-width: $bp-md) {
+  // Extra room under the form so the last control is reachable above the bar
+  .page-conversion,
+  .quote-panel { padding-bottom: calc(#{$space-10} + 76px); }
+  .page-conversion .form-actions,
+  .quote-panel .form-actions { margin-bottom: $space-2; }
+}
+
+/* Bar slides away while the quote form is on screen or has focus, so it can
+   never sit over the submit button. */
+.mobile-cta-bar {
+  transition: transform $duration-normal $ease-out-expo, opacity $duration-normal ease;
+  will-change: transform;
+
+  .cta-quote { flex: 1.45; }
+}
+body.cro-quote-in-view .mobile-cta-bar,
+body.cro-form-focus .mobile-cta-bar,
+body:has(form.lead-form:focus-within) .mobile-cta-bar {
+  transform: translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-cta-bar { transition: none; }
+}
+
+/* --- Header CTA hierarchy: phone = secondary outline, quote = primary --- */
+.header-cta .btn-header {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+/* --- Trust strip (inside the form, above the fields) --- */
+.quote-trust {
+  list-style: none;
+  margin: 0 0 $space-2;
+  padding: 0 0 $space-4;
+  border-bottom: $border-subtle;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-2 $space-4;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-2;
+    margin: 0;
+    font-family: $font-heading;
+    font-size: clamp(0.72rem, 0.68rem + 0.2vw, 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+    color: $text-secondary;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      color: $gold-primary;
+    }
+
+    a {
+      color: $text-primary;
+      text-decoration: none;
+      border-bottom: 1px solid rgba($gold-base, 0.35);
+      &:hover { color: $gold-bright; border-bottom-color: $gold-bright; }
+    }
+
+    strong { color: $text-primary; font-weight: 600; }
+  }
+
+  .quote-trust-stars {
+    color: $gold-primary;
+    letter-spacing: -0.05em;
+    font-size: 0.8em;
+  }
+
+  @media (max-width: $bp-sm) { grid-template-columns: 1fr; }
+}
+
+/* --- Step header --- */
+.quote-form {
+  .form-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: $space-3;
+    flex-wrap: wrap;
+  }
+
+  .quote-step-label {
+    font-family: $font-heading;
+    font-size: $text-xs;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gold-primary;
+  }
+
+  .quote-step-time {
+    font-size: $text-xs;
+    font-weight: 500;
+    color: $text-dim;
+    letter-spacing: 0.02em;
+  }
+
+  .quote-step {
+    display: flex;
+    flex-direction: column;
+    gap: $space-4;
+  }
+  .quote-step[hidden] { display: none; }
+
+  // Never let a long placeholder / hint widen the card on narrow screens
+  min-width: 0;
+  max-width: 100%;
+  > *, .quote-step > *, .form-grid-2 > *, .form-field { min-width: 0; }
+  input, select, textarea { max-width: 100%; box-sizing: border-box; }
+}
+
+/* --- Property-type chips (native radios, keyboard operable) --- */
+.quote-chips {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+
+  legend {
+    font-family: $font-heading;
+    font-size: $text-xs;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: $text-secondary;
+    margin-bottom: $space-2;
+    padding: 0;
+  }
+
+  .quote-chip-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space-2;
+  }
+
+  .quote-chip {
+    position: relative;
+    display: inline-flex;
+    margin: 0;
+    cursor: pointer;
+
+    input {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    span {
+      display: inline-flex;
+      align-items: center;
+      gap: $space-2;
+      min-height: 44px;
+      padding: $space-2 $space-4;
+      font-family: $font-heading;
+      font-size: $text-sm;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: $text-primary;
+      background: rgba($bg-elevated, 0.55);
+      border: $border-light;
+      border-radius: $radius-md;
+      transition: border-color $duration-fast ease, background $duration-fast ease, color $duration-fast ease;
+      user-select: none;
+
+      svg { width: 16px; height: 16px; color: $gold-primary; flex-shrink: 0; }
+    }
+
+    &:hover span { border-color: rgba($gold-base, 0.4); }
+
+    input:checked + span {
+      background: rgba($gold-base, 0.14);
+      border-color: $gold-primary;
+      color: $text-white;
+      box-shadow: inset 0 0 0 1px rgba($gold-base, 0.5);
+    }
+
+    input:focus-visible + span {
+      outline: 2px solid $gold-bright;
+      outline-offset: 2px;
+    }
+  }
+
+  &.has-error .quote-chip span { border-color: rgba(230, 122, 61, 0.55); }
+}
+
+/* --- Inline validation --- */
+.form-field {
+  .field-hint {
+    font-size: $text-xs;
+    color: $text-dim;
+    line-height: 1.4;
+  }
+
+  .field-error {
+    display: none;
+    font-size: $text-xs;
+    font-weight: 500;
+    color: #f0a679;
+    line-height: 1.4;
+  }
+
+  &.has-error {
+    input,
+    select,
+    textarea { border-color: rgba(230, 122, 61, 0.6); }
+    .field-error { display: block; }
+    .field-hint { display: none; }
+  }
+
+  input:not(:placeholder-shown):not([aria-invalid="true"]):valid { border-color: rgba(79, 206, 93, 0.35); }
+
+  // Optional flag on labels
+  .field-optional {
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    color: $text-dim;
+  }
+}
+
+.quote-chips .field-error {
+  display: none;
+  margin-top: $space-2;
+  font-size: $text-xs;
+  font-weight: 500;
+  color: #f0a679;
+}
+.quote-chips.has-error .field-error { display: block; }
+
+/* --- Submit row --- */
+.quote-form .form-actions {
+  gap: $space-4;
+
+  .btn { min-height: 52px; }
+
+  .form-privacy-note {
+    color: $text-secondary;
+    max-width: 22rem;
+    line-height: 1.45;
+  }
+
+  @media (max-width: $bp-sm) {
+    flex-direction: column;
+    align-items: stretch;
+    .btn { width: 100%; }
+    .form-privacy-note { text-align: center; max-width: none; }
+  }
+}
+
+.quote-form .btn[aria-busy="true"] {
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* --- Step 2 (after the lead is in) --- */
+.quote-thanks {
+  padding: $space-4 $space-5;
+  border-radius: $radius-md;
+  background: rgba(79, 206, 93, 0.08);
+  border: 1px solid rgba(79, 206, 93, 0.3);
+
+  .quote-step-heading {
+    font-family: $font-heading;
+    font-size: $text-lg;
+    font-weight: 600;
+    color: $text-heading;
+    margin: 0 0 $space-1;
+    outline: none;
+  }
+
+  p {
+    margin: 0;
+    font-size: $text-sm;
+    color: $text-primary;
+    line-height: 1.5;
+  }
+
+  .quote-whatsapp-fallback {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-2;
+    margin-top: $space-3;
+    font-family: $font-heading;
+    font-size: $text-sm;
+    font-weight: 600;
+    color: $text-white;
+    text-decoration: none;
+    padding: $space-2 $space-4;
+    border-radius: $radius-md;
+    background: rgba(37, 211, 102, 0.16);
+    border: 1px solid rgba(37, 211, 102, 0.45);
+
+    svg { width: 16px; height: 16px; color: #4fce5d; }
+    &:hover { background: rgba(37, 211, 102, 0.26); }
+  }
+}
+
+.quote-step-2-fields {
+  display: flex;
+  flex-direction: column;
+  gap: $space-4;
+
+  .quote-step-2-intro {
+    margin: 0;
+    font-size: $text-sm;
+    color: $text-secondary;
+  }
+}
+
+.quote-step-2-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: $space-4;
+
+  .quote-skip {
+    background: none;
+    border: 0;
+    padding: $space-2 0;
+    font-family: $font-heading;
+    font-size: $text-sm;
+    color: $text-secondary;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    &:hover { color: $text-primary; }
+    &:focus-visible { outline: 2px solid $gold-bright; outline-offset: 2px; }
+  }
+}
+
+.quote-done {
+  outline: none;
+  padding: $space-4 0 0;
+
+  p { margin: 0 0 $space-2; font-size: $text-sm; color: $text-primary; }
+  .quote-done-alt { color: $text-secondary; }
+  a { color: $gold-primary; }
+}
+
+/* --- Compact in-article CTA --- */
+.article-content .cta-inline--compact,
+.cta-inline--compact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-5;
+  margin: $space-8 0;
+  padding: $space-5 $space-6;
+  background: $bg-warm-subtle;
+  border: $border-gold;
+  border-left: 3px solid $gold-primary;
+  border-radius: $radius-sm;
+
+  p {
+    margin: 0;
+    font-size: $text-sm;
+    line-height: 1.5;
+    color: $text-secondary;
+    max-width: none;
+
+    strong { color: $text-primary; font-weight: 600; }
+  }
+
+  .btn {
+    flex-shrink: 0;
+    padding: $space-3 $space-5;
+    font-size: $text-xs;
+    white-space: nowrap;
+  }
+
+  @media (max-width: $bp-md) {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: left;
+    .btn { width: 100%; }
+  }
+}
+
+/* --- Desktop scroll-intent nudge --- */
+.quote-nudge {
+  position: fixed;
+  right: $space-6;
+  bottom: $space-6;
+  z-index: 96;
+  width: min(360px, calc(100vw - 3rem));
+  padding: $space-5 $space-6;
+  background: linear-gradient(135deg, #0a0d14 0%, #12100a 100%);
+  border: 1px solid rgba($gold-base, 0.35);
+  border-radius: $radius-lg;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.4);
+  transform: translateY(24px);
+  opacity: 0;
+  transition: transform $duration-normal $ease-out-expo, opacity $duration-normal ease;
+
+  &[hidden] { display: none; }
+  &.is-visible { transform: translateY(0); opacity: 1; }
+
+  .quote-nudge-eyebrow {
+    display: block;
+    font-family: $font-heading;
+    font-size: $text-xs;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $gold-primary;
+    margin-bottom: $space-2;
+  }
+
+  .quote-nudge-title {
+    font-family: $font-display;
+    font-size: $text-lg;
+    font-weight: 500;
+    color: $text-heading;
+    margin: 0 0 $space-2;
+    line-height: 1.25;
+  }
+
+  p {
+    margin: 0 0 $space-4;
+    font-size: $text-sm;
+    color: $text-secondary;
+    line-height: 1.5;
+  }
+
+  .quote-nudge-cta {
+    width: 100%;
+    padding: $space-3 $space-5;
+    font-size: $text-xs;
+  }
+
+  .quote-nudge-close {
+    position: absolute;
+    top: $space-2;
+    right: $space-2;
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: 0;
+    border-radius: $radius-full;
+    color: $text-secondary;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+
+    &:hover { color: $text-primary; background: rgba(255, 255, 255, 0.06); }
+    &:focus-visible { outline: 2px solid $gold-bright; outline-offset: 2px; }
+  }
+
+  // Sits above the WhatsApp float on desktop
+  ~ .whatsapp-float,
+  + .whatsapp-float { bottom: $space-8; }
+
+  @media (max-width: $bp-lg) { display: none !important; }
+}
+// The nudge takes the bottom-right corner; the WhatsApp float steps aside
+// rather than peeking out behind it (the nudge's own CTA covers the same job).
+body:has(.quote-nudge.is-visible) .whatsapp-float {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-nudge { transition: none; transform: none; }
+  .quote-chip span, .form-field input, .form-field select, .form-field textarea { transition: none; }
+}
+
+/* 1200–1439px: keep the primary "Get a Free Quote" button in the header and
+   collapse the phone to its icon. The live-site audit (2026-09-05) found the
+   button hidden at 1366×768 on every inner page, leaving no quote CTA above
+   the fold on the most common desktop size. */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .header-cta .btn-header { display: inline-flex; }
+  .header-cta .header-phone span { display: none; }
+  .header-cta .header-phone { padding-left: 0.6rem; padding-right: 0.6rem; }
+}
