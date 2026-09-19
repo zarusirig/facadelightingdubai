@@ -258,7 +258,7 @@ const CHIPS = [
 
 function trustStrip() {
   return `<ul class="quote-trust" aria-label="Why enquire with us">
-            <li>${SHIELD_SVG}<span>Licensed electrical fitting contractor <strong>(UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C)</strong></span></li>
+            <li>${SHIELD_SVG}<span>Licensed electrical fitting contractor <strong>(Facade Lighting Contracting LLC)</strong></span></li>
             <li>${STAR_SVG}<span><strong>4.8<span class="quote-trust-stars" aria-hidden="true">&#9733;</span></strong> from <a href="${GBP_URL}" target="_blank" rel="noopener">15 Google reviews</a></span></li>
             <li>${CHECK_SVG}<span>Al Sa'fat &amp; DEWA compliance handled for you</span></li>
             <li>${GIFT_SVG}<span>Free site assessment &middot; no obligation</span></li>

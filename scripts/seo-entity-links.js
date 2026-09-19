@@ -139,7 +139,7 @@ const HOME_PROOF = `
               </svg>
             </div>
             <h3>Licensed Electrical Fitting Contractor</h3>
-            <p>Facade Lighting Dubai is the lighting division of UNQOOD ALNUJOOM Electrical Fitting Contracting L.L.C, a licensed electrical fitting contractor based at Anwaj Building, Meena Bazar, Bur Dubai. The people who design your scheme are the same licensed team that wires it.</p>
+            <p>Facade Lighting Dubai is the lighting division of Facade Lighting Contracting LLC, a licensed electrical fitting contractor based at Anwaj Building, Meena Bazar, Bur Dubai. The people who design your scheme are the same licensed team that wires it.</p>
           </div>
 
           <div class="service-item">
