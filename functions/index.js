@@ -10,7 +10,8 @@
      3. PERSIST the lead to Firestore `leads/{leadId}` first.
      4. Email the owner over Purelymail SMTP (one retry). A mail failure never
         loses the lead: it is already in Firestore with the error recorded.
-     5. Optional acknowledgement to the lead, best effort.
+     5. Acknowledgement to the lead — OFF unless SEND_ACK_EMAIL=1 (spam bots
+        used it to flood strangers' inboxes in Sep 2026).
      6. Always answer JSON: { ok: true, leadId, step, emailed } or
         { ok: false, error }.
 
@@ -58,6 +59,9 @@ const FROM = `"Facade Lighting Dubai — Website" <${MAILBOX}>`;
 
 // Set MAIL_DRY_RUN=1 (functions/.env.local) to skip SMTP in the emulator.
 const MAIL_DRY_RUN = process.env.MAIL_DRY_RUN === '1';
+// The "we received your request" email goes to whatever address the form was
+// given, unverified — which makes it a free spam cannon. Off unless opted in.
+const SEND_ACK_EMAIL = process.env.SEND_ACK_EMAIL === '1';
 const IS_EMULATOR = process.env.FUNCTIONS_EMULATOR === 'true';
 
 const ALLOWED_ORIGINS = new Set([
@@ -334,20 +338,20 @@ exports.contact = onRequest(
       const requestedStep = String(body.step || '').trim() === '2' ? 2 : 1;
       const providedLeadId = clean(body.leadId || body.lead_id, 40);
 
-      // Validation: exactly the minimum a human needs to be contactable.
+      // Validation. Every form on the site has a required phone field, so a
+      // valid phone is mandatory. Email-only posts with junk phones were the
+      // Sep 2026 spam wave. Only a step-2 post naming a real step-1 lead may
+      // skip it — re-checked after the lookup below.
       if (fields.email && !fields.emailValid) {
         return json(res, 400, { ok: false, error: 'That email address does not look valid.' });
       }
-      if (requestedStep === 1) {
-        if (!fields.phoneRaw && !fields.emailValid) {
-          return json(res, 400, { ok: false, error: 'Please enter your phone or WhatsApp number so an engineer can call you.' });
-        }
-        if (fields.phoneRaw && !fields.phoneValid && !fields.emailValid) {
-          return json(res, 400, {
-            ok: false,
-            error: 'That phone number does not look right. Use a UAE number such as 05x xxx xxxx or +971 5x xxx xxxx.',
-          });
-        }
+      const phoneError = !fields.phoneRaw
+        ? 'Please enter your phone or WhatsApp number so an engineer can call you.'
+        : !fields.phoneValid
+          ? 'That phone number does not look right. Use a UAE number such as 05x xxx xxxx, or add + and your country code.'
+          : '';
+      if (phoneError && !(requestedStep === 2 && LEAD_ID_RE.test(providedLeadId))) {
+        return json(res, 400, { ok: false, error: phoneError });
       }
       if (!fields.propertyType) fields.propertyType = 'other'; // never reject a lead over a dropdown
 
@@ -389,6 +393,7 @@ exports.contact = onRequest(
           logger.warn('Recent-lead lookup by phone failed', { message: err.message });
         }
       }
+      if (phoneError && !existing) return json(res, 400, { ok: false, error: phoneError });
       const kind = existing ? 'update' : 'new';
       const effectiveStep = existing ? 2 : requestedStep;
       if (!leadId) leadId = newLeadId();
@@ -469,7 +474,7 @@ exports.contact = onRequest(
       /* 3. Acknowledge the lead, once, best effort ------------------------- */
       let ackResult = null;
       const ackAlreadySent = existing && existing.emails && existing.emails.ack && existing.emails.ack.sentAt;
-      if (lead.email && !ackAlreadySent) {
+      if (SEND_ACK_EMAIL && lead.email && !ackAlreadySent) {
         ackResult = await sendWithRetry(
           buildAckEmail({ lead, from: FROM, to: lead.email, ownerPhone: OWNER_PHONE, ownerWhatsApp: OWNER_WHATSAPP }),
           'acknowledgement'

@@ -11,7 +11,9 @@ rewrites `POST /api/contact` to (see `firebase.json`). It:
    outage never loses a lead,
 4. emails the owner over Purelymail SMTP (one retry), with a WhatsApp/call button,
    page source, UTM/referrer and an Asia/Dubai timestamp,
-5. sends a short acknowledgement to the lead if they gave an email,
+5. sends a short acknowledgement to the lead's email — **only if `SEND_ACK_EMAIL=1`**.
+   It is off by default: the address is unverified, and from 2026-09-09 bots posted
+   ~350 fake quotes a day with strangers' emails to use it as a spam relay,
 6. always answers JSON.
 
 ## Request contract
@@ -20,10 +22,10 @@ rewrites `POST /api/contact` to (see `firebase.json`). It:
 
 | field | required | notes |
 |---|---|---|
-| `phone` | yes (step 1) | any UAE format: `+971 56 568 8660`, `00971…`, `056 568 8660`, `0565688660`, `565688660`, `04 580 7370`, Arabic-Indic digits. Non-UAE `+E.164` accepted. Stored as E.164. A missing/invalid phone is accepted only if a valid `email` is given. |
+| `phone` | yes (step 1) | any UAE format: `+971 56 568 8660`, `00971…`, `056 568 8660`, `0565688660`, `565688660`, `04 580 7370`, Arabic-Indic digits. Non-UAE numbers need the leading `+`. Stored as E.164. A missing/invalid phone is always a `400` (an email does not replace it) — except a step-2 post whose `leadId` matches a stored lead. |
 | `propertyType` | preferred | `villa`, `tower`, `hotel`, `commercial`, `other`. Legacy values (`commercial-tower`, `hotel-resort`, `retail-mall`, …) and free text are mapped; missing defaults to `other`. |
 | `name` | no | UTF-8, ≤120 chars |
-| `email` | no | validated if present; enables the acknowledgement email |
+| `email` | no | validated if present; used as Reply-To (and for the acknowledgement, if enabled) |
 | `area` | no | alias `location` |
 | `timeline` | no | free text ≤120 |
 | `message` | no | ≤4000, line breaks kept. Alias `details`, `project_details` |
@@ -31,7 +33,7 @@ rewrites `POST /api/contact` to (see `firebase.json`). It:
 | `referrer` | no | document.referrer |
 | `utm_source` `utm_medium` `utm_campaign` `utm_term` `utm_content` `gclid` `fbclid` | no | shown in the owner email, stored under `utm` |
 | `step` | no | `1` (default) or `2` |
-| `leadId` | step 2 | id returned by step 1. Unknown id ⇒ treated as a new lead (never rejected). |
+| `leadId` | step 2 | id returned by step 1. Unknown id ⇒ treated as a new lead, so it needs a valid `phone`. |
 | `_honey` (also `website`, `_gotcha`) | honeypot | non-empty ⇒ silent `200 {ok:true}` |
 
 Legacy aliases still accepted: `project_type`, `location`, `page_source`.
@@ -81,6 +83,7 @@ Watch for leads whose email failed:
 | `SMTP_HOST` / `SMTP_PORT` | `.env` (optional) | default `smtp.purelymail.com` / `465` |
 | `OWNER_PHONE` | `.env` (optional) | shown in error messages and the acknowledgement; default `+971 56 568 8660` |
 | `MAIL_DRY_RUN` | `functions/.env.local` (emulator only) | `1` ⇒ log instead of sending |
+| `SEND_ACK_EMAIL` | `functions/.env` (optional) | `1` ⇒ send the acknowledgement email to the lead. Default off — leave it off unless the form has a real bot check (e.g. Turnstile), or bots will use it to spam strangers. |
 
 For the emulator, put the secret in `functions/.secret.local` (git-ignored):
 
